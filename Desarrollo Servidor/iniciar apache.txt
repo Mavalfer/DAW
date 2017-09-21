@@ -1,0 +1,2 @@
+en la carpeta de apache abrir consola en bin, ir al cmd y ejecutar httpd
+las webs se meten en la carpeta htdocs y se accede con localhost:8181

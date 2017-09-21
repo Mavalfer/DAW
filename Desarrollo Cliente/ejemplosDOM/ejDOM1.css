@@ -1,0 +1,11 @@
+.oculto{
+	visibility: hidden;
+}
+
+#mostrar {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
