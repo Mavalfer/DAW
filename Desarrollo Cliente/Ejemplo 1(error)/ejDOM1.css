@@ -1,0 +1,6 @@
+.oculto{
+	visibility: hidden;
+}
+button.oculto{
+    display:none;
+}
