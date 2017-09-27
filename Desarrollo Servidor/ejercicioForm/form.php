@@ -1,4 +1,13 @@
 <?php
+    //importar la clase request
+    require 'Request.php'; //si no lo encuentra va a dar error
+
+    $nombre = Request::read('nombre');
+    $apellidos = Request::read('apellidos');
+    $fecha = Request::read('fecha');
+    $tlf = Request::read('tlf');
+    $mail = Request::read('mail');
+    /*
     if (isset ($_GET['nombre'])) {
         $nombre = $_GET['nombre'];
     } else if (isset($_POST['nombre'])) {
@@ -28,7 +37,7 @@
     } else if (isset ($_POST['mail'])) {
         $mail = $_POST['mail'];
     }
-    
+    */
     //Ahora inventarse algo para evitar este tedio de isset y asignar valor
     //vamos a construir una clase 'Request'
     // con los metodos get, post, y read

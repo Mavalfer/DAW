@@ -3,7 +3,7 @@ class Request { //ojo! el archivo de llama como la clase, esto siempre es asi
     /*
     Diferencias entre java y php:
     this.nombre seria $this->nombre       no static
-    Alumno.centro seria self::$centro     static
+    Alumno.centro seria self::$centro     static, si se llama desde fuera usar el nombre de la clase
     */
     /*
     Este metodo va a tratar de leer un parametro, si es que ha llegado.
@@ -54,4 +54,5 @@ class Request { //ojo! el archivo de llama como la clase, esto siempre es asi
         return self::postget($nombreDelParametro);  //alias
         
     } 
-} //la recomendacion es que los archivos php puros no se cierran con la interrogacion>
+    //la recomendacion es que los archivos php puros no se cierran con la interrogacion>
+} 
