@@ -32,4 +32,12 @@
         static function setCentro($centro) {
             self::$centro = $centro;
         }
+        
+        function introspeccion() {
+            //sintaxis: foreach($variable as $indice => $valor)
+            //sintaxis2: foreach($variable as $valor)
+            foreach($this as $atributo => $valor) {
+                echo "El atributo $atributo tiene el valor $valor <br>";
+            }
+        }
     }

@@ -16,5 +16,8 @@ and open the template in the editor.
         echo '<h1>Eres: ' . $e->getNombre() . ' ' . $e->getApellido() . '</h1>';
         ?>
         <h2>Vamos a realizar una introspeccion:</h2>
+        <?php
+        $e->introspeccion();
+        ?>
     </body>
 </html>
