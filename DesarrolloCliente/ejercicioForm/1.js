@@ -8,12 +8,12 @@
     
     function comprobarPreguntas() {
         var preguntas = document.getElementsByName("radio");
-        for (i = 0; i < preguntas.length; i++) {
+        for (var i = 0; i < preguntas.length; i++) {
             if (preguntas[i].checked) {
                 return true;
-            }
-            return false;
+            }        
         }
+        return false;
     }
 
     function validarFormulario(evento) {
@@ -24,4 +24,4 @@
             window.alert("El formulario no se ha enviado");
         }
     }
- }());
+ }())

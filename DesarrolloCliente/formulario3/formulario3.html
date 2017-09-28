@@ -1,0 +1,100 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo furmulario</title>
+	<link rel="stylesheet" href="apsformulario1.css">
+	<script src="apsfiltroInput.js" defer></script>
+	<script src="apsformulario1.js" defer></script>
+
+</head>
+
+<body>
+	<form action="formulario.php" method="post" name="formulario1" id="formulario1" enctype=“multipart/form-data” >
+		<fieldset id="nombreApellidos">
+			<legend>Nompre y apellidos</legend>
+			<label for="nombre">Nombre</label>
+			<!-- "required": atributo HTML5 Permite aplicar en CSS la pseudoclase :required 
+			y al pulsar submit dará un mensaje de error automáticamente. 
+			Ese mensaje se puede completar con el atributo tittle. 
+			No hace falta controlar con javaScript si está vacío, salvo que queramos sacar algún 
+			mensaje propio en algun lugar concreto.-->
+			<input type="text" id="nombre" name="nombre" size="30"   maxLength="50" autofocus /> 
+			<span class="ayuda">*</span> <!-- Aquí sacaremos los mensajes de ayuda con javaScript -->
+			<br />
+			
+			<label for="apellidos">Apellidos</label>
+			<input type="text" id="apellidos" name="apellidos" />
+			<span class="ayuda"></span>
+		</fieldset>
+		
+		<!-- El código postal lo vamos a validar mientras se escribe, para impedir teclear letras -->
+		<label for="codPostal">Código postal</label>
+		<input type="text" id="codPostal" name="codPostal" caracteresPermitidos="0123456789" maxLength=5>
+		<span class="ayuda"></span>
+		<br/>
+		
+		<label for="email">Email</label>
+		<!-- Si en la siguiente etiqueta input ponemos type="email" en lugar de type="text", HTML5 Permite validar un correo electrónico sacando un mensaje en caso de error al pulsar submit -->
+		<input id="email" name="email" type="text" placeholder="ejemplo@izv.es" >
+		<span class="ayuda">*</span>
+		<br/>
+<!--        ------------------------------------------------------------------------------------  select-->
+		<label for="dpto">Departamento</label>
+		<select id="dpto" name="dpto">
+			<optgroup label=" Direccion">
+				<option value="gerente">Gerente</option>
+				<option value="director">Director</option>
+			</optgroup>
+			<optgroup label="Informatica">
+				<option value="desarrollo">Desarrollo</option>
+				<option value="sistemas">Sistemas</option>
+			</optgroup>
+		</select>
+		<br />
+		<table width="100%" border="0">
+			<tr>
+				<td> 
+<!--        ------------------------------------------------------------------------------------  radio button-->
+					<span>Edad:</span><span class='ayuda'>*</span><br/>	
+					<label><input type="radio" name="edad" id="020" value="020">0-20 </label><br/>
+					<label><input type="radio" name="edad" id="2040" value="2040" >20-40</label><br/>
+					<label><input type="radio" name="edad" id="4060" value="4060">40-60</label><br/>
+					<label><input type="radio" name="edad" id="60100" value="60100">60-100</label>
+				</td>
+				<td>
+<!--        ---------------------------------------------------------------------------------------  checkbox-->
+					<span>¿Cómo te desplazas al trabajo?</span><span class="ayuda">*</span> <br/>
+					<label><input type="checkbox" id="bici" name="vehiculo" value="bici">En bicicleta</label>
+					<br/>
+					<label><input type="checkbox" id="coche" name="vehiculo" value="coche" checked="checked">En coche</label>
+					<br>
+					<label><input type="checkbox" id="moto" name="vehiculo" value="moto"> En moto</label>
+				</td>
+			</tr>
+		</table>
+		<br/>
+<!--        ------------------------------------------------------------------------------------  select múltiple -->
+		<span>¿Cuanto navegas por internet? </span><span class='ayuda'>*</span>
+		<br/>
+		<select id="frecuencia" name="frecuencia" size="2" multiple>//en Chrome no funciona size, lo hacemos con css
+			<option value="1">2 horas al día.</option>
+			<option value="2">4 horas al día.</option>
+			<option value="3">10 horas a la semana.</option>
+			<option value="4">20 horas al mes.</option>
+		</select>
+		<br/>
+		<label for="foto">Sube una foto:</label>
+		<input type="file" id="foto" name="foto" size="40">
+		<br/>
+		<label for="color">Elige tu color favorito:</label>
+		<input type="color" id="color" name="color">
+		<br/>
+		
+		<label>Observaciones<textarea id="observaciones" rows="2" cols="20">Introduce aquí tus observaciones</textarea></label>
+		<br/>
+		<input type="submit" value="Enviar" id="enviar">
+		<input type="reset" value="Limpiar"><span class='ayuda'> * En este formulario hay datos obligatorios</span>
+		<br/>
+	</form>
+</body>
+
+</html>
