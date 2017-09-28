@@ -40,4 +40,28 @@
                 echo "El atributo $atributo tiene el valor $valor <br>";
             }
         }
+        
+        function getAtributos() { 
+            $atributos = [];
+            foreach ($this as $atributo => $valor){
+                $atributos[] = $atributo;
+            }
+            return $atributos;
+        }
+        
+        function getValores() {
+            $valores = [];
+            foreach ($this as $valor) {
+                $valores[] = $valor;
+            }
+            return $valores;
+        }
+        
+        function getValoresAtributos() {
+            $valoresCompletos = [];
+            foreach($this as $atributo => $valor) {
+                $valoresCompletos[$atributo] = $valor;
+            }
+            return $valoresCompletos;
+        }
     }
