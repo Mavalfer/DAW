@@ -1,0 +1,11 @@
+div > div {
+    height: 128px;
+    width: 128px;
+    background-color: green;
+}
+#arriba {
+    background-color: red;
+}
+#abajo {
+    background-color: blue;
+}

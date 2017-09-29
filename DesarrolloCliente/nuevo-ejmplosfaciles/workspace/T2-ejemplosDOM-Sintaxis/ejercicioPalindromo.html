@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Detecta palíndromos</title>
+    <script>
+        function palindromo(cadena) {
+            var resultado = "La cadena \"" + cadena + "\" \n";
+
+            // Pasar a minusculas la cadena
+            var cadenaOriginal = cadena.toLowerCase();
+
+            // Convertir la cadena en un array
+            var letrasEspacios = cadenaOriginal.split("");
+
+            // Eliminar los espacios en blanco (podría usarse letrasEspacios.replace(' ',''); )
+            var cadenaSinEspacios = "";
+            for (var i in letrasEspacios) {
+                if (letrasEspacios[i] != " ") {
+                    cadenaSinEspacios += letrasEspacios[i];
+                }
+            }
+            //Convertimos en un array para darle la vuelta
+            var letras = cadenaSinEspacios.split("");
+            var letrasReves = cadenaSinEspacios.split("").reverse();
+            var cadenaReves = letrasReves.join(''); // Convertimos de nuevo en cadena para comparar con el originalo            
+            var iguales = (cadenaSinEspacios == cadenaReves);
+            if (iguales) {
+                resultado += " es un palíndromo";
+            } else {
+                resultado += " no es un palíndromo";
+            }
+
+            return resultado;
+        }
+
+        alert(palindromo(prompt('Teclea una frase',"Se van sus naves")));
+        
+    </script>
+</head>
+
+<body>
+    <p>Detecta palíndromos</p>
+</body>
+
+</html>

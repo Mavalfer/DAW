@@ -1,0 +1,24 @@
+   a {
+       color: black;
+       text-decoration: none;
+   }
+   a:focus,
+   a:hover {
+       color: blue;
+   }
+   h2 {
+       padding: .25em 0 .25em 25px;
+       cursor: pointer;
+       background: url(mas.jpg) no-repeat left center;
+   }
+   h2.menos {
+       background: url(menos.jpg) no-repeat left center;
+   }
+   div.cerrado {
+       padding: 0 0 .25em 25px;
+       display: none;
+   }
+   div.abierto {
+       display: block;
+       S
+   }

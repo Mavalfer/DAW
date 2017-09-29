@@ -18,26 +18,26 @@
 			No hace falta controlar con javaScript si está vacío, salvo que queramos sacar algún 
 			mensaje propio en algun lugar concreto.-->
 			<input type="text" id="nombre" name="nombre" size="30"   maxLength="50" autofocus /> 
-			<span class="ayuda" id='ayudaNombre'>*</span> <!-- Aquí sacaremos los mensajes de ayuda con javaScript -->
+			<span class="ayuda">*</span> <!-- Aquí sacaremos los mensajes de ayuda con javaScript -->
 			<br />
 			
 			<label for="apellidos">Apellidos</label>
 			<input type="text" id="apellidos" name="apellidos" />
-			<span class="ayuda" id='ayudaNombre'></span>
+			<span class="ayuda"></span>
 		</fieldset>
 		
 		<!-- El código postal lo vamos a validar mientras se escribe, para impedir teclear letras -->
 		<label for="codPostal">Código postal</label>
 		<input type="text" id="codPostal" name="codPostal" caracteresPermitidos="0123456789" maxLength=5>
-		<span class="ayuda" id='ayudaPostal'></span>
+		<span class="ayuda"></span>
 		<br/>
 		
 		<label for="email">Email</label>
 		<!-- Si en la siguiente etiqueta input ponemos type="email" en lugar de type="text", HTML5 Permite validar un correo electrónico sacando un mensaje en caso de error al pulsar submit -->
 		<input id="email" name="email" type="text" placeholder="ejemplo@izv.es" >
-		<span class="ayuda" id='ayudaMail'>*</span>
+		<span class="ayuda">*</span>
 		<br/>
-<!--    select-->
+<!--        ------------------------------------------------------------------------------------  select-->
 		<label for="dpto">Departamento</label>
 		<select id="dpto" name="dpto">
 			<optgroup label=" Direccion">
@@ -53,16 +53,16 @@
 		<table width="100%" border="0">
 			<tr>
 				<td> 
-<!--       radio button-->
-					<span>Edad:</span><span class='ayuda'id='ayudaEdad'>*</span><br/>	
+<!--        ------------------------------------------------------------------------------------  radio button-->
+					<span>Edad:</span><span class='ayuda'>*</span><br/>	
 					<label><input type="radio" name="edad" id="020" value="020">0-20 </label><br/>
 					<label><input type="radio" name="edad" id="2040" value="2040" >20-40</label><br/>
 					<label><input type="radio" name="edad" id="4060" value="4060">40-60</label><br/>
 					<label><input type="radio" name="edad" id="60100" value="60100">60-100</label>
 				</td>
 				<td>
-<!--       checkbox-->
-					<span>¿Cómo te desplazas al trabajo?</span><span class="ayuda" id='ayudaCheck'>*</span> <br/>
+<!--        ---------------------------------------------------------------------------------------  checkbox-->
+					<span>¿Cómo te desplazas al trabajo?</span><span class="ayuda">*</span> <br/>
 					<label><input type="checkbox" id="bici" name="vehiculo" value="bici">En bicicleta</label>
 					<br/>
 					<label><input type="checkbox" id="coche" name="vehiculo" value="coche" checked="checked">En coche</label>
@@ -72,8 +72,8 @@
 			</tr>
 		</table>
 		<br/>
-<!--     select múltiple -->
-		<span>¿Cuanto navegas por internet? </span><span class='ayuda' id='ayudaSelect'>*</span>
+<!--        ------------------------------------------------------------------------------------  select múltiple -->
+		<span>¿Cuanto navegas por internet? </span><span class='ayuda'>*</span>
 		<br/>
 		<select id="frecuencia" name="frecuencia" size="2" multiple>//en Chrome no funciona size, lo hacemos con css
 			<option value="1">2 horas al día.</option>

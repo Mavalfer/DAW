@@ -1,0 +1,25 @@
+ div#mapa {
+	height: 800px;
+    margin: 5px;
+    width: 800px;
+	border: 1px solid black;
+}
+#micaja{
+    border-left: 1px solid #c5a;
+   border-top: 1px solid #ccc;
+   border-bottom: 1px solid #666;
+   border-right: 1px solid #666;
+   padding: 10px;
+}
+
+/*Sólo se aplicará el siguiente estilo en caso de que Modernizr haya creado automáticamente la clase boxshadow en la etiqueta html (afecta al resto del documento)*/
+.boxshadow #micaja{ 
+   border: 1px solid #c5a;
+   box-shadow: #c5a 5px 5px 5px;
+} 
+.oculto{
+    display: none;
+}
+.body{
+    white-space: pre;
+}

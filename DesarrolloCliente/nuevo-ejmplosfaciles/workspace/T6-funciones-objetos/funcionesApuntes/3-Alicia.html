@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Callback</title>
+	    <meta charset="utf-8">
+        <script src="3-Alicia.js"></script>
+	</head>
+	<body>
+		<div id="eldiv">
+			Veamos qué pasa con las llamadas <br/>
+			var miFuncion = alicia.cansarse;<br/>
+			var miOtraFuncion = alicia.cansarse.bind(alicia); 
+			<form>
+				<input type="button" id="1" value="alicia.cansarse()">
+				<input type="button" id="2" value="esperarUnSegundo(alicia.cansarse);">
+                <input type="button" id="3" value="miFuncion();">
+				<input type="button" id="4" value="miFuncion.call(alicia);">
+				<input type="button" id="5" value="miOtraFuncion()">
+				<input type="button" id="6" value="esperarUnSegundo(miOtraFuncion);">			
+			</form>
+		</div>
+	</body>
+</html>

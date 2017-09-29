@@ -1,0 +1,2 @@
+Añadir métodos a un objeto ya definido: prototype.
+La teoría está en el fichero "librosWebIntroduccion_ajax_2caras.pdf"  pag.46

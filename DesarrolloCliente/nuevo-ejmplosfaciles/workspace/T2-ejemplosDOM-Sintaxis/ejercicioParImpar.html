@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dice si un número es par o impar</title>
+    <script>
+        var numero = prompt("Introduce un número entero");
+
+        var resultado = parImpar(numero);
+        alert("El número " + numero + " es " + resultado);
+
+        function parImpar(numero) {
+            if (numero % 2 == 0) {
+                return "par";
+            } else {
+                return "impar";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>Dice si el número es par o impar</p>
+</body>
+
+</html>

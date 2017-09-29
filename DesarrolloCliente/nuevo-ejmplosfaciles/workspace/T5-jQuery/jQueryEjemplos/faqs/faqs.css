@@ -1,0 +1,15 @@
+h2 {
+    padding: .25em 0 .25em 25px;
+    cursor: pointer;
+    background: url(./imagenes/mas.jpg) no-repeat left center;
+}
+h2.menos {
+    background: url(./imagenes/menos.jpg) no-repeat left center;
+}
+div {
+    padding: 0 0 .25em 25px;
+    display: none;
+}
+div.abierto {
+    display: block;
+}
