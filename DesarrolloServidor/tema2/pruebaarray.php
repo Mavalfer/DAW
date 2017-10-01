@@ -144,6 +144,16 @@ and open the template in the editor.
         
         echo "<br><br>La media de la clase es: " . $suma / $numAlums;
         
+
+        $pepitoGrillo = array('pinocchio' => 'nariz', 'sebastian' => 'cangreho', 'aurora' => 'dormilona', 'malefica' => 'MALAA');
+
+        foreach ($pepitoGrillo as $i => $pepito) {
+            echo $pepito;
+        }
+
+        
+
+
         ?>
     </body>
 </html>
