@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form action="crearAsignatura.php" method="POST" enctype="application/x-www-form-urlencoded"> <!--para crear, borrar, modificar, etc el method va a ser post-->
+                <input type="text" name="nombre" required placeholder="nombre">
+                <input type="text" name="nombreLargo" required placeholder="nombreLargo" />
+                <input type="number" name="horas" required placeholder="horas">
+                <input type="submit" value="alta"/>
+            </form>
+        </div>
+    </body>
+</html>
