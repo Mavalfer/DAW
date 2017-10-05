@@ -97,7 +97,42 @@ class CuentaBancaria {
         }
     }
     
-    public function __toString() {
+    function setFase1($array, $inicio = 0){
+        $this->titular = $array[0 + $inicio];
+        $this->dni = $array[1 + $inicio];
+        $this->fechaNacimiento = $array[2 + $inicio];
+        $this->numeroCuenta = $array[3 + $inicio];
+        $this->saldo = $array[4 + $inicio];
+    }
+      
+    //ahora un set array numerico en plan universal
+    
+    function set($array, $pos = 0) {
+        foreach ($this as $campo => $value) {
+            if (isset($array[$pos])) {
+                $this->$campo = $array[$pos];
+            }
+            $pos++;
+        }
+    }
+    
+    function setAsociativo($array) { 
+        foreach ($this as $indice => $valor) {
+            if(isset($array[$indice])){
+                $this->$indice = $array[$indice];
+            }
+        }
+    }
+    
+        function setAsociativoEzequiel($array) { 
+        foreach ($array as $indice => $valor) {
+            if(property_exists(get_class(), $indice)){
+                $this->$indice = $valor;
+            }
+        }
+    }
+    
+    function __toString() {
         return $this->titular . ' ' . $this->dni . ' ' . $this->fechaNacimiento . ' ' . $this->numeroCuenta . ' ' . $this->saldo;
     }
 

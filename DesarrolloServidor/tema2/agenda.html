@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Agenda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form action="agenda.php" method="POST">
+                <label for="nombre">Nombre </label>
+                <input type="text" name="nombre" id="nombre">
+                <br>
+                <label for="tlf1">Telefono 1 </label>
+                <input type="text" name="telefono[]" id="tlf1">
+                <br>
+                <label for="tlf2">Telefono 2 </label>
+                <input type="text" name="telefono[]" id="tlf2">
+                <br>
+                <label for="tlf3">Telefono 3 </label>
+                <input type="text" name="telefono[]" id="tlf3">
+                <br>
+                <input type="submit" value="Alta">
+            </form>
+        </div>
+    </body>
+</html>
