@@ -1,0 +1,58 @@
+body {
+    background: #fafafa;
+}
+
+.wrapper {
+    position: relative;
+    width: 252px;
+    margin: 0 auto;
+}
+
+ul.categorias {
+    font-family: "Helvetica", "Arial", sans-serif;
+    list-style-type: none;
+    /*para que la img se ajuste a la lista se ponen margen, paddin a 0 y el width de la imagen*/
+    margin: 0;
+    padding: 0;
+    width: 252px;
+}
+
+.categorias li a {
+
+    height: 28px; /*el alto de cada banda*/
+    width: 217px; /*ligeramente menos del ancho de la img*/
+    display: block; /*pasar el elemento de en linea a bloque*/
+    text-transform: uppercase; /*pasa todo el texto del ancla a mayuscula*/
+    font-size: 13px;
+    line-height: 28px; /*centrado vertical del texto respecto a su contenedor, especifica el ancho de la linea, como es una sola linea pues si tiene la misma altura que su contenedor estara alineado al centro vertical, esto solo sirve para una sola linea*/
+    margin-bottom: 5px;
+    padding-left: 35px; /*no pisar el lateral*/
+    text-decoration: none;
+    background: url(sprite.png) no-repeat;
+    color: #05213f;
+    background-color: #05213f;
+}
+
+li.jquery a:hover {
+    color: #ca1010;
+    background-color: #ca1010;
+    background-position: 0px -28px;
+}
+
+li.wordpress a:hover {
+    color: #ca1010;
+    background-color: #ca1010;
+    background-position: 0px -56px;
+}
+
+li.html5 a:hover {
+    color: #ca1010;
+    background-color: #ca1010;
+    background-position: 0px -84px;
+}
+
+li.css3 a:hover {
+    color: #ca1010;
+    background-color: #ca1010;
+    background-position: 0px -112px;
+}
