@@ -1,44 +1,38 @@
 .wrapper{
     margin: 0 auto;
     width: 300px;
-    height: auto;
+    height: 600px;
+    text-align: center;
 }
 
 button {
-    margin-top: 200px;
-    width: 100px;
+    position: relative;
+    margin: 0 auto;
+    width: 150px;
     height: 25px;
-    margin-left: 125px;
+    top: 50%;
+    border: 1px solid black;;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    
+
 }
 
 button::before {
     content: "";
-    
-    
     width: 15px;
     height: 15px;
-    background-color:blue;
-    position: relative;
-    display: block;  
+    float: left;
+    display: block;
     background: url(circle.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    
-  /*  content: "";
-    font-size: 24pt;
-    text-align: center;
-    line-height: 42px;
-    color: #ffff;
-    background: #ddd;
-    float: left;
-    position: relative;
-    right: 25px;
-    border-radius: 35px;
-   
-    background: url(left-quote-mark.png) 5px 5px #ddd;
-    background-repeat: no-repeat;
-    display: block;
-    width: 35px;
-    height: 35px;*/
+    padding-right: 6px;
+    border-right: 1px solid black;
 
+}
+
+button:hover::before {
+    background: url(play-button.svg);
+    background-repeat: no-repeat;
 }
