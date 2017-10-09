@@ -7,32 +7,51 @@
 
 button {
     position: relative;
-    margin: 0 auto;
-    width: 150px;
     height: 25px;
-    top: 50%;
-    border: 1px solid black;;
     text-decoration: none;
+    border: none;
     background-color: rgb(255, 255, 255);
+    width: 150px;
+    text-align: center;
+    top: 50%;
     
-
+    
 }
+
+
 
 button::before {
     content: "";
-    width: 15px;
-    height: 15px;
+    text-align: center;   
+    position: relative;
     float: left;
-    display: block;
     background: url(circle.svg);
     background-repeat: no-repeat;
-    background-size: contain;
-    padding-right: 6px;
+    background-size: 15px;
+    background-position: center;
+    display: block;
+    width: 25px;
+    height: 20px;
     border-right: 1px solid black;
+    padding-right: 5px;
+    bottom: 2px;
+    right: 6px;
+}
 
+button::after {
+    content: "Botón";
+    position: relative;
+    top: 1.5px;
+    float: left;
 }
 
 button:hover::before {
     background: url(play-button.svg);
+    background-size: 15px;
     background-repeat: no-repeat;
+    background-position: center;
+}
+
+button:focus {
+    outline: 0;
 }
