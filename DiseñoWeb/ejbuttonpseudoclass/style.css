@@ -13,8 +13,32 @@ button {
 
 button::before {
     content: "";
-    width: 25px;
-    height: 25px;
-    background-color:blue;
     
+    
+    width: 15px;
+    height: 15px;
+    background-color:blue;
+    position: relative;
+    display: block;  
+    background: url(circle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+  /*  content: "";
+    font-size: 24pt;
+    text-align: center;
+    line-height: 42px;
+    color: #ffff;
+    background: #ddd;
+    float: left;
+    position: relative;
+    right: 25px;
+    border-radius: 35px;
+   
+    background: url(left-quote-mark.png) 5px 5px #ddd;
+    background-repeat: no-repeat;
+    display: block;
+    width: 35px;
+    height: 35px;*/
+
 }
