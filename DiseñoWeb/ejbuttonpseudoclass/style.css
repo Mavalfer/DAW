@@ -1,0 +1,20 @@
+.wrapper{
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+}
+
+button {
+    margin-top: 200px;
+    width: 100px;
+    height: 25px;
+    margin-left: 125px;
+}
+
+button::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color:blue;
+    
+}

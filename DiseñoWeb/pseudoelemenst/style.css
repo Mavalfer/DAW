@@ -1,0 +1,53 @@
+.wrapper {
+    margin: 0 auto;
+    width: 600px;
+    height: auto;
+}
+
+blockquote {
+    margin-top: 200px;
+    width: 400px;
+    text-align: center;
+}
+
+blockquote::before {
+    content: "";
+    font-size: 24pt;
+    text-align: center;
+    line-height: 42px;
+    color: #ffff;
+    background: #ddd;
+    float: left;
+    position: relative;
+    right: 25px;
+    border-radius: 35px;
+    /*estas ultimas son las importantes*/
+    background: url(left-quote-mark.png) 5px 5px #ddd;/*esto es un shorthand de varias propiedades, background image, background position respecto a su contenedor porque le hemos hecho un display block, color*/
+    background-repeat: no-repeat;
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+blockquote::after {
+    content: "";
+    font-size: 24pt;
+    text-align: center;
+    line-height: 42px;
+    color: #ffff;
+    background: #ddd;
+    float: right;
+    bottom: 20px;
+    position: relative;
+    left: 50px;
+    border-radius: 35px;
+    background: url(icon.png) 5px 5px #ddd;
+    background-repeat: no-repeat;
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+blockquote:hover::after, blockquote:hover::before {
+    background-color:white;
+}
