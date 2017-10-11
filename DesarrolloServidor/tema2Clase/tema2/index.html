@@ -1,0 +1,32 @@
+<!-- nombre, apellidos, teléfono y fecha de nacimiento + correo electrónico.
+Siguiente pág. tu nombre es x , teléfono x , etc. -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Form Alumno</title>
+    </head>
+    
+    <body>
+        <form action="alumno.php" method="get" enctype="application/x-www-form-urlencoded">
+            <label for="nombre"><input type="text" id="nombre" name="nombre"> &nbsp; Introduce tu nombre</label><br><hr>
+            <label for="apellidos"><input type="text" id="apellidos" name="apellidos"> &nbsp; Introduce tus apellidos</label><br><hr>
+            <label for="telefono"><input type="text" id="telefono" name="telefono"> &nbsp; Introduce tu teléfono</label><br><hr>
+            <label for="nacimiento"><input type="date" id="nacimiento" name="nacimiento"> &nbsp; Introduce tu fecha de nacimiento</label><br><hr>
+            <label for="correo"><input type="email" id="correo" name="correo"> &nbsp; Introduce tu correo electrónico</label><br><hr>
+            
+            <input type="submit" value="ENVIAR GET">
+        </form>
+        <br><br>
+        <form action="alumno.php" method="post" enctype="application/x-www-form-urlencoded">
+            <label for="nombre2"><input type="text" id="nombre2" name="nombre"> &nbsp; Introduce tu nombre</label><br><hr>
+            <label for="apellidos2"><input type="text" id="apellidos2" name="apellidos"> &nbsp; Introduce tus apellidos</label><br><hr>
+            <label for="telefono2"><input type="text" id="telefono2" name="telefono"> &nbsp; Introduce tu teléfono</label><br><hr>
+            <label for="nacimiento2"><input type="date" id="nacimiento2" name="nacimiento"> &nbsp; Introduce tu fecha de nacimiento</label><br><hr>
+            <label for="correo2"><input type="email" id="correo2" name="correo"> &nbsp; Introduce tu correo electrónico</label><br><hr>
+            
+            <input type="submit" value="ENVIAR POST">
+        </form>
+    </body>
+</html>

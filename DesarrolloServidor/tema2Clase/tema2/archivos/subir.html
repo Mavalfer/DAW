@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>subir archivo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="300" /> -->
+    <body>
+        <form action="subir.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="archivo" />
+            <input type="text" name="nombre" value="" placeholder="nombre del archivo" />
+            <input type="submit" value="subir" />
+        </form>
+    </body>
+</html>

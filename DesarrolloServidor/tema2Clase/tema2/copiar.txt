@@ -1,0 +1,56 @@
+<?php
+class Request {
+    static function get($nombre){
+        if(isset($_GET[$nombre])){
+            return $_GET[$nombre];
+        }
+        return null;
+    }
+    static function getpost($nombre){
+        $valor = self::get($nombre);
+        if($valor == null){
+            $valor = self::post($nombre);
+        }    
+        return $valor;
+    }
+    static function post($nombre){
+        if(isset($_POST[$nombre])){
+            return $_POST[$nombre];
+        }
+        return null;
+    }
+    static function postget($nombre){
+        $valor = self::post($nombre);
+        if($valor == null){
+            $valor = self::get($nombre);
+        }    
+        return $valor;
+    }
+    static function read($nombre){//alias
+        return self::postget($nombre);
+    }
+}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<?php
+    //1º importar la clase Request
+    require 'Request.php';
+    //2º usar los métodos estáticos de la clase Request
+    $nombre = Request::read('nombre');
+    $apellidos = Request::read('apellidos');
+    $telefono = Request::read('telefono');
+    $nacimiento = Request::read('nacimiento');
+    $correo = Request::read('correo');
+?>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hola <?php echo $nombre; ?></title>
+    </head>
+    
+    <body>
+        <?php  
+            echo "Has llegado al PHP con el nombre " . $nombre . ", apellido " . $apellidos . ", teléfono " . $telefono . ", correo " . $correo . " y fecha de nacimiento " .$nacimiento;
+        ?>
+    </body>
+</html>

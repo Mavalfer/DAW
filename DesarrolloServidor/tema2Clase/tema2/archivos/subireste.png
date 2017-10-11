@@ -1,0 +1,4 @@
+<?php
+$ficheros1  = scandir('.');
+ 
+var_dump($ficheros1);
