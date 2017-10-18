@@ -14,7 +14,7 @@ $session = new Session('login');
 if (isset($users[$login]) && $users[$login] === $password) {
     echo 'ok';
     //$session->set('user', $login);
-    $session->setUser()
+    $session->setUser($login);
 } else {
     echo 'no';
     $session->close();
