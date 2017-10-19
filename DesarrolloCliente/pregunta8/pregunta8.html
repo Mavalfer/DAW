@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="pregunta8.js" defer></script>
+</head>
+
+<body>
+    <form action="formulario.php" method="post" name="formulario1" id="formulario1">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" />
+        <span class="ayuda">*</span>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" />
+        <span class="ayuda"></span>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" placeholder="ejemplo@izv.es">
+        <span class="ayuda">*</span>
+        <br/>
+        <input type="submit" value="Enviar" id="enviar">
+        <input type="reset" value="Limpiar"><span class='ayuda'> * En este formulario hay datos obligatorios</span>
+        <br/>
+    </form>
+</body>
+
+</html>
+
+
+
+
+<!--Escribe el código JavaScript necesario para validar el siguiente formulario. El nombre y los apellidos deben tener al menos 3 caracteres, y el email debe ser válido. Las funciones de validación las tienes al final del código HTML, sólo tienes que llamarlas adecuadamente. Se pide la validación necesaria, no hace falta validar cuando cambie el contenido de cada campo.-->
