@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Programmer's Reference</title>
+    <style>
+        .background {
+            background-color:  = "#ff0000";
+        }
+        
+        .color {
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="myParagraph"><a href="http://www.yahoo.com/">This is my link!</a></p>
+    <script>
+        var myLink = document.querySelector("#myParagraph a");
+        myLink.classList.add('background');
+        myLink.classList.add('color');
+//        myLink.style.backgroundColor = "#ff0000";
+//        myLink.style.color = "#fff";
+    </script>
+</body>
+
+</html>
