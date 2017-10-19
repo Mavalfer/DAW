@@ -31,11 +31,11 @@ class Filter {
     }
 
     static function isLogin($value) {
-
+            //empieza por una letra y tiene al menos 5 caracteres sin espacios iniciales y finales
     }
 
     static function isMaxLength($value, $length) {
-
+            //comprueba si un valor tiene como maximo $length caracteres
     }
 
     static function isMinLength($value, $length) {
@@ -47,11 +47,11 @@ class Filter {
     }
 
     static function isTime($value) {
-
+            //diga si es una hora
     }
 
     static function isURL($value) {
-
+            //diga si es una url
     }
 
 }
