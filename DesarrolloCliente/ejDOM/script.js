@@ -5,7 +5,12 @@
     
     
     function insertAfter(mover, elemento) {
-        mover.parentElement.insertBefore(mover, elemento.nextElementSibling);
+        
+        if (elemento.nextElementSibling == null) {
+            mover.parentElement.appendChild(mover);
+        } else {
+            mover.parentElement.insertBefore(mover, elemento.nextElementSibling);
+        } 
     }
     
     insertAfter(mover, elemento);

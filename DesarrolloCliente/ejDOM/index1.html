@@ -1,0 +1,44 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa, omnis maxime repudiandae quod reprehenderit est adipisci, quis fugiat natus facilis beatae veniam corrupti, accusamus incidunt quibusdam odio, iste placeat.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cupiditate, cumque asperiores dolores eos fuga eveniet amet quas facilis natus et ipsam vitae sed necessitatibus provident officiis, iusto ipsum. Sint.</p>
+    <br>
+    <p>
+        <a href="https://www.google.es/">g</a>
+        <a href="http://prueba">p</a>
+        <a href="https://www.google.es/">g</a>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ut facilis inventore, maiores, nam eaque officiis reprehenderit quidem aliquam nihil vero ex veritatis ipsa, provident nesciunt, earum perferendis quod et!</p>
+    <br>
+    <a href="https://www.google.es/">g</a>
+    <a href="https://www.google.es/">g</a>
+    <a href="https://www.google.es/">g</a>
+    <a href="https://www.youtube.com/?gl=ES&hl=es">yt</a>
+    <a href="https://www.google.es/">g</a>
+    <p id="resultados"></p>
+
+    <script>
+        var resultados = document.getElementById('resultados');
+        
+        var enlaces = document.getElementsByTagName('a');
+        
+        var penultimo = enlaces[enlaces.length - 2].getAttribute('href');
+        
+        var prueba = 0;
+        for (var i = 0; i < enlaces.length; i++) {
+            if (enlaces[i].getAttribute('href') ==  "http://prueba") {
+                prueba++;
+            }
+        }
+        
+        var enlacesP = document.getElementsByTagName('p').item(2).getElementsByTagName('a').length;
+
+        resultados.innerText = "Enlaces: " + enlaces.length + "\n" + "El penultimo enlace lleva a: " + penultimo + "\n" + "Numero de enlaces que llevan a prueba: " + prueba + "\n" + "Numero de enlaces en el tercer parrafo: " + enlacesP + "\n";
+    </script>
+</body>
+
+</html>
