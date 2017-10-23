@@ -57,7 +57,7 @@ if ($conexion === null) {
         echo 'Se han insertado con el id ' . $id . '<br>';
     }   
     echo Util::varDump($res);*/
-    $sql = 'delete from car where id = 10';
+   /* $sql = 'delete from car where id = 10';
     $res = $conexion->query( $sql );
     echo Util::varDump($res);
     if ($res !== false){
@@ -70,6 +70,13 @@ if ($conexion === null) {
     if ($res !== false){
         $borrados = $res->rowCount();    
         echo 'Se han borrado ' . $borrados . '<br>';
+    }*/
+    $sql = 'UPDATE car SET marca="peugeot",modelo="207" WHERE id=14';
+    $res = $conexion->query( $sql );
+    echo Util::varDump($res);
+    if ($res !== false){
+        $borrados = $res->rowCount();    
+        echo 'Se han modificado ' . $borrados . '<br>';
     }
     ?>
 </body>
