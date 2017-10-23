@@ -48,7 +48,7 @@ if ($conexion === null) {
 //    $res = $conexion->query( $sql );
 //    echo Util::varDump($res);
     
-    $sql = 'insert into car values (null, "citroën", "c3")';
+   /* $sql = 'insert into car values (null, "citroën", "c3")';
     $res = $conexion->query( $sql );
     if ($res !== false){
         $insertados = $res->rowCount();    
@@ -56,7 +56,21 @@ if ($conexion === null) {
         $id = $conexion->lastInsertId(); //da el id del ultimo elemento insertado sasdasd
         echo 'Se han insertado con el id ' . $id . '<br>';
     }   
+    echo Util::varDump($res);*/
+    $sql = 'delete from car where id = 10';
+    $res = $conexion->query( $sql );
     echo Util::varDump($res);
+    if ($res !== false){
+        $borrados = $res->rowCount();    
+        echo 'Se han borrado ' . $borrados . '<br>';
+    }
+    $sql = 'delete from car where marca = "nissan"';
+    $res = $conexion->query( $sql );
+    echo Util::varDump($res);
+    if ($res !== false){
+        $borrados = $res->rowCount();    
+        echo 'Se han borrado ' . $borrados . '<br>';
+    }
     ?>
 </body>
 </html>
