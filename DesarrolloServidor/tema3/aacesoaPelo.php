@@ -53,7 +53,7 @@ if ($conexion === null) {
     if ($res !== false){
         $insertados = $res->rowCount();    
         echo 'Se han insertado ' . $insertados . '<br>';
-        $id = $conexion->lastInsertId(); //da el id del ultimo elemento insertado
+        $id = $conexion->lastInsertId(); //da el id del ultimo elemento insertado sasdasd
         echo 'Se han insertado con el id ' . $id . '<br>';
     }   
     echo Util::varDump($res);
