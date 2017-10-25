@@ -83,6 +83,16 @@ if ($conexion === null) {
         $borrados = $res->rowCount();    
         echo 'Se han modificado ' . $borrados . '<br>';
     }*/
+    $sql = 'select * from car order by marca, modelo';
+    $res = $conexion->query($sql);
+    
+    while($fila = $res->fetch()) { //va asignando el fetch del res a $fila hasta que sea false (se acaben los registros)
+        $car = new Car();
+        
+        $car->setFromAssociative($fila);
+        echo Util::varDump($fila);
+    }
+    /*
     $sql = 'select * from contacto co left join telefono te on co.id=te.idContacto';
     $res = $conexion->query($sql);
     $consultadas = $res->rowCount(); //select "no es seguro" que realmente devuelva las filas seleccionadas, existe una posibilidad de que falle. Al hacer el join de arriba vemos que no muestra correctamente los nombres de las columnas en el array asociativo.
@@ -99,7 +109,7 @@ if ($conexion === null) {
         //echo Util::varDump($fila); //obervar que es un array asociativo con valores duplicados en indices
     }
     $res->closeCursor(); //cierra el fetch
-    
+    */
     ?>
 </body>
 </html>
