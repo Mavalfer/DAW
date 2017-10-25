@@ -1,42 +1,26 @@
 <?php
 
-class Car {
+class Contacto {
+    private $id, $nombre; //campos iguales y en el mismo orden que en la tabla, las clases y las tablas tienen que estar creadas a semejanza
     
-    private $marca, $modelo;
-    
-    function __construct($marca = null, $modelo = null) {
-        $this->marca = $marca;
-        $this->modelo = $modelo;
+    function __construct($id = null, $nombre = null) {
+        $this->id = $id;
+        $this->nombre = $nombre;
     }
     
     /*get y set*/
     
-    function getMarca() {
-        return $this->marca;
+    function getId() {
+        
     }
     
-    function getModelo() {
-        return $this->modelo;
+    function getNombre() {
+        
     }
     
-    function setMarca($marca) {
-        $this->marca = $marca;
+    function setNombre($value) {
+        $this->nombre = $value;
     }
-    
-    function setModelo($modelo) {
-        $this->modelo = $modelo;
-    }
-    
-     /*devuelve un array numerico con los nombres de los atributos del objeto*/
-    function getAttributes() {
-        $atributos = [];
-        foreach ($this as $atributo => $valor){
-            $atributos[] = $atributo;
-        }
-        return $atributos;
-    }
-    
-    /*DE AQUI PARA ABAJO LOS METODOS SON GENERICOS*/
     
     /*devuelve un array numerico con los valores de los atributos del objeto*/
     function getValues() {
@@ -90,5 +74,4 @@ class Car {
         }
         return substr($cadena, 0, -2);
     }
-    
 }

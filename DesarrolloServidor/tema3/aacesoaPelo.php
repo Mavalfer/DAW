@@ -34,6 +34,11 @@ if ($conexion === null) {
 <body>
     <h1>Conectado</h1>
     <?php
+    /*
+    $resultado = $conexion->query( $sql );
+    $resultado->rowCount();
+    $conexion->lastInsertId()  //insert
+    */
     //esto es solo de ejemplo, consultas sin preparar no
     //tres formas de hacer insert con distintos parametros
 //    $sql = 'insert into car(id, marca, modelo) values (null, "ford", "fiesta")';
@@ -71,13 +76,30 @@ if ($conexion === null) {
         $borrados = $res->rowCount();    
         echo 'Se han borrado ' . $borrados . '<br>';
     }*/
-    $sql = 'UPDATE car SET marca="peugeot",modelo="207" WHERE id=14';
+    /*$sql = 'UPDATE car SET marca="peugeot",modelo="207" WHERE id=14';
     $res = $conexion->query( $sql );
     echo Util::varDump($res);
     if ($res !== false){
         $borrados = $res->rowCount();    
         echo 'Se han modificado ' . $borrados . '<br>';
+    }*/
+    $sql = 'select * from contacto co left join telefono te on co.id=te.idContacto';
+    $res = $conexion->query($sql);
+    $consultadas = $res->rowCount(); //select "no es seguro" que realmente devuelva las filas seleccionadas, existe una posibilidad de que falle. Al hacer el join de arriba vemos que no muestra correctamente los nombres de las columnas en el array asociativo.
+    echo 'Filas seleccionadas ' . $consultadas . '<br>';
+    
+    $contacto = new Contacto();
+    $telefono = new Telefono();
+    while($fila = $res->fetch()) { //va asignando el fetch del res a $fila hasta que sea false (se acaben los registros)
+        $contacto->set($fila);
+        echo $contacto . '<br>';
+        
+        $telefono->set($fila, 2);
+        echo $telefono . '<br>';
+        //echo Util::varDump($fila); //obervar que es un array asociativo con valores duplicados en indices
     }
+    $res->closeCursor(); //cierra el fetch
+    
     ?>
 </body>
 </html>
