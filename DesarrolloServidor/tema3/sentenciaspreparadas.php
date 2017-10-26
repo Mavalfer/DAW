@@ -39,7 +39,7 @@ if ($alta === 'alta') {
     /*sentencia preparada*/
     $sql = 'insert into car(marca,modelo) values (:marca, :modelo)';
     //esa sentencia tiene un significado que no es posible modificar con inyecciones sql
-    $sentencia = $conexion->prepare($sql); //el prepare asegura que la sentencia que se va a ejecutar es esa y solo esa
+    $sentencia = $conexion->prepare($sql); //el prepare asegura que la sentencia que se va a ejecutar es esa y solo esa, ninguna mas que nos intente inyectar el usuario
     $sentencia->bindValue('marca', $car->getMarca()); //ese 'marca' es :marca
     $sentencia->bindValue('modelo', $car->getModelo())
     //$res = $conexion->query($sql); entonces eso ya no se ejecuta asi
