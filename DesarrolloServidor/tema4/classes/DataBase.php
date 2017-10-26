@@ -20,14 +20,14 @@ class DataBase {
         }
     }
         
-    function execute($sql, array $parametros){
+    function execute($sql, array $parametros = array()){ //parametros tiene un array vacio como valor por defecto para poder hacerlo sin parametros
         $this->sentencia = $this->conexion->prepare($sql);
         foreach ($parametros as $nombreDelParametro => $valorDelParametro) {
             $this->sentencia->bindValue($nombreDelParametro, $valorDelParametro);   
         }
         $r = $this->sentencia->execute(); //devuelve true o false
         
-        ///* DEPURACION poner dos slashes al principio de la linea para descomentar
+        /* DEPURACION poner dos slashes al principio de la linea para descomentar
         echo $sql . '<br>';
         echo Util::varDump($parametros);
         echo Util::varDump($this->sentencia->errorInfo());
@@ -52,7 +52,7 @@ class DataBase {
         return $this->conexion->lastInsertId();
     }
     
-    function getSentence() {
+    function getStatement() {
         return $this->sentencia;
     }
     

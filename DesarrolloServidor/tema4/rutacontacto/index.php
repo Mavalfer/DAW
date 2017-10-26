@@ -9,8 +9,29 @@
         <!-- jumbotron -->
         <?php
         include '../template/header.html';
+        require '../classes/AutoLoad.php';
+        
+        $r = Request::read('r');
+        if ($r !== null) {
+            echo '<h1 class="container">' . $r . ' Muy bien o no</h1>';
+        }
+        
         include '../template/bodycontacto.html';
+        
+        //lista de contactos
+        $sql = 'select * from contacto order by nombre';
+        $db = new DataBase();
+        $res = $db->execute($sql);
+        $sentencia = $db->getStatement();
+        while($row = $sentencia->fetch()) {
+            $contacto = new Contacto();
+            $contacto->set($row);
+            echo Util::varDump($contacto);
+        }
+        
+        
         include '../template/footer.html';
+        
         ?>
         <!-- jumbotron -->
         

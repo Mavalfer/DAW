@@ -6,6 +6,11 @@ class Autoload {
         if(file_exists($archivo)) {
             require $archivo;
         }
+        
+        $archivo = '../classes/' . $className . '.php';
+        if(file_exists($archivo)) {
+            require $archivo;
+        }
     }
 }
 

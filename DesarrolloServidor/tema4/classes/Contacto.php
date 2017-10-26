@@ -15,7 +15,7 @@ class Contacto {
     }
     
     function getNombre() {
-        
+        return $this->nombre;
     }
     
     function setNombre($value) {
