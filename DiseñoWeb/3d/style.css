@@ -1,0 +1,98 @@
+.wrapper { /*centrar div en la pantalla*/
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/*1º Definir el espacio 3d, darle profundidad al espacio y determinar le plano de observacion del usuario con respecto al punto de fuga (para que no se vea solo la cara frontal deformada) se hace rotando en x e y el cubo (rotate admite deg). Para que todos los divs cojan el mismo punto de fuga se usa transform-style: preserve 3d, si no cada uno seria distinto con su espacio 3d en vez de uno solo*/
+
+/*
+.cubo {
+    transform-style: preserve-3d;
+    transform: perspective(800px), rotateX(-80deg), rotateY(-80deg);
+}
+
+/*Definir cuanto va a medir el cubo (lo mismo que cada una de sus caras, pues seleccionamos el cubo y las caras*/
+
+.cubo, .cubo .cara {
+    width: 200px;
+    height: 200px;
+}
+
+/*centrar el cubo respecto a su contenedor*/
+
+.cubo {
+    margin: 100px auto;
+   /* border: 1px solid grey; /*esto no muestra las aristas del cubo, si queremos verlas ponerselo a las caras*/
+}
+
+.cubo .cara {
+    position: absolute;  
+    border: 1px solid grey;
+}
+
+/*Pintar las caras*/
+
+.cubo .cara#superior {
+    background-color: rgba(43, 226, 198, 0.8);
+}
+
+.cubo .cara#inferior {
+    background-color: rgba(0, 255, 98, 0.8);
+}
+
+.cubo .cara#frente {
+    background-color: rgba(0, 157, 255, 0.8);
+}
+
+.cubo .cara#detras {
+    background-color: rgba(255, 0, 59, 0.8);
+}
+
+.cubo .cara#izda {
+    background-color: rgba(40, 0, 175, 0.8);
+}
+
+.cubo .cara#dcha {
+    background-color: rgba(226, 78, 43, 0.8);
+}
+
+.cubo {  /*el que define el espacio 3d dejarlo solo*/
+    transform-style: preserve-3d;
+    transform: perspective(700px) rotateX(-30deg) rotateY(-30deg);
+}
+
+/*Colocar las caras*/
+
+.cubo .cara#izda {
+    transform: rotateY(90deg) translateZ(100px);  /*translate es la mitad del tamaño del cubo*/
+}
+
+.cubo .cara#dcha {
+    transform: rotateY(90deg) translateZ(-100px);
+}
+
+
+.cubo .cara#superior {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cubo .cara#inferior {
+    transform: rotateX(90deg) translateZ(-100px);
+}
+
+.cubo .cara#frente {
+    transform: translateZ(100px);
+}
+
+.cubo .cara#detras {
+    transform: translateZ(-100px);
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+/* CSS */
+
+/* Definimos el tamaño de cada cara del cubo */
+.cubo,
+.cubo .cara {
+    width: 200px;
+    height: 200px;
+}
+
+/* Posicion absoluta para poder manejarlos individualmente*/
+.cubo .cara {
+    position: absolute;
+    border: 1px dotted grey;
+}
+/* Lo centramos respecto a su contenedor */
+.cubo {
+    margin: 100px auto;
+}
+
+/* Pintamos el fondo de cada cara */
+.cubo .cara#superior {
+    background-color: rgba(255, 165, 0, 0.83);
+}
+
+.cubo .cara#frente {
+    background-color: rgba(255, 0, 0, 0.79);
+}
+.cubo .cara#atras {
+    background-color: rgba(48, 234, 48, 0.76);
+}
+.cubo .cara#derecha {
+    background-color: rgba(0, 186, 255, 0.8);
+}
+.cubo .cara#izquierda {
+    background-color: rgba(255, 255, 42, 0.84);
+}
+.cubo .cara#inferior {
+    background-color: rgba(255, 0, 177, 0.76);
+
+}
+/* Preservar el espacio 3D para el padre -cubo- y los hijos -caras- */
+/* Asignar una perspectiva para poder apreciar mejor el efecto */
+
+.cubo {
+    transform-style: preserve-3d;
+    transform: perspective(700px) rotateX(-30deg) rotateY(-30deg);
+}
+
+/* Rotar cada una de las caras para que encajen formando un cubo */
+
+.cubo .cara#derecha {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cubo .cara#superior  {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cubo .cara#inferior {
+    transform: rotateX(90deg)  translateZ(-100px);
+}
+
+.cubo .cara#izquierda {
+    transform: rotateY(90deg) translateZ(-100px)
+}
+
+/* Como ya están en su posición X,Y sólo modificar Z */
+.cubo .cara#atras {
+    transform: translateZ(-100px);
+}
+.cubo .cara#frente {
+    transform: translateZ(100px);
+}
+

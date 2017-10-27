@@ -1,0 +1,95 @@
+.wrapper { /*centrar div en la pantalla*/
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+/*Medidas*/
+
+.piramide {
+    width: 200px;
+    height: 400px;
+    margin: 100px auto;
+}
+
+.piramide .cara#base {
+    
+}
+
+
+.cubo {
+    margin: 100px auto;
+
+}
+
+.cubo .cara {
+    position: absolute;  
+    border: 1px solid grey;
+}
+
+/*Pintar las caras*/
+
+.cubo .cara#superior {
+    background-color: rgba(43, 226, 198, 0.8);
+}
+
+.cubo .cara#inferior {
+    background-color: rgba(0, 255, 98, 0.8);
+}
+
+.cubo .cara#frente {
+    background-color: rgba(0, 157, 255, 0.8);
+}
+
+.cubo .cara#detras {
+    background-color: rgba(255, 0, 59, 0.8);
+}
+
+.cubo .cara#izda {
+    background-color: rgba(40, 0, 175, 0.8);
+}
+
+.cubo .cara#dcha {
+    background-color: rgba(226, 78, 43, 0.8);
+}
+
+.cubo {  /*el que define el espacio 3d dejarlo solo*/
+    transform-style: preserve-3d;
+    transform: perspective(700px) rotateX(-30deg) rotateY(-30deg);
+}
+
+/*Colocar las caras*/
+
+.cubo .cara#izda {
+    transform: rotateY(90deg) translateZ(100px);  /*translate es la mitad del tamaño del cubo*/
+}
+
+.cubo .cara#dcha {
+    transform: rotateY(90deg) translateZ(-100px);
+}
+
+
+.cubo .cara#superior {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cubo .cara#inferior {
+    transform: rotateX(90deg) translateZ(-100px);
+}
+
+.cubo .cara#frente {
+    transform: translateZ(100px);
+}
+
+.cubo .cara#detras {
+    transform: translateZ(-100px);
+}
+
+
+
+
+
+
+
+
+
