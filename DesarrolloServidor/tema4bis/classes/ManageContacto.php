@@ -15,7 +15,7 @@ class ManageContacto implements Manager {
     @param Contacto $objeto Debe ser un objeto de la clase Contacto, que se va a insertar en la base de datos.
     @return int Es el código autonumérico del objeto insertado, en caso de éxito. En caso de error es el 0.
     */
-    public function add(Contacto $objeto) {
+    public function add($objeto) {
         //por costumbre cuando se inserta un objeto se devuelve el id del objeto insertado
         
         //sentencia preparada
@@ -34,7 +34,7 @@ class ManageContacto implements Manager {
     }
     
     
-    public function edit(Contacto $objeto) {
+    public function edit($objeto) {
         $sql = 'update contacto set nombre = :nombre where id = :id';
         $params = array(
             'nombre' => $objeto->getNombre(),
@@ -47,7 +47,7 @@ class ManageContacto implements Manager {
         } else {
             $filasAfectadas = -1;  //hay que poner -1 porque 0 significa que la operacion se ha realizado pero no se ha modificado nada, entonces -1 sera que ha habido un fallo
         }
-        return $id;
+        return $filasAfectadas;
     }
     
     public function get($id) {
@@ -62,16 +62,59 @@ class ManageContacto implements Manager {
             $contacto->set($fila);
             
         } else {
-            $contacto = null;
+            $contacto = null; //si la consulta falla o no encuentra el contacto
         }
         return $contacto;
     }
     
     public function getAll() {
-        
+        $sql = 'select * from contacto order by nombre';
+        $resultado = $this->db->execute($sql, $params); //true o false
+        $contactos = array();
+        if($resultado) {
+            $sentencia = $this->db->getStatement();
+            while($fila = $sentencia->fetch()) {
+                $contacto = new Contacto();        
+                $contacto->set($fila);
+                $contactos[] = $contacto;
+            }
+            
+        }
+        return $contactos;
     }
     
     public function remove($id) {
-        
+        $sql = 'DELETE FROM contacto WHERE id = :id';
+        $params = array(
+            'id' => $id
+        );
+        $resultado = $this->db->execute($sql, $params); //true o false
+        if ($resultado) {
+            $ifilasAfectadas = $this->db->getRowNumber();  //0 o 1
+        } else {
+            $filasAfectadas = -1;
+        }
+        return $filasAfectadas;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
