@@ -69,7 +69,7 @@ class ManageContacto implements Manager {
     
     public function getAll() {
         $sql = 'select * from contacto order by nombre';
-        $resultado = $this->db->execute($sql, $params); //true o false
+        $resultado = $this->db->execute($sql); //true o false
         $contactos = array();
         if($resultado) {
             $sentencia = $this->db->getStatement();

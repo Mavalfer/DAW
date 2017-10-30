@@ -4,17 +4,17 @@ $db = new DataBase();
 $gestor = new ManageContacto($db);
 $listaContactos = $gestor->getAll();
 ?>
-    <!doctype html>
-    <html>
+<!doctype html>
+<html>
 
-    <head>
-        <meta>
-        <link rel="stylesheet" href="">
-        <title></title>
-    </head>
+<head>
+    <meta>
+    <link rel="stylesheet" href="">
+    <title></title>
+</head>
 
-    <body>
-        <!--
+<body>
+    <!--
         Acciones que siempre se van a hacer en una tabla
         1º listado de todos los contactos  -> getAll()
         2º insertar un contacto            -> add(Contacto c)
@@ -22,39 +22,45 @@ $listaContactos = $gestor->getAll();
         4º borrar un contacto              -> remove(id)
         5º listar un contacto              -> get(id)
     -->
-        <h1>Gestión de contactos</h1>
+    <h1>Gestión de contactos</h1>
 
 
-        <!--table>thead>tr>th*4^^tbody>tr>td*4-->
-        
-        <table border="1">
-            <thead>
-                <?php
-                foreach ($listaContactos as $key => $contacto) {
-        
-                }
-                ?>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-            </thead>
-            <tbody>
+    <!--table>thead>tr>th*4^^tbody>tr>td*4-->
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>...</th>
+                <th>...</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+        foreach ($listaContactos as $key => $contacto) {
+            ?>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <?php echo $contacto->getId(); ?>
+                    </td>
+                    <td>
+                        <?= $contacto->getNombre()?>
+                    </td>
                     <td></td>
                     <td></td>
                 </tr>
-            </tbody>
-        </table>
-    </body>
+                <?php
+        }
+        ?>
 
-    </html>
+        </tbody>
+    </table>
+</body>
+
+</html>
 
 
-    <?php
+<?php
 $db->closeConnection();
 ?>
