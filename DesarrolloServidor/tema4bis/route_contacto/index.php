@@ -47,8 +47,10 @@ $listaContactos = $gestor->getAll();
                     <td>
                         <?= $contacto->getNombre()?>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td><a href="action_viewedit.php?id=<?= $contacto->getId()?>">Editar</a></td><!--Editar: enlace al archivo action_viewedit.php?id=ID siempre hay que pasar como parametro el id de la clave principal -->
+                    <!--mostrar formulario prerelleno con los datos del usuario -->
+                    <td><a href="action_viewdelete.php?id=<?= $contacto->getId()?>">Borrar</a></td>
+                    <!-- Borrar: enlace al archivo action_viewdelete.php?id=ID¿de verdad quieres borrar a NOMBRE?-->
                 </tr>
                 <?php
         }

@@ -11,7 +11,7 @@ class Contacto {
     /*get y set*/
     
     function getId() {
-        
+        return $this->id;
     }
     
     function getNombre() {

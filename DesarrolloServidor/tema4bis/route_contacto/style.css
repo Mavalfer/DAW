@@ -1,0 +1,13 @@
+
+@keyframes mover {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+table {
+    animation: mover 4s infinite linear;
+}
