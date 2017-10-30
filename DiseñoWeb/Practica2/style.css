@@ -1,0 +1,40 @@
+@import url(reset.css);
+
+.wrapper {
+    width: 1850px;
+    height: 3000px;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+header {
+    height: 850px;
+    position: relative;
+    background-color: cadetblue;
+}
+
+header .logo {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 150px;
+    left: 100px;
+    background-color: antiquewhite;
+}
+
+header nav {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    top: 100px;
+    right: 400px;
+}
+
+header nav .listanav {
+    list-style-type: none;
+}
+
+header nav .listanav li {
+    display: inline;
+    margin-left: 75px;
+}
