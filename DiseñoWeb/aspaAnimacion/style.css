@@ -1,0 +1,26 @@
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+
+}
+
+.aspa {
+ 
+    width: 50px;
+    height: 200px;
+    background-color: darkgreen;
+}
+
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to{
+        transform: rotate(360deg);
+    }
+}
+.aspa {
+    animation: rotar 4s infinite linear;
+}

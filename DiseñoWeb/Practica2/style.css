@@ -15,19 +15,20 @@ header {
 
 header .logo {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    top: 150px;
-    left: 100px;
+    width: 380px;
+    height: 290px;
+    top: 60px;
+    left: 80px;
     background-color: antiquewhite;
 }
 
 header nav {
     position: absolute;
-    width: 800px;
+    width: 690px;
     height: 50px;
-    top: 100px;
-    right: 400px;
+    top: 115px;
+    left: 985px;
+    background-color: aliceblue;
 }
 
 header nav .listanav {
@@ -35,6 +36,11 @@ header nav .listanav {
 }
 
 header nav .listanav li {
-    display: inline;
-    margin-left: 75px;
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    line-height: 50px; 
+    text-align: center; 
+    margin-left: 0px;
+    background-color: brown;
 }

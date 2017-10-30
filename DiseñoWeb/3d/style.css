@@ -90,9 +90,21 @@
 
 
 
+/*animacion*/
 
+@keyframes rotar {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
 
-
+.cubo {
+    animation: rotar 4s infinite linear;
+}
 
 
 

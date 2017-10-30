@@ -1,0 +1,43 @@
+.wrapper{
+    width: 1000px;
+    margin: 0 auto;
+    
+}
+
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    position: absolute;
+    animation-name: mover;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+} 
+
+@keyframes mover {
+    0% {
+        opacity: 0.1;
+        left: -10px;
+    }
+    
+    25% {
+        opacity: 0.3;
+        left: 500px;
+    }
+    
+    75% {
+        opacity: 0.6;
+        left: 1000px;
+    }
+    
+    100% {
+        opacity: 1;
+        left: 3000px;
+    }
+}
