@@ -62,29 +62,63 @@ header .lema {
     background-color: azure;
 }
 
-.sectionInicio1 {
+section {
     position: relative;
     height: 850px;
+}
+
+.sectionInicio1 {
+/*    background-image: url();*/
     background-color: darkcyan;
 }
 
 .sectionInicio1 p {
     position: absolute;
-    display: inline-block;
     width: 364px;
-    height: 682px;
+    height: 675px;
     top: 81px;
     left: 622px;
+    background-color: bisque;
+}
+.sectionInicio1 div {
+    position: absolute;
+    width: 448px;
+    height: 675px;
+    top: 81px;
+    left: 1038px;
+    background-color: aliceblue;
 }
 
-/*.inicioContenido {
+.sectionInicio2 {
+/*    background-image: url();*/
+    background-color: dodgerblue;
+}
+
+.inicio2Contenido {
     position: absolute;
-    width: 864px;
-    height: 682px;
-    top: 931px;
+    width: 670px;
+    height: 753px;
+    top: 44px;
     left: 622px;
     background-color: azure;
-} */
+}
+
+.inicio2Contenido #pIzda {
+    position: absolute;
+    width: 320px;
+    height: 420;
+    background-color: dimgray;
+}
+
+.inicio2Contenido #pDcha {
+    position: absolute;
+    width: 320px;
+    height: 400px;
+    bottom: 0px;
+    left: 335px;
+    background-color: dimgray;
+}
+
 
 
 
