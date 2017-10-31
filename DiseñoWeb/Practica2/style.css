@@ -8,8 +8,8 @@
 }
 
 header {
-    height: 850px;
     position: relative;
+    height: 850px;
     background-color: cadetblue;
 }
 
@@ -41,6 +41,54 @@ header nav .listanav li {
     height: 50px;
     line-height: 50px; 
     text-align: center; 
-    margin-left: 0px;
+    margin-left: 66px;
     background-color: brown;
 }
+
+header nav .listanav li:first-child {
+    margin-left: 0px;
+}
+
+header nav .listanav li:hover {
+    background-image: url(sprite.png);
+}
+
+header .lema {
+    position: absolute;
+    width: 660px;
+    height: 417px;
+    top: 372px;
+    left: 600px;
+    background-color: azure;
+}
+
+.sectionInicio1 {
+    position: relative;
+    height: 850px;
+    background-color: darkcyan;
+}
+
+.sectionInicio1 p {
+    position: absolute;
+    display: inline-block;
+    width: 364px;
+    height: 682px;
+    top: 81px;
+    left: 622px;
+}
+
+/*.inicioContenido {
+    position: absolute;
+    width: 864px;
+    height: 682px;
+    top: 931px;
+    left: 622px;
+    background-color: azure;
+} */
+
+
+
+
+
+
+
