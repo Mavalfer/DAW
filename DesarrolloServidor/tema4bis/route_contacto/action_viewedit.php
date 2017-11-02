@@ -16,9 +16,10 @@ $contacto = $gestor->get($idContacto);
 <head></head>
 
 <body>
+
     <?php
-    echo $contacto->toString();
-    ?>
+
+?>
 </body>
 
 </html>
