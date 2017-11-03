@@ -1,23 +1,23 @@
 <?php
 
 class ManageContacto implements Manager {
-    
+
     private $db;
-    
+
     function __construct(DataBase $db) {
         $this->db = $db;
     }
-    
-    
+
+
     /*
     Método que realiza el alta de un contacto nuevo.
-    
+
     @param Contacto $objeto Debe ser un objeto de la clase Contacto, que se va a insertar en la base de datos.
     @return int Es el código autonumérico del objeto insertado, en caso de éxito. En caso de error es el 0.
     */
     public function add($objeto) {
         //por costumbre cuando se inserta un objeto se devuelve el id del objeto insertado
-        
+
         //sentencia preparada
         $sql = 'insert into contacto(id, nombre) values (null, :nombre';
         $params = array(
@@ -32,8 +32,8 @@ class ManageContacto implements Manager {
         }
         return $id;
     }
-    
-    
+
+
     public function edit($objeto) {
         $sql = 'update contacto set nombre = :nombre where id = :id';
         $params = array(
@@ -49,7 +49,7 @@ class ManageContacto implements Manager {
         }
         return $filasAfectadas;
     }
-    
+
     public function get($id) {
         $sql = 'select * from contacto where id = :id';
         $params = array(
@@ -60,13 +60,13 @@ class ManageContacto implements Manager {
         $contacto = new Contacto();
         if ($resultado && $fila = $sentencia->fetch()) {
             $contacto->set($fila);
-            
+
         } else {
             $contacto = null; //si la consulta falla o no encuentra el contacto
         }
         return $contacto;
     }
-    
+
     public function getAll() {
         $sql = 'select * from contacto order by nombre';
         $resultado = $this->db->execute($sql); //true o false
@@ -74,15 +74,15 @@ class ManageContacto implements Manager {
         if($resultado) {
             $sentencia = $this->db->getStatement();
             while($fila = $sentencia->fetch()) {
-                $contacto = new Contacto();        
+                $contacto = new Contacto();
                 $contacto->set($fila);
                 $contactos[] = $contacto;
             }
-            
+
         }
         return $contactos;
     }
-    
+
     public function remove($id) {
         $sql = 'DELETE FROM contacto WHERE id = :id';
         $params = array(
@@ -97,24 +97,3 @@ class ManageContacto implements Manager {
         return $filasAfectadas;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

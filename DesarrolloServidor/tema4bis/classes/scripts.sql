@@ -1,9 +1,9 @@
-/* 1º crear la base de datos */
+/* 1ï¿½ crear la base de datos */
 create database dwes
 default character set utf8
 collate utf8_unicode_ci;
 
-/* 2º crear el usuario administrador de esa base de datos */
+/* 2ï¿½ crear el usuario administrador de esa base de datos */
 create user udwes@localhost
 identified by 'cdwes';
 
@@ -13,7 +13,7 @@ udwes@localhost;
 
 flush privileges;
 
-/* 3º crear las tablas */
+/* 3ï¿½ crear las tablas */
 create table if not exists car (
     id bigint not null auto_increment,
     marca varchar(30) not null,

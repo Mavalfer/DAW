@@ -28,7 +28,7 @@ $listaContactos = $gestor->getAll();
     <!--table>thead>tr>th*4^^tbody>tr>td*4-->
 
    <h2><a href="action_viewinsert.php">Registrar contacto</a></h2>
-   
+
     <table border="1">
         <thead>
             <tr>

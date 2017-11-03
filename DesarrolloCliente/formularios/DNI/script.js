@@ -42,25 +42,19 @@
     function checkLetra(letra) {
         var r = false;
         var char = letra.value;
-//        var regEx = /[0-9]/;
-//        var esLetras = false;
         for (var i = 0; i < letras.length; i++) {
             if (char == letras[i]) {
                 r = true;
             }
         }
-//        if (esLetras) {
-//            if (regEx.test(string)) {
-//                r = true;
-//            }
-//        }
         return r;
     }
     
     function corresponde(letra, dni) {
         var r = false;
-        var resto = dni.parseInt() % 23;
-        if (letras[resto] == letra) {
+        var numero = parseInt(dni.value);
+        var resto = numero % 23;
+        if (letras[resto] == letra.value) {
             r = true;
         }
         return r;
