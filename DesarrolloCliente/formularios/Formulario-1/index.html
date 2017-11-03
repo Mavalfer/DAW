@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulario-1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Registro</h1>
+        <form action="index.html">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <br>
+            <input type="password" name="pass" placeholder="Contraseña">
+            <br>
+            <input type="password" name="pass" placeholder="Repite contraseña">
+            <br>
+            <input type="email" placeholder="Email">
+            <br>
+            Sexo:
+            <input type="radio" name="sexo" value="Hombre">Hombre
+            
+            <input type="radio" name="sexo" value="Mujer">Mujer
+            
+            <input type="radio" name="sexo" value="Otro">Otro
+            <br>
+            Fecha de nacimiento
+            <input type="text" name="fecha" placeholder="dd/mm/aaaa">
+            <br>
+            <input type="text" name="ciudad" placeholder="Ciudad">
+            <br>
+            <input type="text" name="pais" placeholder="Pais">
+            <br>
+            Foto: 
+            <input type="file" name="foto">
+            <br>
+            Resuelve la operación: 
+            <span name="captcha"></span>
+            <input type="text" name="captcha">
+            <br>
+            <input type="submit" name="submit" value="Crear cuenta">
+            <br>
+            <span id="errores"></span>
+        </form>
+    </div>
+</body>
+</html>

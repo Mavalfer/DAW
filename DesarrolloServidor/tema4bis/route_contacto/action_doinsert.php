@@ -14,6 +14,7 @@ $pollas->getNombre();
 
 $asd = Request::read();
 
+$pollas2 = new Contacto();
 
 //header location, con eso vuelve al index y meter el $r de insertar el contacto y el action tambien?
 //close connection
