@@ -1,34 +1,52 @@
 @import url(reset.css);
 
+
+/*-Dimensiones generales-*/
+
 .wrapper {
     width: 1850px;
     height: 3000px;
     margin: 0 auto;
-    background-color: aqua;
 }
 
-header {
-    position: relative;
+header, section {
     height: 850px;
-    background-color: cadetblue;
 }
+
+/*------------------*/
+
+
+/*-Posicionamiento-*/
+
+header, section {
+    position: relative;
+}
+
+header div, header nav {
+    position: absolute;
+}
+
+section * {
+    position: absolute;
+}
+
+/*-----------------*/
+
+
+/*-Header-*/
 
 header .logo {
-    position: absolute;
     width: 380px;
     height: 290px;
     top: 60px;
     left: 80px;
-    background-color: antiquewhite;
 }
 
 header nav {
-    position: absolute;
     width: 690px;
     height: 50px;
     top: 115px;
     left: 985px;
-    background-color: aliceblue;
 }
 
 header nav .listanav {
@@ -42,7 +60,6 @@ header nav .listanav li {
     line-height: 50px; 
     text-align: center; 
     margin-left: 66px;
-    background-color: brown;
 }
 
 header nav .listanav li:first-child {
@@ -54,75 +71,124 @@ header nav .listanav li:hover {
 }
 
 header .lema {
-    position: absolute;
     width: 660px;
     height: 417px;
     top: 372px;
     left: 600px;
-    background-color: azure;
 }
 
-section {
-    position: relative;
-    height: 850px;
-}
+/*-------------*/
 
-.sectionInicio1 {
-/*    background-image: url();*/
-    background-color: darkcyan;
-}
+
+/*-Primera seccion-*/
 
 .sectionInicio1 p {
-    position: absolute;
     width: 364px;
     height: 675px;
     top: 81px;
     left: 622px;
-    background-color: bisque;
 }
+
 .sectionInicio1 div {
-    position: absolute;
     width: 448px;
     height: 675px;
     top: 81px;
     left: 1038px;
-    background-color: aliceblue;
 }
 
-.sectionInicio2 {
-/*    background-image: url();*/
-    background-color: dodgerblue;
-}
+/*----------------------*/
+
+
+/*-Segunda seccion-*/
 
 .inicio2Contenido {
-    position: absolute;
     width: 670px;
     height: 753px;
     top: 44px;
     left: 622px;
+}
+
+.inicio2Contenido #pIzda {
+    width: 320px;
+    height: 420px;
+    left: 10px;
+}
+
+.inicio2Contenido #pDcha {
+    width: 320px;
+    height: 400px;
+    bottom: 0px;
+    right: 10px;
+}
+
+.inicio2Contenido .organic {
+    
+}
+
+.inicio2Contenido .natural {
+    
+}
+
+/*----------------------*/
+
+
+/*-Footer-*/
+
+/*----------------------*/
+
+
+/*-Colores para pruebas-*/
+
+.wrapper {
+    background-color: aqua;
+}
+
+header {
+    background-color: cadetblue;
+}
+
+header .logo {
+    background-color: antiquewhite;
+}
+
+header nav {
+    background-color: aliceblue;
+}
+
+header nav .listanav li {
+    background-color: brown;
+}
+
+header .lema {
+    background-color: azure;
+}
+
+.sectionInicio1 {
+    background-color: darkcyan;
+}
+
+.sectionInicio1 p {
+    background-color: bisque;
+}
+
+.sectionInicio1 div {
+    background-color: aliceblue;
+}
+
+.sectionInicio2 {
+    background-color: dodgerblue;
+}
+
+.inicio2Contenido {
     background-color: azure;
 }
 
 .inicio2Contenido #pIzda {
-    position: absolute;
-    width: 320px;
-    height: 420;
     background-color: dimgray;
 }
 
 .inicio2Contenido #pDcha {
-    position: absolute;
-    width: 320px;
-    height: 400px;
-    bottom: 0px;
-    left: 335px;
     background-color: dimgray;
 }
 
-
-
-
-
-
-
-
+/*-----------------------*/
