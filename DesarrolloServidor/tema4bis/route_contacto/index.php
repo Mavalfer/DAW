@@ -3,6 +3,31 @@ require '../classes/Autoload.php';
 $db = new DataBase();
 $gestor = new ManageContacto($db);
 $listaContactos = $gestor->getAll();
+
+$action = Request::get('action');
+$r = Request::read('r');
+
+if($action === 'add'){
+    if($r === '0'){
+        echo '<h1>la inserción ha fallado</h1>';
+    }else{
+        echo '<h1>insertado con exito con id: ' . $r . '</h1>';
+    }
+}elseif($action === 'editar'){
+    if($r === '-1'){
+        echo '<h1>Ha fallado la edición</h1>';
+    }else{
+        echo '<h1>Se han editado: ' . $r . ' filas con exito</h1>';
+    }
+}elseif($action === 'remove'){
+    if($r === '-1'){
+        echo '<h1>el borrado ha fallado</h1>';
+    }else{
+        echo '<h1>Se han borrado: ' . $r . ' filas con exito</h1>';
+    }
+}
+
+
 ?>
 <!doctype html>
 <html>
@@ -23,8 +48,7 @@ $listaContactos = $gestor->getAll();
         5º listar un contacto              -> get(id)
     -->
     <h1>Gestión de contactos</h1>
-
-
+    
     <!--table>thead>tr>th*4^^tbody>tr>td*4-->
 
    <h2><a href="action_viewinsert.php">Registrar contacto</a></h2>

@@ -19,7 +19,7 @@ class ManageContacto implements Manager {
         //por costumbre cuando se inserta un objeto se devuelve el id del objeto insertado
 
         //sentencia preparada
-        $sql = 'insert into contacto(id, nombre) values (null, :nombre';
+        $sql = 'insert into contacto(id, nombre) values (null, :nombre)';
         $params = array(
             'nombre' => $objeto->getNombre()
         );

@@ -22,6 +22,10 @@ class Contacto {
         $this->nombre = $value;
     }
 
+    function setId($value) {
+        $this->id = $value;
+    }
+    
     /*devuelve un array numerico con los valores de los atributos del objeto*/
     function getValues() {
         $valores = [];

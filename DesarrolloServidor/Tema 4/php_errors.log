@@ -1,0 +1,80 @@
+[30-Oct-2017 13:06:46 UTC] PHP Fatal error:  Class 'DatasBase' not found in /home/ubuntu/workspace/Tema 4/ruta_contacto/index.php on line 3
+[30-Oct-2017 13:06:46 UTC] PHP Stack trace:
+[30-Oct-2017 13:06:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contacto/index.php:0
+[30-Oct-2017 17:07:05 UTC] PHP Fatal error:  Call to undefined method DataBase::remove() in /home/ubuntu/workspace/Tema 4/ruta_contacto/action_doDelete.php on line 6
+[30-Oct-2017 17:07:05 UTC] PHP Stack trace:
+[30-Oct-2017 17:07:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contacto/action_doDelete.php:0
+[02-Nov-2017 11:20:11 UTC] PHP Parse error:  syntax error, unexpected ''</h1>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ubuntu/workspace/Tema 4/ruta_contacto/index.php on line 14
+[02-Nov-2017 13:27:38 UTC] PHP Warning:  require(../classes/Autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 2
+[02-Nov-2017 13:27:38 UTC] PHP Stack trace:
+[02-Nov-2017 13:27:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:27:38 UTC] PHP Fatal error:  require(): Failed opening required '../classes/Autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 2
+[02-Nov-2017 13:27:38 UTC] PHP Stack trace:
+[02-Nov-2017 13:27:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:28:43 UTC] PHP Fatal error:  Call to a member function getAll() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 5
+[02-Nov-2017 13:28:43 UTC] PHP Stack trace:
+[02-Nov-2017 13:28:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:29:00 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 59
+[02-Nov-2017 13:29:00 UTC] PHP Stack trace:
+[02-Nov-2017 13:29:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:31:30 UTC] PHP Fatal error:  Call to undefined method Telefono::getNombre() in /home/ubuntu/workspace/Tema 4/classes/ManagerContacto.php on line 20
+[02-Nov-2017 13:31:30 UTC] PHP Stack trace:
+[02-Nov-2017 13:31:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doinsert.php:0
+[02-Nov-2017 13:31:30 UTC] PHP   2. ManagerContacto->add() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doinsert.php:10
+[02-Nov-2017 13:32:02 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doinsert.php on line 13
+[02-Nov-2017 13:32:02 UTC] PHP Stack trace:
+[02-Nov-2017 13:32:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doinsert.php:0
+[02-Nov-2017 13:32:14 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doinsert.php on line 13
+[02-Nov-2017 13:32:14 UTC] PHP Stack trace:
+[02-Nov-2017 13:32:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doinsert.php:0
+[02-Nov-2017 13:33:49 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdcontact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:33:49 UTC] PHP Stack trace:
+[02-Nov-2017 13:33:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:34:09 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:34:09 UTC] PHP Stack trace:
+[02-Nov-2017 13:34:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:44:55 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:44:55 UTC] PHP Stack trace:
+[02-Nov-2017 13:44:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:45:01 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:45:01 UTC] PHP Stack trace:
+[02-Nov-2017 13:45:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:45:02 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:45:02 UTC] PHP Stack trace:
+[02-Nov-2017 13:45:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:45:02 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:45:02 UTC] PHP Stack trace:
+[02-Nov-2017 13:45:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:45:02 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:45:02 UTC] PHP Stack trace:
+[02-Nov-2017 13:45:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 13:45:02 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 13:45:02 UTC] PHP Stack trace:
+[02-Nov-2017 13:45:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 15:29:12 UTC] PHP Fatal error:  Call to undefined method Contacto::getIdContacto() in /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php on line 36
+[02-Nov-2017 15:29:12 UTC] PHP Stack trace:
+[02-Nov-2017 15:29:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/index.php:0
+[02-Nov-2017 15:31:41 UTC] PHP Fatal error:  Call to undefined method Telefono::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php on line 21
+[02-Nov-2017 15:31:41 UTC] PHP Stack trace:
+[02-Nov-2017 15:31:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php:0
+[02-Nov-2017 15:32:21 UTC] PHP Fatal error:  Call to undefined method Telefono::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php on line 21
+[02-Nov-2017 15:32:21 UTC] PHP Stack trace:
+[02-Nov-2017 15:32:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php:0
+[02-Nov-2017 15:33:08 UTC] PHP Fatal error:  Call to undefined method Telefono::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php on line 21
+[02-Nov-2017 15:33:08 UTC] PHP Stack trace:
+[02-Nov-2017 15:33:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php:0
+[02-Nov-2017 15:34:12 UTC] PHP Fatal error:  Call to undefined method Telefono::getIdContact() in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php on line 21
+[02-Nov-2017 15:34:12 UTC] PHP Stack trace:
+[02-Nov-2017 15:34:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php:0
+[02-Nov-2017 15:34:33 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php on line 27
+[02-Nov-2017 15:34:33 UTC] PHP Stack trace:
+[02-Nov-2017 15:34:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewedit.php:0
+[02-Nov-2017 15:34:49 UTC] PHP Fatal error:  Class 'ManagePhone' not found in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doedit.php on line 4
+[02-Nov-2017 15:34:49 UTC] PHP Stack trace:
+[02-Nov-2017 15:34:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_doedit.php:0
+[02-Nov-2017 15:35:09 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewdelete.php on line 23
+[02-Nov-2017 15:35:09 UTC] PHP Stack trace:
+[02-Nov-2017 15:35:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_viewdelete.php:0
+[02-Nov-2017 15:35:40 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_dodelete.php on line 11
+[02-Nov-2017 15:35:40 UTC] PHP Stack trace:
+[02-Nov-2017 15:35:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_dodelete.php:0
