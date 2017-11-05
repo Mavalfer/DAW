@@ -93,7 +93,7 @@ header .lema {
     width: 448px;
     height: 675px;
     top: 81px;
-    left: 1038px;
+    left: 1038px;+
 }
 
 /*----------------------*/
@@ -134,61 +134,117 @@ header .lema {
 
 /*-Footer-*/
 
+footer {
+    position: relative;
+    height: 500px;
+}
+
+footer * {
+    position: absolute;
+}
+
+footer #footerP1 {
+    width: 320px;
+    height: 200px;
+    top: 146px;
+    left: 302px;
+}
+
+footer #footerP2 {
+    width: 376px;
+    height: 210px;
+    top: 146px;
+    left: 781px;
+}
+
+footer div {
+    width: 305px;
+    height: 105px;
+    top: 190px;
+    left: 1267px;
+}
+
+footer #copyright {
+    width: 525px;
+    height: 20px;
+    top: 450px;
+    left: 708px;
+}
+
+footer {
+    background-color: chocolate;
+}
+
+footer #footerP1 {
+    background-color: aqua;
+}
+
+footer #footerP2 {
+    background-color: aqua;
+}
+
+footer div {
+    background-color: aqua;
+}
+
+footer #copyright {
+    background-color: aqua;
+}
 /*----------------------*/
 
 
 /*-Colores para pruebas-*/
 
-.wrapper {
-    background-color: aqua;
-}
+    .wrapper {
+        background-color: aqua;
+    }
 
-header {
-    background-color: cadetblue;
-}
+    header {
+        background-color: cadetblue;
+    }
 
-header .logo {
-    background-color: antiquewhite;
-}
+    header .logo {
+        background-color: antiquewhite;
+    }
 
-header nav {
-    background-color: aliceblue;
-}
+    header nav {
+        background-color: aliceblue;
+    }
 
-header nav .listanav li {
-    background-color: brown;
-}
+    header nav .listanav li {
+        background-color: brown;
+    }
 
-header .lema {
-    background-color: azure;
-}
+    header .lema {
+        background-color: azure;
+    }
 
-.sectionInicio1 {
-    background-color: darkcyan;
-}
+    .sectionInicio1 {
+        background-color: darkcyan;
+    }
 
-.sectionInicio1 p {
-    background-color: bisque;
-}
+    .sectionInicio1 p {
+        background-color: bisque;
+    }
 
-.sectionInicio1 div {
-    background-color: aliceblue;
-}
+    .sectionInicio1 div {
+        background-color: aliceblue;
+    }
 
-.sectionInicio2 {
-    background-color: dodgerblue;
-}
+    .sectionInicio2 {
+        background-color: dodgerblue;
+    }
 
-.inicio2Contenido {
-    background-color: azure;
-}
+    .inicio2Contenido {
+        background-color: azure;
+    }
 
-.inicio2Contenido #pIzda {
-    background-color: dimgray;
-}
+    .inicio2Contenido #pIzda {
+        background-color: dimgray;
+    }
 
-.inicio2Contenido #pDcha {
-    background-color: dimgray;
-}
+    .inicio2Contenido #pDcha {
+        background-color: dimgray;
+    }
 
 /*-----------------------*/
