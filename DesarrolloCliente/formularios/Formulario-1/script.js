@@ -5,6 +5,7 @@
     var errores = document.getElementById('errores');
 
     var boton = document.querySelector("input[name=mostrar]");
+    var checkbox = document.querySelector("input[name=checkbox]");
 
     var funciones = [validarNombre, validarContraseña, validarMail, validarFecha, validarCaptcha];
 
@@ -13,6 +14,7 @@
 
     document.addEventListener('submit', validarFormulario);
     boton.addEventListener('click', mostrarCaptcha);
+    checkbox.addEventListener('change', activarSubmit);
 
     function validarFormulario(e) {
 
@@ -125,5 +127,14 @@
 
         var result = [bool, str];
         return result;
+    }
+    
+    function activarSubmit() {
+        var submit = document.querySelector("input[name=submit]");
+        if (submit.disabled == true) {
+            submit.disabled = false;
+        } else {
+            submit.disabled = true;
+        }
     }
 })();
