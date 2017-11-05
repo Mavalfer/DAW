@@ -15,14 +15,14 @@
             <br>
             <input type="password" name="pass" placeholder="Repite contraseña">
             <br>
-            <input type="email" placeholder="Email">
+            <input type="email" name ="mail" placeholder="Email">
             <br>
             Sexo:
             <input type="radio" name="sexo" value="Hombre">Hombre
             
             <input type="radio" name="sexo" value="Mujer">Mujer
             
-            <input type="radio" name="sexo" value="Otro">Otro
+            <input type="radio" name="sexo" value="Otro" checked>Otro
             <br>
             Fecha de nacimiento
             <input type="text" name="fecha" placeholder="dd/mm/aaaa">
@@ -35,7 +35,9 @@
             <input type="file" name="foto">
             <br>
             Resuelve la operación: 
-            <span name="captcha"></span>
+            <input type="button" name="mostrar" value="Mostrar">
+            <span id="n1"></span> + 
+            <span id="n2"></span>
             <input type="text" name="captcha">
             <br>
             <input type="submit" name="submit" value="Crear cuenta">
