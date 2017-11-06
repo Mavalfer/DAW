@@ -6,7 +6,7 @@
     formulario.addEventListener('submit', validarFormulario);
     
     function validarFormulario(){
-        
+        if    
     }
     
     

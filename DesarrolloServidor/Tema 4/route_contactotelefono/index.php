@@ -1,31 +1,14 @@
 <?php
     require'../classes/AutoLoad.php';
     $db = new DataBase();
-    $gestor = new ManagerContacto($db);
+    
+    $gestor = new ManageContactoTelefono($db); /*Gestor para manejar las dos tablas al mismo tiempo*/
     $listaDeContactosTelefonos = $gestor->getAll();
     
     $action = Request::get('action');
     $r = Request::get('r');
     
-    if($action === 'add'){
-        if($r === '0'){
-            echo '<h1>la inserción ha fallado</h1>';
-        }else{
-            echo '<h1>insertado con exito con id: ' . $r . '</h1>';
-        }
-    }elseif($action === 'editar'){
-        if($r === '-1'){
-            echo '<h1>Ha fallado la edición</h1>';
-        }else{
-            echo '<h1>Se han editado: ' . $r . ' filas con exito</h1>';
-        }
-    }elseif($action === 'remove'){
-        if($r === '-1'){
-            echo '<h1>el borrado ha fallado</h1>';
-        }else{
-            echo '<h1>Se han borrado: ' . $r . ' filas con exito</h1>';
-        }
-    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,25 +19,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Gestion de contactos</h1>
+    <h1>Gestion de contactos y sus telefonos</h1>
     <table border="1">
         <thead>
             <tr>
-                <td>Id</td>
                 <td>Nombre</td>
+                <td>Telefono</td>
+                <td>Descripcion</td>
                 <td>...</td>
                 <td>...</td>
             </tr>
         </thead>
         <tbody>
     <?php
-        foreach ($listaDeContactos as $key => $contacto) {
+        foreach ($listaDeContactosTelefonos as $key => $contactoTelefono) {
+            $contacto = $contactoTelefono['contacto'];
+            $telefono = $contactoTelefono['telefono'];
             ?>
             <tr>
-                <td><?php echo $contacto->getId(); ?></td>
                 <td><?php echo $contacto->getNombre(); ?></td>
+                <td><?php echo $telefono->getTelefono(); ?></td>
+                <td><?php echo $telefono->getDescripcion(); ?></td>
                 <td><a href="action_viewEdit.php?id=<?php echo $contacto->getId(); ?>">Editar</a></td>
-                <td><a href="action_viewDelete.php?id=<?php echo $contacto->getId(); ?>">Borrar</a></td>
+                <td><a href="action_viewDelete.php?idcontacto=<?php echo $contacto->getId(); ?>&idtelefono=<?php echo $telefono->getId(); ?>">Borrar</a></td>
             </tr>
             <?php
         }      
