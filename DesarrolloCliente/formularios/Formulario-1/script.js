@@ -49,7 +49,7 @@
         var str = "Nombre no válido" + "\n";
         var regEx = /[^A-z0-9]/;
         var longitud = nombre.value.length;
-        if (!regEx.test(nombre.value) && (longitud => 3) && (longitud <= 15) && nombre.value != "") {
+        if (!regEx.test(nombre.value) && (longitud >= 3) && (longitud <= 15) && nombre.value != "") {
             bool = true;
             str = "";
         }

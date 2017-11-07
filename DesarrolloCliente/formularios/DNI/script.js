@@ -54,7 +54,7 @@
         var r = false;
         var numero = parseInt(dni.value);
         var resto = numero % 23;
-        if (letras[resto] == letra.value) {
+        if (letra  s[resto] == letra.value) {
             r = true;
         }
         return r;
