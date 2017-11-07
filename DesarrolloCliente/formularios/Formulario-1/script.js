@@ -62,7 +62,7 @@
         var bool = false;
         var str = "Contraseña incorrecta" + "\n";
         var regEx = /^\b[A-Z]+[a-z]+[0-9]+[A-z0-9_]{3,15}\b/;
-        if (regEx.test(contraseña[1].value) && contraseña[0].value == contraseña[1].value) {
+        if (regEx.test(contraseña[0].value) && contraseña[0].value == contraseña[1].value) {
             bool = true;
             str = "";
         }
