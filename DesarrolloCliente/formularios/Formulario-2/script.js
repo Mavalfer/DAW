@@ -9,6 +9,15 @@
 
     var preguntas = document.getElementsByTagName('div');
 
+    var comentario = preguntas[9].querySelector('textarea');
+    var spanComent = preguntas[9].querySelector('span');
+    var longComent = comentario.getAttribute('maxlength');
+    comentario.addEventListener('keyup', function() {
+        
+        
+    }),
+    
+    
     function checkRespondidas(preguntas) {
 
     }
@@ -218,6 +227,8 @@
         
         return r;
     }
+    
+    
     
     
 })();
