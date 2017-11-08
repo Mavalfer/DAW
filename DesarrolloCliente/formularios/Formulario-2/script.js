@@ -1,25 +1,64 @@
 (function () {
 
     const NUMPREGUNTAS = 9;
-    var nRespondidas = 0;
-    var nAciertos = 0;
-    var porcAciertos = 0;
-    var nFalladas = 0;
-    var noContestadas = NUMPREGUNTAS - nRespondidas;
+    
 
     var preguntas = document.getElementsByTagName('div');
+    var evaluar = [evaluarP1, evaluarP2, evaluarP3, evaluarP4, evaluarP5, evaluarP6, evaluarP7, evaluarP8, evaluarP9];
 
-    var comentario = preguntas[9].querySelector('textarea');
-    var spanComent = preguntas[9].querySelector('span');
+    var comentario = preguntas[10].querySelector('textarea');
+    var spanComent = preguntas[10].querySelector('span');
     var longComent = comentario.getAttribute('maxlength');
+    
+    spanComent.innerText = longComent;
     comentario.addEventListener('keyup', function() {
+        spanComent.innerText = parseInt(longComent) - parseInt(comentario.value.length);
+        
+    });
+    
+        
+    var form = document.querySelector('form');
+    
+    var botonCorreccion = document.querySelector('input[name=correccion]');
+    botonCorreccion.addEventListener('click', correccion);
+    var stats = document.getElementById('stats');
+    
+    function correccion(e) {
+        e.preventDefault;
+        botonCorreccion.value = "Reintentar";
+        var estadisticas = checkRespondidas(evaluar);
+        stats.innerText = estadisticas[0] + " aciertos.\n" + estadisticas[1] + " fallos.\n" + estadisticas[2] + " respondidas.\n" + estadisticas[3] + " no contestadas.\n" + estadisticas[4] + " % aciertos.\n"
         
         
-    }),
+    }
     
-    
-    function checkRespondidas(preguntas) {
 
+    function checkRespondidas(evaluar) { /*Retorna un array con aciertos, falladas, respondidas, no contestadas y el porcentaje de aciertos*/
+        var r;
+        var nRespondidas = 0;
+        var nAciertos = 0;
+        var porcAciertos = 0;
+        var nFalladas = 0;
+        
+        for (var i = 0; i < evaluar.length; i++) {
+            r = evaluar[i]();
+            switch (r) {
+                case 0:
+                    nFalladas++;
+                    nRespondidas++;
+                    break;
+                case 1:
+                    nAciertos++;
+                    nRespondidas++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        var noContestadas = NUMPREGUNTAS - nRespondidas;
+        porcAciertos = (nAciertos * 100) / NUMPREGUNTAS;
+        var retorno = [nAciertos, nFalladas, nRespondidas, noContestadas, porcAciertos];
+        return retorno;
     }
 
 
@@ -31,7 +70,7 @@
      */
 
     function evaluarP1() { /*Son correctas primera y segunda*/
-        var p = preguntas[0].getElementsByName('check1');
+        var p = document.getElementsByName('check1');
         var r;
         var a = 0;
 
@@ -56,7 +95,7 @@
     }
 
     function evaluarP2() {
-        var p = preguntas[1].querySelector('input').value;
+        var p = document.getElementById('text1').value;
         var r;
         var sol = "asd";
         
@@ -79,7 +118,7 @@
     }
     
     function evaluarP3() {
-        var p = preguntas[2].querySelector('input').value;
+        var p = document.getElementById('text2').value;
         var r;
         var sol = "asd";
         
@@ -101,7 +140,7 @@
     }
     
     function evaluarP4() {
-        var p = preguntas[3].querySelector('input').value;
+        var p = document.getElementById('text3').value;
         var r;
         var sol = "asd";
         
@@ -123,7 +162,7 @@
     }
     
     function evaluarP5() { /*Correcta la tercera opcion*/
-        var p = preguntas[4].querySelector('select').selectedIndex;
+        var p = document.getElementById('select1').selectedIndex;
         var r;
         var sol = 2;
         
@@ -137,7 +176,7 @@
     }
     
     function evaluarP6() { /*Correcta la primera opcion*/
-        var p = preguntas[5].getElementsByTagName('input');
+        var p = preguntas[6].getElementsByTagName('input');
         var r;
         var a = 0;
 
@@ -163,7 +202,7 @@
     }
     
     function evaluarP7() {
-        var p = preguntas[6].querySelector('input').value;
+        var p = document.getElementById('text4').value;
         var r;
         var sol = "asd";
         
@@ -185,7 +224,7 @@
     }
     
     function evaluarP8() {
-        var p = preguntas[7].querySelector('input').value;
+        var p = document.getElementById('text5').value;
         var r;
         var sol = "asd";
         
@@ -207,7 +246,7 @@
     }
     
     function evaluarP9() {
-        var p = preguntas[8].querySelector('input').value;
+        var p = document.getElementById('text6').value;
         var r;
         var sol = "asd";
         
