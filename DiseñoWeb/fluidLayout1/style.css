@@ -1,0 +1,24 @@
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #DCDBD9;
+    color: #2C2C2C;
+    font: normal 100% Cambria, Georgia, serif; /*toma el 100% del tamaño de la fuente del navegador*/
+}
+
+h1 {
+    font-size: 1.5em; /* 24px / 16px*/
+    font-style: italic;
+    font-weight: normal;
+}        
+
+h1 a {
+    color: #6e82a2;
+    font: bold 0.4583333333em Calibri, Optima, Arial, sans-serif; /* 11px / 24px */
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+}

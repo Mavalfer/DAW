@@ -6,6 +6,7 @@
 
     var boton = document.querySelector("input[name=mostrar]");
     var checkbox = document.querySelector("input[name=checkbox]");
+    var btnReset = document.getElementById('reset');
 
     var funciones = [validarNombre, validarContraseña, validarMail, validarFecha, validarCaptcha];
 
@@ -15,7 +16,9 @@
     document.addEventListener('submit', validarFormulario);
     boton.addEventListener('click', mostrarCaptcha);
     checkbox.addEventListener('change', activarSubmit);
-
+    btnReset.addEventListener('click', borrarDatos);
+    
+    
     function validarFormulario(e) {
 
         errores.innerText = "";
@@ -30,7 +33,30 @@
         }
 
     }
-
+    
+    function mostrarCaptcha() {
+        n1 = Math.floor(Math.random() * 10);
+        n2 = Math.floor(Math.random() * 10);
+        span1.innerText = n1;
+        span2.innerText = n2;
+    }
+    
+    function activarSubmit() {
+        var submit = document.querySelector("input[name=submit]");
+        if (submit.disabled == true) {
+            submit.disabled = false;
+        } else {
+            submit.disabled = true;
+        }
+    }
+    
+    function borrarDatos(e) {    
+        if (!confirm("¿Borrar todos los datos?")) {
+            e.preventDefault();
+        }
+    }
+    
+    /* Esta funcion recibe como parametros una funcion de validacion y el evento submit, en caso de que la funcion retorne false (!result[0]), canvela el evento y agrega un mensaje de error (result[1]) al espacio para los errores */
     function evaluar(funcion, event) {
         var result = funcion();
         var bool = false;
@@ -43,6 +69,7 @@
         return bool;
     }
 
+    /* Todas las funciones de validar que se le pasan como parametro a la funcion anterior devuelven un array, result[0] es true si el campo esta completado y correcto, y false si no. Ademas result[1] es un string con un mensaje de error, que sera cadena vacia en caso de que no haya error*/
     function validarNombre() {
         var nombre = document.querySelector("input[name=nombre]");
         var bool = false;
@@ -106,12 +133,7 @@
         return result;
     }
 
-    function mostrarCaptcha() {
-        n1 = Math.floor(Math.random() * 10);
-        n2 = Math.floor(Math.random() * 10);
-        span1.innerText = n1;
-        span2.innerText = n2;
-    }
+    
 
     function validarCaptcha() {
         var captcha = document.querySelector("input[name=captcha]");
@@ -129,12 +151,5 @@
         return result;
     }
     
-    function activarSubmit() {
-        var submit = document.querySelector("input[name=submit]");
-        if (submit.disabled == true) {
-            submit.disabled = false;
-        } else {
-            submit.disabled = true;
-        }
-    }
+    
 })();

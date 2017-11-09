@@ -27,7 +27,9 @@
         e.preventDefault;
         botonCorreccion.value = "Reintentar";
         var estadisticas = checkRespondidas(evaluar);
-        stats.innerText = estadisticas[0] + " aciertos.\n" + estadisticas[1] + " fallos.\n" + estadisticas[2] + " respondidas.\n" + estadisticas[3] + " no contestadas.\n" + estadisticas[4] + " % aciertos.\n"
+        stats.innerText = estadisticas[0] + " aciertos.\n" + estadisticas[1] + " fallos.\n" + estadisticas[2] + " respondidas.\n" + estadisticas[3] + " no contestadas.\n" + estadisticas[4] + " % aciertos.\n";
+        
+        
         
         
     }
