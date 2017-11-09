@@ -19,6 +19,24 @@ class ManagerContactoTelefono implements Manager{
         
     }
     
+    function countTelefonos($id){
+        $sql = 'SELECT count(*) FROM telefono where idContacto = :idContacto';
+        $params = array(
+            'idContacto' => $id
+        );
+        $res = $this->database->execute($sql , $params);
+        $cuenta = 0;
+        $telefonos = array();
+        if($res){
+            $sentencia = $this->database->getStatement();
+            if($fila = $sentencia->fetch()){
+                /*echo Util::varDump()*/
+                $cuenta = $fila[0];
+            }
+        }
+        return $cuenta;
+    }
+    
     function getAll(){
         $sql = 'SELECT * FROM contacto co LEFT JOIN telefono te ON co.id = te.idContacto ORDER BY co.nombre, te.telefono';
         $res = $this->database->execute($sql);
