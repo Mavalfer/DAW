@@ -9,5 +9,5 @@ $description = Request::read('description');
 $phone = new Telefono(null, $idcontact, $number, $description);
 $r = $gestor->add($phone);
 
-//header('Location: index.php?action=insert&r=' . $r);
+header('Location: index.php?action=insert&r=' . $r);
 $db->closeConnection();

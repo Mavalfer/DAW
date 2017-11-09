@@ -78,3 +78,21 @@
 [02-Nov-2017 15:35:40 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_telefono/action_dodelete.php on line 11
 [02-Nov-2017 15:35:40 UTC] PHP Stack trace:
 [02-Nov-2017 15:35:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_telefono/action_dodelete.php:0
+[07-Nov-2017 17:37:35 UTC] PHP Fatal error:  Call to a member function getId() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php on line 22
+[07-Nov-2017 17:37:35 UTC] PHP Stack trace:
+[07-Nov-2017 17:37:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php:0
+[07-Nov-2017 17:39:26 UTC] PHP Fatal error:  Call to undefined method Util::vard_dump() in /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php on line 20
+[07-Nov-2017 17:39:26 UTC] PHP Stack trace:
+[07-Nov-2017 17:39:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php:0
+[07-Nov-2017 17:39:44 UTC] PHP Fatal error:  Call to undefined method Util::var_dump() in /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php on line 20
+[07-Nov-2017 17:39:44 UTC] PHP Stack trace:
+[07-Nov-2017 17:39:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php:0
+[07-Nov-2017 17:39:45 UTC] PHP Fatal error:  Call to undefined method Util::var_dump() in /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php on line 20
+[07-Nov-2017 17:39:45 UTC] PHP Stack trace:
+[07-Nov-2017 17:39:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php:0
+[07-Nov-2017 17:39:55 UTC] PHP Fatal error:  Call to a member function getId() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php on line 24
+[07-Nov-2017 17:39:55 UTC] PHP Stack trace:
+[07-Nov-2017 17:39:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_viewDelete.php:0
+[07-Nov-2017 17:43:33 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_doDelete.php on line 23
+[07-Nov-2017 17:43:33 UTC] PHP Stack trace:
+[07-Nov-2017 17:43:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/Tema 4/ruta_contactotelefono/action_doDelete.php:0

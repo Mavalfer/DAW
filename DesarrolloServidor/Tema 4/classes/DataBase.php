@@ -26,7 +26,7 @@ class DataBase {
             $this->sentencia->bindValue($nameParam , $value);
         }
         $r = $this->sentencia->execute();
-        /*
+        //*
         echo $sql . '<br>';
         echo Util::varDump($params);
         echo Util::varDump($this->sentencia->errorInfo());         

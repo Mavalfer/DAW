@@ -1,6 +1,5 @@
 <?php
 require'../classes/AutoLoad.php';
-
 $nombre = Request::get('nombre');
 $contacto = new Contacto(0, $nombre);
 $db = new DataBase();

@@ -15,8 +15,6 @@ $telefonos = $gestor->getAll();
         <h1>Gestión de telefonos</h1>
         <div class="cosa">
         <br>
-        <a href="./action_viewinsert.php">Insertar telefono</a>
-        <hr>
         <table border="1">
             <thead>
                 <tr>
@@ -44,6 +42,8 @@ $telefonos = $gestor->getAll();
         ?>
                 </tbody>
         </table>
+        <br>
+        <a href="./action_viewinsert.php">Insertar telefono</a>
         </div>
 	</body>
 </html>
