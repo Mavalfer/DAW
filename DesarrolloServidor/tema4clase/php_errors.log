@@ -1,0 +1,71 @@
+[06-Nov-2017 13:27:21 UTC] PHP Fatal error:  Class ManageContactoTelefono contains 4 abstract methods and must therefore be declared abstract or implement the remaining methods (Manager::add, Manager::edit, Manager::get, ...) in /home/ubuntu/workspace/tema4/classes/ManageContactoTelefono.php on line 30
+[06-Nov-2017 13:27:21 UTC] PHP Stack trace:
+[06-Nov-2017 13:27:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:0
+[06-Nov-2017 13:27:21 UTC] PHP   2. spl_autoload_call() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:5
+[06-Nov-2017 13:27:21 UTC] PHP   3. AutoLoad::searchClass() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:5
+[06-Nov-2017 13:27:21 UTC] PHP   4. require() /home/ubuntu/workspace/tema4/classes/AutoLoad.php:8
+[09-Nov-2017 11:04:45 UTC] PHP Fatal error:  Class 'ManagerContactoTelefono' not found in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php on line 6
+[09-Nov-2017 11:04:45 UTC] PHP Stack trace:
+[09-Nov-2017 11:04:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php:0
+[09-Nov-2017 11:07:25 UTC] PHP Fatal error:  Call to a member function execute() on a non-object in /home/ubuntu/workspace/tema4/classes/ManageContactoTelefono.php on line 36
+[09-Nov-2017 11:07:25 UTC] PHP Stack trace:
+[09-Nov-2017 11:07:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php:0
+[09-Nov-2017 11:07:25 UTC] PHP   2. ManageContactoTelefono->getWithContactId() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php:8
+[09-Nov-2017 11:08:26 UTC] PHP Fatal error:  Call to a member function getStatement() on a non-object in /home/ubuntu/workspace/tema4/classes/ManageContactoTelefono.php on line 39
+[09-Nov-2017 11:08:26 UTC] PHP Stack trace:
+[09-Nov-2017 11:08:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php:0
+[09-Nov-2017 11:08:26 UTC] PHP   2. ManageContactoTelefono->getWithContactId() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php:8
+[09-Nov-2017 11:08:45 UTC] PHP Fatal error:  Call to a member function getTelefono() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php on line 38
+[09-Nov-2017 11:08:45 UTC] PHP Stack trace:
+[09-Nov-2017 11:08:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php:0
+[09-Nov-2017 11:09:18 UTC] PHP Fatal error:  Call to a member function getTelefono() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php on line 38
+[09-Nov-2017 11:09:18 UTC] PHP Stack trace:
+[09-Nov-2017 11:09:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewdelete.php:0
+[09-Nov-2017 11:44:58 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_dodelete.php on line 24
+[09-Nov-2017 11:44:58 UTC] PHP Stack trace:
+[09-Nov-2017 11:44:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_dodelete.php:0
+[09-Nov-2017 11:47:03 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_dodelete.php on line 24
+[09-Nov-2017 11:47:03 UTC] PHP Stack trace:
+[09-Nov-2017 11:47:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_dodelete.php:0
+[09-Nov-2017 11:47:28 UTC] PHP Fatal error:  Call to a member function closeConnection() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_dodelete.php on line 24
+[09-Nov-2017 11:47:28 UTC] PHP Stack trace:
+[09-Nov-2017 11:47:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_dodelete.php:0
+[09-Nov-2017 12:44:46 UTC] PHP Fatal error:  Call to a member function getNombre() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 22
+[09-Nov-2017 12:44:46 UTC] PHP Stack trace:
+[09-Nov-2017 12:44:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:46:42 UTC] PHP Fatal error:  Call to a member function getNombre() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 23
+[09-Nov-2017 12:46:42 UTC] PHP Stack trace:
+[09-Nov-2017 12:46:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:46:45 UTC] PHP Fatal error:  Call to a member function getNombre() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 23
+[09-Nov-2017 12:46:45 UTC] PHP Stack trace:
+[09-Nov-2017 12:46:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:47:36 UTC] PHP Fatal error:  Call to a member function getNombre() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 23
+[09-Nov-2017 12:47:36 UTC] PHP Stack trace:
+[09-Nov-2017 12:47:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:48:13 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 10
+[09-Nov-2017 12:48:13 UTC] PHP Stack trace:
+[09-Nov-2017 12:48:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:48:42 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 10
+[09-Nov-2017 12:48:42 UTC] PHP Stack trace:
+[09-Nov-2017 12:48:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:49:26 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 10
+[09-Nov-2017 12:49:26 UTC] PHP Stack trace:
+[09-Nov-2017 12:49:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:49:29 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 10
+[09-Nov-2017 12:49:29 UTC] PHP Stack trace:
+[09-Nov-2017 12:49:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:50:14 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 11
+[09-Nov-2017 12:50:14 UTC] PHP Stack trace:
+[09-Nov-2017 12:50:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:50:48 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 10
+[09-Nov-2017 12:50:48 UTC] PHP Stack trace:
+[09-Nov-2017 12:50:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:50:50 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 10
+[09-Nov-2017 12:50:50 UTC] PHP Stack trace:
+[09-Nov-2017 12:50:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 12:51:36 UTC] PHP Fatal error:  Call to a member function getIdcontacto() on a non-object in /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php on line 11
+[09-Nov-2017 12:51:36 UTC] PHP Stack trace:
+[09-Nov-2017 12:51:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_viewedittelefono.php:0
+[09-Nov-2017 13:42:16 UTC] PHP Fatal error:  Class 'ManagerContacto' not found in /home/ubuntu/workspace/tema4/route_contactotelefono/action_vieweditcontacto.php on line 4
+[09-Nov-2017 13:42:16 UTC] PHP Stack trace:
+[09-Nov-2017 13:42:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_vieweditcontacto.php:0

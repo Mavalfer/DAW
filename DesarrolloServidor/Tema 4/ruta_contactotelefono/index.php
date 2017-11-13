@@ -14,6 +14,7 @@
 </head>
 <body>
     <h1>Gestion de contactos y telefonos</h1>
+    <h2><a href="action_viewinsertarcontacto.php">Insertar Contacto</a></h2>
     <table border="1">
         <thead>
             <tr>
@@ -29,8 +30,8 @@
             $telefono = $contactoTelefono['telefono'];
             ?>
             <tr>
-                <td><?php echo $contacto->getNombre(); ?></td>
-                <td><?php echo $telefono->getTelefono(); ?></td>
+                <td><a href="action_vieweditcontacto.php?idcontacto=<?php echo $contacto->getId(); ?>"><?php echo $contacto->getNombre(); ?></a></td>
+                <td><a href="action_viewedittelefono.php?idtelefono=<?php echo $telefono->getId(); ?>"><?php echo $telefono->getTelefono(); ?></a></td>
                 <td><?php echo $telefono->getDescripcion(); ?></td>
                 <td><a href="action_viewEdit.php?idcontacto=<?php echo $contacto->getId(); ?>&idtelefono=<?php echo $telefono->getId(); ?>">Editar</a></td>
                 <td><a href="action_viewDelete.php?idcontacto=<?php echo $contacto->getId(); ?>&idtelefono=<?php echo $telefono->getId(); ?>">Borrar</a></td>

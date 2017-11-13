@@ -79,4 +79,13 @@ class ManagerContactoTelefono implements Manager{
         
     }
     
+    function getNombreContactoFromTelefono($idTelefono) {
+        $sql = 'select nombre from contacto co join telefono te on co.id = te.idContacto where te.id = :idTelefono';
+        $params = array(
+            'idTelefono' => $id
+        );
+        $res = $this->database->execute($sql , $params);
+        
+    }
+    
 }    

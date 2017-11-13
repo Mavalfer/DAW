@@ -9,7 +9,7 @@
 class Constant{
     const SERVER = 'localhost:3306';
     const DATABASE = 'dwes';
-    const USER = 'joseantoniolpz';
-    const PASS = '';
+    const USER = 'udwes';
+    const PASS = 'cdwes';
 }
 

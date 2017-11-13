@@ -9,10 +9,13 @@
 <body>
     <h1>Insertar contacto</h1>
     <form action="action_doInsert.php" method="POST">
-        <input type="text" name="nombre"/>
-        <input type="submit" value="Submit"/>
+        <input type="text" name="nombre" placeholder="Nombre del contacto"/>
+        <br>
         <input type="text" value="" name="number" placeholder="Numero de telefono" required>
+        <br>
         <input type="text" value="" name="description" placeholder="Descripción" required>
+        <br>
+        <input type="submit" value="Submit"/>
     </form>
 </body>
 </html>
