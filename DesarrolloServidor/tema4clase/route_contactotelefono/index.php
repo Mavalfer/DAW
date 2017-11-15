@@ -3,10 +3,24 @@ require '../classes/AutoLoad.php';
 $db = new DataBase();
 
 $gestor = new ManageContactoTelefono($db);
-$listaDeContactosTelefonos = $gestor->getAll();
+$rows = $gestor->count();
 
 $action = Request::read('action');
 $result = Request::read('r');
+
+$page = Request::read('page');//página actual
+if($page === null) {
+    $page = 1;
+}
+$rpp = 6;
+$pagination = new Pagination($rows, $page, $rpp);
+
+//$offset = $rpp * ($page - 1);
+//$rowcount = $rpp;
+//$pages = ceil($rows / $rpp); //numero total de páginas
+
+$listaDeContactosTelefonos = $gestor->getAllLimit($pagination->getOffset(), $pagination->getRpp());
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +49,7 @@ $result = Request::read('r');
                     $telefono = $contactoTelefono['telefono'];
                     ?>
                     <tr>
-                        <td><?= $key ?></td>
+                        <td><?= $key + $offset ?></td>
                         <td><a href="action_vieweditcontacto.php?idcontacto=<?php echo $contacto->getId();?>"><?= $contacto->getNombre() ?></a></td>
                         <td><a href="action_viewedittelefono.php?idtelefono=<?php echo $telefono->getId();?>"><?= $telefono->getTelefono() ?></a></td>
                         <td><?= $telefono->getDescripcion() ?></td>
@@ -55,6 +69,14 @@ $result = Request::read('r');
                     <?php
                 }
                 ?>
+                <tr>
+                    <td colspan=5>
+                        <a href='?page=1'>&lt;&lt;</a>
+                        <a href='?page=<?php echo max($page - 1, 1); ?>'>&lt;</a>
+                        <a href='?page=<?php echo min($page + 1, $pages); ?>'>&gt;</a>
+                        <a href='?page=<?php echo $pages; ?>'>&gt;&gt;</a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </body>

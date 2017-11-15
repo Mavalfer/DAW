@@ -62,7 +62,45 @@ class ManageContactoTelefono {
         }
         return $telefonos;
     }
+    
+    function count() {
+        $sql = 'select count(*) from contacto co left join ' .
+               'telefono te on co.id = te.idcontacto ';
+        $resultado = $this->db->execute($sql);
+        $cuenta = 0;
+        if($resultado){
+            $sentencia = $this->db->getStatement();
+            if($fila = $sentencia->fetch()) {
+                //echo Util::varDump($fila);
+                $cuenta = $fila[0];
+            }
+        }
+        return $contactosTelefonos;
+    }
 
     
-    
+     function getAlllimit($offset, $rpp) {
+        $sql = 'select * from contacto co left join ' .
+               'telefono te on co.id = te.idcontacto ' .
+               'order by co.nombre, te.telefono limit '. $offset . ', ' . $rpp;
+        /*$params = array(
+            'offset' => $offset,
+            'rpp' => $rpp
+        );*/
+        $params = array();
+        $resultado = $this->db->execute($sql, $params);
+        $contactosTelefonos = array();
+        if($resultado){
+            $sentencia = $this->db->getStatement();
+            while($fila = $sentencia->fetch()) {
+                $contacto = new Contacto();
+                $contacto->set($fila);
+                $telefono = new Telefono();
+                $telefono->set($fila, 2);
+                $contactosTelefonos[] = array('contacto' => $contacto,
+                                                'telefono' => $telefono);
+            }
+        }
+        return $contactosTelefonos;
+    }
 }
