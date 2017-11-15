@@ -1,44 +1,49 @@
-/* 1� crear la base de datos */
+/* 1º crear la base de datos */
 create database dwes
 default character set utf8
 collate utf8_unicode_ci;
 
-/* 2� crear el usuario administrador de esa base de datos */
+/* 2º crear el usuario administrador de esa base de datos */
 create user udwes@localhost
 identified by 'cdwes';
-
 grant all
 on dwes.* to
 udwes@localhost;
-
 flush privileges;
 
-/* 3� crear las tablas */
+/* 3º crear las tablas */
 create table if not exists car (
     id bigint not null auto_increment,
     marca varchar(30) not null,
     modelo varchar(40) not null,
     primary key (id),
     unique(marca, modelo)
-) engine=innodb default character set = utf8 collate utf8_unicode_ci;
-
+) engine = innodb default character set = utf8 collate utf8_unicode_ci;
 create table if not exists carold (
-    marca varchar(30),
-    modelo varchar(40),
+    marca varchar(30) not null,
+    modelo varchar(40) not null,
     primary key(marca, modelo)
-) engine=innodb default character set = utf8 collate utf8_unicode_ci;
+) engine = innodb default character set = utf8 collate utf8_unicode_ci;
+
+create table if not exists usuario (
+    id bigint not null auto_increment primary key,
+    correo varchar(80) not null unique,
+    clave varchar(250) not null,
+    verificado tinyint(1) not null default 0
+) engine = innodb default character set = utf8 collate utf8_unicode_ci;
 
 create table if not exists contacto (
     id bigint not null auto_increment primary key,
-    nombre varchar(40) not null unique
-) engine=innodb default character set = utf8 collate utf8_unicode_ci;
+    idusuario bigint not null,
+    nombre varchar(40) not null unique,
+    foreign key (idusuario) references usuario(id) on delete restrict
+) engine = innodb default character set = utf8 collate utf8_unicode_ci;
 
 create table if not exists telefono (
     id bigint not null auto_increment primary key,
     idcontacto bigint not null,
     telefono varchar(15) not null,
     descripcion varchar(20) null,
-    foreign key(idcontacto) references contacto(id) on delete restrict
-) engine=innodb default character set = utf8 collate utf8_unicode_ci;
-
-/* SELECT * FROM contacto co join telefono te on co.id=te.idcontacto */
+    unique(idcontacto, telefono),
+    foreign key (idcontacto) references contacto(id) on delete restrict
+) engine = innodb default character set = utf8 collate utf8_unicode_ci;
