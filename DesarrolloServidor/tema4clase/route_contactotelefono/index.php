@@ -20,7 +20,8 @@ $pagination = new Pagination($rows, $page, $rpp);
 //$pages = ceil($rows / $rpp); //numero total de páginas
 
 $listaDeContactosTelefonos = $gestor->getAllLimit($pagination->getOffset(), $pagination->getRpp());
-
+$sesion = new Session('sesion');
+$user = $sesion->getUser();
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +31,8 @@ $listaDeContactosTelefonos = $gestor->getAllLimit($pagination->getOffset(), $pag
     </head>
     <body>
         <h1>Gestión integral de contactos y sus teléfonos</h1>
+        <h2><?php if($user === null){echo "No eres nadie";} else {echo 'Eres ' . $user->getUsuario();} ?></h2>
+        <h3><a href="../route_user/actiondologon.php">Cerrar sesión</a></h3>
         <h2><a href="action_viewinsert.php">insertar contacto</a></h2>
         <table border="1">
             <thead>

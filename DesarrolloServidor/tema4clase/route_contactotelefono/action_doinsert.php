@@ -1,5 +1,13 @@
 <?php
 require'../classes/AutoLoad.php';
+
+$sesion = new Session('sesion');
+$user = $sesion->getUser();
+if($user === null){
+    header('Location: ../');
+    exit();
+}
+
 $db = new DataBase();
 $gestor = new ManageContacto($db);
 $contacto = new Contacto();

@@ -1,3 +1,11 @@
+<?php
+$sesion = new Session('sesion');
+$user = $sesion->getUser();
+if($user === null){
+    header('Location: ../');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
