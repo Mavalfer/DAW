@@ -1,0 +1,35 @@
+/* CSS */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+    background-image: url(pattern.jpg);
+    color: #443526;
+    font-family: 'PT Sans', serif;
+}
+
+.wrapper {
+    min-width: 320px; /*resultado iphone3 mediaquery vertical*/
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.3);
+    padding: 10px;
+}
+
+article, aside, dialog, figure, footer, header, hgroup, nav, section {
+    display: block; /*esto es por si el navegador no es del todo compatible con html5 para que a las etiquetas semanticas las ponga en bloque*/
+}
+
+/* Text */
+h1, h2, h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 300%;
+}

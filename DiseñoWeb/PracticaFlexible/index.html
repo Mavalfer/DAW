@@ -1,0 +1,276 @@
+<!DOCTYPE html> 
+<!--[if lt IE 7 ]> <html class="ie6" lang="en-us"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7" lang="en-us"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8" lang="en-us"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9" lang="en-us"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-us"> <!--<![endif]--><head> 
+<meta charset="utf-8"> 
+<title>Sugarlife</title>
+<script type="text/javascript" src="js/modernizr.custom.37637.js"></script>
+
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head> 
+ 
+<body>
+<div class="wrapper">
+	<header role="banner">
+		<div class="logo">
+			<img src="logo.png" width="300" height="120" alt="s'mores">
+			<p class="tagline">···Make your own cookies!</p>
+		</div>
+		<nav role="navigation" class="main-nav">
+			<ul class="list-nav">
+				<li id="link-home"><a href="index.html">Home</a></li>
+				<li id="link-builder"><a href="builder.html">Cookie builder</a></li>
+				<li id="link-party"><a href="index.html">Throw a party</a></li>
+				<li id="link-tumblr"><a href="http://smoresday.tumblr.com">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<h1>Cracker Cookies Builder</h1>
+	<p class="intro">This is your chance to get creative. As long as you have a roasted marshmallow sandwiched between something with some chocolate added, I say you got a s'mores. So pick your frame, marshmallow, and candy, add an optional accessory or two, and build a crazy s'mores concoction.</p>
+	
+	<section>
+		<form name="form1" method="post" action="" class="builder">
+			<section class="component" id="frame">
+				<h2>Frame</h2>
+				<ul>
+					<li>
+						<input type="radio" name="frame" value="plain-graham-crackers" id="frame_0"><label for="frame_0">graham crackers</label>
+					</li>
+					<li>
+						<input type="radio" name="frame" value="cinnamon-grahams" id="frame_1"><label for="frame_1">cinnamon grahams</label>
+					</li>
+					<li>
+						<input type="radio" name="frame" value="chocolate-grahams" id="frame_2"><label for="frame_2">chocolate grahams</label>
+					</li>
+					<li>
+						<input type="radio" name="frame" value="fudge-stripe-cookies" id="frame_3"><label for="frame_3">Fudge Stripe cookies</label>
+					</li>
+					<li>
+						<input type="radio" name="frame" value="oreos" id="frame_4"><label for="frame_4">Oreos</label>
+					</li>
+					<li>
+						<input type="radio" name="frame" value="chocolate-chip-cookies" id="frame_5"><label for="frame_5">chocolate chip cookies</label>
+					</li>
+					<li>
+						<input type="radio" name="frame" value="ritz-crackers" id="frame_6"><label for="frame_6">Ritz crackers</label>
+					</li>
+					<li>
+						<input type="radio" name="frame" value="other-frame" id="frame_7"><label for="frame_7" id="other-frame-label">other:</label><input type="text" name="other-frame-name" id="other-frame-name" class="other-name" aria-labelledby="other-frame-label">
+					</li>
+				</ul>
+			</section>
+			
+			<section class="component" id="marshmallow">
+				<h2>Marshmallow</h2>
+				<ul>
+					<li>
+						<input type="radio" name="mallow" value="plain-marshmallow" id="mallow_0"><label for="mallow_0">plain marshmallow</label>
+					</li>
+					<li>
+						<input type="radio" name="mallow" value="chocolate-marshmallow" id="mallow_1"><label for="mallow_1">chocolate 'mallow</label>
+					</li>
+					<li>
+						<input type="radio" name="mallow" value="strawberry-marshmallow" id="mallow_2"><label for="mallow_2">strawberry 'mallow</label>
+					</li>
+					<li>
+						<input type="radio" name="mallow" value="giant-marshmallow" id="mallow_3"><label for="mallow_3">giant 'mallow</label>
+					</li>
+					<li>
+						<input type="radio" name="mallow" value="other-mallow" id="mallow_4"><label for="mallow_4" id="other-mallow-label">other:</label><input type="text" name="other-mallow-name" id="other-mallow-name" class="other-name" aria-labelledby="other-mallow-label">
+					</li>
+				</ul>
+			</section>
+			
+			<section class="component" id="candy">
+				<h2>Candy</h2>
+				<ul>
+					<li>
+						<input type="radio" name="candy" value="hersheys-chocolate" id="candy_0"><label for="candy_0">Hershey's chocolate</label>
+					</li>
+					<li>
+						<input type="radio" name="candy" value="dark-chocolate" id="candy_1"><label for="candy_1">dark chocolate</label>
+					</li>
+					<li>
+						<input type="radio" name="candy" value="chocolate-with-almonds" id="candy_2"><label for="candy_2">chocolate with almonds</label>
+					</li>
+					<li>
+						<input type="radio" name="candy" value="nutella" id="candy_3"><label for="candy_3">Nutella</label>
+					</li>
+					<li>
+						<input type="radio" name="candy" value="reeses-peanut-butter-cup" id="candy_4"><label for="candy_4">Reese's P.B. Cup</label>
+					</li>
+					<li>
+						<input type="radio" name="candy" value="white-chocolate" id="candy_5"><label for="candy_5">white chocolate</label>
+					</li>
+					<li>
+						<input type="radio" name="candy" value="other-candy" id="candy_6"><label for="candy_6" id="other-candy-label">other:</label><input type="text" name="other-candy-name" id="other-candy-name" class="other-name" aria-labelledby="other-candy-label">
+					</li>
+				</ul>
+			</section>
+			
+			<section class="component" id="accessories">
+				<h2>Accessories</h2>
+				<ul>
+					<li>
+						<input type="checkbox" name="accessory" value="peanut-butter" id="accessory_0"><label for="accessory_0">peanut butter</label>
+					</li>
+					<li>
+						<input type="checkbox" name="accessory" value="banana" id="accessory_1"><label for="accessory_1">banana</label>
+					</li>
+					<li>
+						<input type="checkbox" name="accessory" value="strawberries" id="accessory_2"><label for="accessory_2">strawberries</label>
+					</li>
+					<li>
+						<input type="checkbox" name="accessory" value="caramel-sauce" id="accessory_3"><label for="accessory_3">caramel sauce</label>
+					</li>
+					<li>
+						<input type="checkbox" name="accessory" value="cream-cheese" id="accessory_4"><label for="accessory_4">cream cheese</label>
+					</li>
+					<li>
+						<input type="checkbox" name="accessory" value="bacon" id="accessory_5"><label for="accessory_5">bacon</label>
+					</li>
+					<li>
+						<input type="checkbox" name="accessory" value="other-accessory" id="accessory_6"><label for="accessory_6" id="other-accessory-label">other:</label><input type="text" name="other-accessory-name" id="other-accessory-name" class="other-name" aria-labelledby="other-accessory-label">
+					</li>
+				</ul>
+			</section>
+			
+			<section class="action">
+				<label for="smores-name">Name your s'mores:</label>
+				<input type="text" name="smores-name" id="smores-name">
+				<button type="submit" name="build" id="build">build it</button>
+			</section>
+		</form>
+	</section>
+	
+	<h2>Need some inspiration?</h2>
+	<section class="gallery">
+		<article class="gallery-item feature">
+			<h3>Classic</h3>
+			<ul>
+				<li>plain graham crackers</li>
+				<li>plain marshmallow</li>
+				<li>Hershey's chocolate</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Elvis</h3>
+			<ul>
+				<li>chocolate graham crackers</li>
+				<li>plain marshmallow</li>
+				<li>Hershey's chocolate</li>
+				<li>peanut butter</li>
+				<li>banana</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>PB&amp;J</h3>
+			<ul>
+				<li>plain graham crackers</li>
+				<li>plain marshmallow</li>
+				<li>Hershey's chocolate</li>
+				<li>peanut butter</li>
+				<li>strawberries</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Chocolate-covered Strawberry</h3>
+			<ul>
+				<li>chocolate graham crackers</li>
+				<li>plain marshmallow</li>
+				<li>dark chocolate</li>
+				<li>strawberries</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Thanksgiving Casserole</h3>
+			<ul>
+				<li>cinnamon graham crackers</li>
+				<li>plain marshmallow</li>
+				<li>Hershey's chocolate</li>
+				<li>sweet potato puree</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>nutTY</h3>
+			<ul>
+				<li>almond thins cookies</li>
+				<li>plain marshmallow</li>
+				<li>Nutella</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Banana Pudding</h3>
+			<ul>
+				<li>Nilla Wafers</li>
+				<li>plain marshmallow</li>
+				<li>white chocolate</li>
+				<li>banana</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>The Monster</h3>
+			<ul>
+				<li>chocolate graham crackers</li>
+				<li>chocolate marshmallow</li>
+				<li>Reese's peanut butter cup</li>
+				<li>caramel sauce</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Salty-Sweet</h3>
+			<ul>
+				<li>Ritz crackers</li>
+				<li>plain marshmallow</li>
+				<li>Hershey's chocolate</li>
+				<li>peanut butter</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Triple Chocolate</h3>
+			<ul>
+				<li>chocolate graham crackers</li>
+				<li>chocolate marshmallow</li>
+				<li>dark chocolate</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Fruit Salad</h3>
+			<ul>
+				<li>plain graham crackers</li>
+				<li>plain marshmallow</li>
+				<li>white chocolate</li>
+				<li>banana</li>
+				<li>strawberries</li>
+			</ul>
+		</article>
+		<article class="gallery-item">
+			<h3>Cookies 'n' Cream</h3>
+			<ul>
+				<li>Oreos</li>
+				<li>plain marshmallow</li>
+				<li>Hershey's Cookies 'n' Creme bar</li>
+			</ul>
+		</article>
+	</section>
+	
+	<section role="navigation">
+		<ul class="pagination">
+			<li><a href="">Previous</a></li>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">4</a></li>
+			<li><a href="">5</a></li>
+			<li><a href="">6</a></li>
+			<li><a href="">7</a></li>
+			<li><a href="">8</a></li>
+			<li><a href="">Next</a></li>
+		</ul>
+	</section>
+</div>
+</body>
+</html> 
