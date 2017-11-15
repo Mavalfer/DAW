@@ -12,7 +12,7 @@ $page = Request::read('page');//página actual
 if($page === null) {
     $page = 1;
 }
-$rpp = 6;
+$rpp = 2;
 $pagination = new Pagination($rows, $page, $rpp);
 
 //$offset = $rpp * ($page - 1);
@@ -72,9 +72,15 @@ $listaDeContactosTelefonos = $gestor->getAllLimit($pagination->getOffset(), $pag
                 <tr>
                     <td colspan=5>
                         <a href='?page=1'>&lt;&lt;</a>
-                        <a href='?page=<?php echo max($page - 1, 1); ?>'>&lt;</a>
-                        <a href='?page=<?php echo min($page + 1, $pages); ?>'>&gt;</a>
-                        <a href='?page=<?php echo $pages; ?>'>&gt;&gt;</a>
+                        <a href='?page=<?php echo $pagination->previous(); ?>'>&lt;</a>
+                        <?php
+                        $rango = $pagination->getRange();
+                        foreach($rango as $pagina){
+                            echo '<a href="?page=' . $pagina . '">' . $pagina . '</a> ';
+                        }
+                        ?>
+                        <a href='?page=<?php echo $pagination->next(); ?>'>&gt;</a>
+                        <a href='?page=<?php echo $pagination->last() ?>'>&gt;&gt;</a>
                     </td>
                 </tr>
             </tbody>

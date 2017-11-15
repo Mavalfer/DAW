@@ -69,3 +69,18 @@
 [09-Nov-2017 13:42:16 UTC] PHP Fatal error:  Class 'ManagerContacto' not found in /home/ubuntu/workspace/tema4/route_contactotelefono/action_vieweditcontacto.php on line 4
 [09-Nov-2017 13:42:16 UTC] PHP Stack trace:
 [09-Nov-2017 13:42:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/action_vieweditcontacto.php:0
+[13-Nov-2017 12:34:31 UTC] PHP Catchable fatal error:  Argument 2 passed to DataBase::execute() must be of the type array, null given, called in /home/ubuntu/workspace/tema4/classes/ManageContactoTelefono.php on line 71 and defined in /home/ubuntu/workspace/tema4/classes/DataBase.php on line 23
+[13-Nov-2017 12:34:31 UTC] PHP Stack trace:
+[13-Nov-2017 12:34:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:0
+[13-Nov-2017 12:34:31 UTC] PHP   2. ManageContactoTelefono->getAlllimit() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:19
+[13-Nov-2017 12:34:31 UTC] PHP   3. DataBase->execute() /home/ubuntu/workspace/tema4/classes/ManageContactoTelefono.php:71
+[13-Nov-2017 12:38:08 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/tema4/classes/ManageContactoTelefono.php on line 65
+[13-Nov-2017 12:38:08 UTC] PHP Stack trace:
+[13-Nov-2017 12:38:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:0
+[13-Nov-2017 12:38:08 UTC] PHP   2. spl_autoload_call() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:5
+[13-Nov-2017 12:38:08 UTC] PHP   3. AutoLoad::searchClass() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:5
+[13-Nov-2017 13:30:07 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/tema4/classes/Pagination.php on line 49
+[13-Nov-2017 13:30:07 UTC] PHP Stack trace:
+[13-Nov-2017 13:30:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:0
+[13-Nov-2017 13:30:07 UTC] PHP   2. spl_autoload_call() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:16
+[13-Nov-2017 13:30:07 UTC] PHP   3. AutoLoad::searchClass() /home/ubuntu/workspace/tema4/route_contactotelefono/index.php:16
