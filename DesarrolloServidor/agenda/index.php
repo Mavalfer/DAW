@@ -44,6 +44,7 @@ $usuario = $sesion->getUser();
         } else {
             echo '<h1>Hola ' . $usuario->getCorreo() . '</h1>';
             echo '<h1><a href="usuario/dologout.php">cerrar sesion</a></h1>';
+            
         }
         ?>
         <hr>
