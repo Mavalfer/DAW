@@ -37,10 +37,3 @@ create table if not exists telefono (
     descripcion varchar(20) null,
     foreign key (idcontacto) references contacto(id) on delete restrict
 ) engine = innodb default character set = utf8 collate utf8_unicode_ci;
-
-
-create table if not exists usuario (
-    id bigint not null auto_increment primary key,
-    correo varchar(80) not null unique,
-    clave varchar(250) not null
-) engine = innodb default character set = utf8 collate utf8_unicode_ci;

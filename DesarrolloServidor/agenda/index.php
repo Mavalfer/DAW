@@ -1,3 +1,14 @@
+<?php
+require'./classes/AutoLoad.php';
+$op = Request::read('op');
+$r = Request::read('r');
+$mensaje = '';
+if($op !== null) {
+    $mensaje = '<h1>Operación: ' .$op . ' ' . $r . '</h1>';
+}
+$sesion = new Session('agenda');
+$usuario = $sesion->getUser();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,19 +18,34 @@
         <title>Document</title>
     </head>
     <body>
+        <?php
+        echo $mensaje;
+        ?>
         <h1>agenda</h1>
         <hr>
+        <?php
+        if($usuario === null) {
+        ?>
         <h2>date de alta</h2>
-        <form>
-            <input type="text" name=""/>
+        <form method="post" action="usuario/doalta.php">
+            <input type="email" name="correo" placeholder="correo" required>
+            <input type="password" name="clave" placeholder="clave" required>
+            <input type="password" name="claveRepetida" placeholder="repite clave" required>
             <input type="submit" value="Submit"/>
         </form>
         <hr>
         <h2>loguéate</h2>
-        <form>
-            <input type="text" name=""/>
+        <form method="post" action="usuario/dologin.php">
+            <input type="email" name="correo" placeholder="correo" required>
+            <input type="password" name="clave" placeholder="clave" required>
             <input type="submit" value="Submit"/>
         </form>
+        <?php
+        } else {
+            echo '<h1>Hola ' . $usuario->getCorreo() . '</h1>';
+            echo '<h1><a href="usuario/dologout.php">cerrar sesion</a></h1>';
+        }
+        ?>
         <hr>
     </body>
 </html>
