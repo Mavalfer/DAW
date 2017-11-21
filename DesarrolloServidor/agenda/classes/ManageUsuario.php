@@ -47,7 +47,7 @@ class ManageUsuario {
             'correo' => $objeto->getCorreo(),
             'clave' => $objeto->getClave(),
             'verificado' => $objeto->getVerificado(),
-            'id' => $id
+            'id' => $objeto
         );
         $resultado = $this->db->execute($sql, $params);
         if($resultado) {

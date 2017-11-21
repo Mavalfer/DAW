@@ -10,18 +10,20 @@ class Util {
     }
 
     static function enviarCorreo ($destino, $asunto, $mensaje) {
-        require_once 'clases/vendor/autoload.php';
+        require_once '../classes/vendor/autoload.php';
         $cliente = new Google_Client();
-        $cliente->setApplicationName(Constantes::APLICACIONAPIGMAIL);
+        $cliente->setApplicationName(Constants::APPNAME);
+        $cliente->setClientId(Constants::CLIENTID);
+        $cliente->setClientSecret(Constants::CLIENTSECRET);
         $cliente->setAccessType('offline');
-        $cliente->setAccessToken(file_get_contents('_token_/token.conf'));
+        $cliente->setAccessToken(file_get_contents(Constants::TOKEN));
         if ($cliente->getAccessToken()) {
             $service = new Google_Service_Gmail($cliente);
             try {
-                $mail = new PHPMailer();
+                $mail = new PHPMailer\PHPMailer\PHPMailer();
                 $mail->CharSet = "UTF-8";
-                $mail->From = Constantes::CORREO;
-                $mail->FromName = Constantes::ALIAS;
+                $mail->From = Constants::CORREO;
+                $mail->FromName = Constants::ALIAS;
                 $mail->AddAddress($destino);
                 $mail->AddReplyTo($origen, $alias);
                 $mail->Subject = $asunto;
