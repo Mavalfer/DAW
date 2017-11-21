@@ -33,3 +33,142 @@ h1 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 300%;
 }
+
+.intro {
+    margin-bottom: 1.5em;
+    font-size: 125%;
+    line-height: 1.5;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tagline {
+    font-family: 'Emilys Candy';
+    font-size: 1.6em;
+    color: #ff00a7;
+    text-shadow: 1px 1px 1px grey;
+}
+
+.list-nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Emilys Candy';
+    font-weight: normal;
+    font-size: 1.4rem;
+}
+
+.list-nav li a {
+    text-decoration: none;
+    
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+.list-nav li:first-child a {
+    background-color: red;
+    color: aquamarine;
+}
+
+.list-nav li:nth-child(2) a {
+    background-color: #c400ff;
+    color: #ffff00;
+}
+
+.list-nav li:nth-child(3) a {
+    background-color: #fff500;
+    color: #0000ff;
+}
+
+.list-nav li:last-child a {
+    background-color: #0093ff;
+    color: #0014ff;
+}
+
+/*Form builder*/
+
+.builder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+
+
+.component h2 {
+    position: relative;
+    margin: 0 0 .5em 0;
+    padding: 10px 0 0 0;
+}
+
+.component h2::before {
+    content: '';
+    display: block;
+    position: absolute;
+    
+    left: 107px;
+    width: 30px;
+    height: 30px;
+    margin-left: -20px;
+    background-image: url(cookies.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#marshmallow h2::before {
+    left: 60px;
+}
+
+#candy h2::before {
+    
+}
+
+#accessories h2::before {
+    left: 70px; 
+}
+
+.builder ul li {
+    list-style-type: none;
+}
+
+.component {
+    flex: 1 1 200px;
+    
+    display: flex; /*es hijo de flex y a su vez lo convertimos en contenedor flex*/
+    flex-direction: column;
+    
+    
+    
+    
+    margin: 20px 10px;
+    padding: 20px;
+    background: hsla(0,0%,100%,.3);
+}
+
+.component ul {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+/*    justify-content: space-around;*/
+    
+}
+
+.component ul li:last-child {
+    margin-top: auto;
+}
+
+
+
+
+
+
