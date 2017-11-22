@@ -40,6 +40,8 @@ $usuario = $sesion->getUser();
             <input type="password" name="clave" placeholder="clave" required>
             <input type="submit" value="Submit"/>
         </form>
+        <hr>
+        <h3><a href="usuario/claveolvidada.php">He olvidado mi contraseña</a></h3>
         <?php
         } else {
             echo '<h1>Hola ' . $usuario->getCorreo() . '</h1>';
