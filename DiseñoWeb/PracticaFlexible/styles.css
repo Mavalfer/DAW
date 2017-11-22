@@ -111,6 +111,7 @@ h1 {
     padding: 10px 0 0 0;
 }
 
+/*
 .component h2::before {
     content: '';
     display: block;
@@ -124,6 +125,7 @@ h1 {
     background-size: contain;
     background-repeat: no-repeat;
 }
+*/
 
 #marshmallow h2::before {
     left: 60px;
@@ -155,17 +157,160 @@ h1 {
     background: hsla(0,0%,100%,.3);
 }
 
-.component ul {
-    flex: 1;
+.component ul { /*Los li cogen un sangrado automaticamente*/
+    margin: 0;
+    padding: 0; /*esto pal sangrado*/
+    flex: 1; 
     display: flex;
     flex-direction: column;
 /*    justify-content: space-around;*/
+/*    align-items: center;*/
     
 }
 
 .component ul li:last-child {
     margin-top: auto;
+    display: flex;
+    align-items: center;
 }
+
+.component li {
+    margin-bottom: 0.5em; /*espacio entre las lineas*/
+}
+
+.component li:last-child label {
+    margin-right: 10px;
+}
+
+.component .other-name {
+    flex: 1;
+    
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+}
+
+.action {
+    flex: 1 1 100%;
+    
+    display: flex;
+    
+    flex-wrap: wrap;
+    
+    align-items: center;
+    
+    margin: 0 0 0 20px;
+    text-align: center;
+}
+
+.flexbox .action label {
+    margin-right: 10px;
+}
+
+.action label {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: normal;
+    font-size: 112.5%;
+    text-transform: uppercase;
+}
+
+.action input {
+    flex: 1;
+    
+    display: block;
+    
+    width: 100%;
+    
+    box-sizing: border-box;
+}
+
+
+.action button {
+    flex: 1 1 100%;
+    
+    margin-top: 10px;
+    
+    background-color: crimson;
+    padding: 5px;
+    text-transform: uppercase;
+    color: white;
+    color: white;
+    font-weight: 800;
+    border: none;
+}
+
+
+.gallery {
+    display: flex;
+    
+    flex-wrap: wrap;
+    
+    justify-content: space-between;
+    
+    text-align: center;
+}
+
+
+.gallery-item {
+    flex: 1 0 200px;
+    
+    margin: 0 0 10px 10px;
+    padding: 20px;
+    border-radius: 2px;
+    border: 1px solid hsl(30,28%,20%);
+    background: hsl(30,28%,20%);
+    color: hsl(30,28%,90%);
+}
+
+.gallery-item:hover {
+    background: hsl(30,28%,20%);
+    color: #f5a83e;
+    cursor: pointer;
+}
+
+.gallery-item h3 {
+    margin: 0 0 .5em 0;
+}
+
+.gallery-item ul {
+    margin: 0;
+    padding: 5;
+    list-style: square;
+    text-align: left;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    margin: 20px 10px 40px 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.pagination li {
+    order: 2; /*los hijos de un contenedor flexbox tienen la propiedad order, para cambiar el orden de los elementos con el css*/
+}
+
+.pagination a {
+    display: inline-block;
+    
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid hsla(0,0%,100%,.3);
+}
+
+
+
+
+
+
+
+
+
 
 
 

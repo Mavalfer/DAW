@@ -1,0 +1,51 @@
+/* CSS */
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    background: deepskyblue;
+    border-bottom: 2px solid hotpink;
+}
+
+.navigation li {
+    
+}
+
+.navigation li a {
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    color: black;
+}
+
+.navigation a:hover {
+    background: #d800ff;
+}
+
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: center;
+    }
+} 
+
+@media all and (max-width: 600px) {
+    .navigation {
+        flex-flow: column wrap; /*shorthand de un par de cosas*/
+        padding: 0;
+    }
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid blue;
+    }
+    
+    .navigation li:last-of-type a {
+        border-bottom: none;
+    }
+} 
