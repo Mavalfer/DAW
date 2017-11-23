@@ -10,10 +10,14 @@ $mail = Request::read('data');
 $user = $gestor->get($id);
 
 if ($user !== null) {
-    if ($user->getCorreo() === $mail) {
+    if (sha1($user->getCorreo()) === $mail) {
         $user->setVerificado(1);
-        $gestor->edit($user);
-        header('Location: ../index.php?ver=true');
+        $test = $gestor->edit($user);
+        
+        echo Util::varDump($user);
+        echo $test;
+        
+        //header('Location: ../index.php?ver=true&test=' . $test);
     } else {
         header('Location: https://www.google.es/');
     }

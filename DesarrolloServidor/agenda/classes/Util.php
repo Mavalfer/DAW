@@ -76,4 +76,6 @@ class Util {
     static function verificarClave($claveSinEncriptar, $claveEncriptada) {
         return password_verify($claveSinEncriptar, $claveEncriptada);
     }
+    
+    
 }

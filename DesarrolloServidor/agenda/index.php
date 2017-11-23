@@ -2,10 +2,12 @@
 require'./classes/AutoLoad.php';
 $op = Request::read('op');
 $r = Request::read('r');
+$ver = Request::read('ver');
 $mensaje = '';
 if($op !== null) {
     $mensaje = '<h1>Operación: ' .$op . ' ' . $r . '</h1>';
 }
+
 $sesion = new Session('agenda');
 $usuario = $sesion->getUser();
 ?>
