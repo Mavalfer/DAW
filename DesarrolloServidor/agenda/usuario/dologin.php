@@ -12,6 +12,7 @@ if($usuarioBD === null) {
     $r = -1;
 } else {
     $r = Util::verificarClave($usuario->getClave(), $usuarioBD->getClave());
+    
     if($r) {
         $sesion->login($usuarioBD);
         $r = 1;

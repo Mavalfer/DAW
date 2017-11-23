@@ -5,7 +5,7 @@ $db = new DataBase();
 $gestor = new ManageUsuario($db);
 
 $id = Request::read('id');
-$mail = Request::read('mail');
+$mail = Request::read('data');
 
 $user = $gestor->get($id);
 

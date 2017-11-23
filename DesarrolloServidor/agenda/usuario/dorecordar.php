@@ -35,7 +35,7 @@ if(Filter::isEmail($correo)) {
         $enlace .= 'dato=' . $jwt;
         echo $enlace . '<br>';
         //Util::enviarCorreo ($usuarioBD->getCorreo(), 'AppAgenda', 'Mensaje con el enlace de recuperacion: ' . $enlace);
-        Util::enviarCorreo ('asdasdizvdamdaw@gmail.com', 'AppAgenda', 'Mensaje con el enlace de recuperacion: ' . $enlace);
+        Util::enviarCorreo ('mvalfer92@gmail.com', 'AppAgenda', 'Mensaje con el enlace de recuperacion: ' . $enlace);
     }
 }
 //header('Location: ../index.php');
