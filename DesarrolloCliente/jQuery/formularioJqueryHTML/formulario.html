@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción</title>
+    <link rel="stylesheet" href="inscribir.css">
+
+</head>
+
+<body>
+    <h1>Formulario inscripción</h1>
+    <form action="envio.php" method="get" name="formInscripcion" id="formInscripcion">
+        <fieldset>
+            <legend>Información de inscripción</legend>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Al menos 6 caracteres">
+            <br>
+            <label for="verificar">Confirme Password:</label>
+            <input type="password" id="verificar" name="verificar">
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Información general</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <br>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos">
+            <br>
+            <label for="provincia">Provincia:</label>
+            <input type="text" id="provincia" name="provincia" placeholder="Código de 2 caracteres">
+            <br>
+            <label for="codPostal">Codigo postal:</label>
+            <input type="text" id="codPostal" name="codPostal" placeholder="99999">
+            <br>
+            <label for="telefono">Phone Number:</label>
+            <input type="text" id="telefono" name="telefono" placeholder="999-999-999">
+            <br>
+            <label for="fecha">Fecha inicio:</label>
+            <input type="text" id="fecha" name="fecha">
+            <br>
+        </fieldset>
+        <fieldset id="botones">
+            <legend>Envío de inscripción</legend>
+            <label>&nbsp;</label>
+            <input type="submit" id="envio" name="envio" value="envio">
+            <input type="reset" id="borrar" name="borrar" value="Reset">
+            <br>
+        </fieldset>
+    </form>
+    <script src="../jquery-3.2.1.min.js"></script>
+    <script src="inscribir.1.js"></script>
+</body>
+
+</html>
