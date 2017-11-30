@@ -92,7 +92,7 @@ class ControladorUsuario extends Controlador {
     }
 
     private static function sendActivationMail(Usuario $usuario) {
-        $enlace = '<a href="https://curso1718-izvdamdaw.c9users.io/agendamvc/' .
+        $enlace = '<a href="https://daw-mavalfer.c9users.io/DesarrolloServidor/agendamvc/' .
                            'index.php?ruta=usuario&accion=doactiva&' .
                            'id=' . $usuario->getId() .
                            '&data=' . sha1($usuario->getId() . $usuario->getCorreo()) .
