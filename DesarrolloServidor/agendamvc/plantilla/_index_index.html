@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>agenda</h1>
+        <hr>
+            <h2><a href="index.php?ruta=usuario&accion=claveolvidada">he olvidado mi clave de acceso</a></h2>
+            <h2>date de alta</h2>
+            <form method="post" action="?ruta=usuario&accion=doalta">
+                <input type="email" name="correo" placeholder="correo" required>
+                <input type="password" name="clave" placeholder="clave" required>
+                <input type="password" name="claveRepetida" placeholder="repite clave" required>
+                <input type="submit" value="Submit"/>
+            </form>
+            <hr>
+            <h2>loguéate</h2>
+            <form method="post">
+                <input type="hidden" name="ruta" value="usuario">
+                <input type="hidden" name="accion" value="dologin">
+                <input type="email" name="correo" placeholder="correo" required>
+                <input type="password" name="clave" placeholder="clave" required>
+                <input type="submit" value="Submit"/>
+            </form>
+        <hr>
+    </body>
+</html>

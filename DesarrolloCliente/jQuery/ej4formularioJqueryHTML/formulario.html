@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Inscripción</title>
-    <link rel="stylesheet" href="inscribir.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
 
 </head>
 
 <body>
+    <div class="wrapper">
     <h1>Formulario inscripción</h1>
     <form action="envio.php" method="get" name="formInscripcion" id="formInscripcion">
         <fieldset>
@@ -47,13 +49,15 @@
         <fieldset id="botones">
             <legend>Envío de inscripción</legend>
             <label>&nbsp;</label>
-            <input type="submit" id="envio" name="envio" value="envio">
+            <input type="submit" id="envio" name="envio" value="Envio">
             <input type="reset" id="borrar" name="borrar" value="Reset">
             <br>
         </fieldset>
     </form>
-    <script src="../jquery-3.2.1.min.js"></script>
-    <script src="inscribir.1.js"></script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
