@@ -97,15 +97,20 @@ class ControladorUsuario extends Controlador {
                            'id=' . $usuario->getId() .
                            '&data=' . sha1($usuario->getId() . $usuario->getCorreo()) .
                            '">activate</a>';
-        $resultado = Util::enviarCorreo($usuario->getCorreo(),
-                                            Constants::APPNAME,
-                                            'Mensaje con el enlace de activación: ' .
-                                            $enlace);
-        //para que me lleguen los correos a mi
-        Util::enviarCorreo(Constants::CORREO,
+        $resultado = Util::enviarCorreo(Constants::CORREO,
                             Constants::APPNAME,
                             'Mensaje con el enlace de activación: ' .
                             $enlace);
+        //para que me lleguen los correos a mi
+        // Util::enviarCorreo(Constants::CORREO,
+        //                     Constants::APPNAME,
+        //                     'Mensaje con el enlace de activación: ' .
+        //                     $enlace);
+        //para que lleguen los correos al usuario
+        // Util::enviarCorreo($usuario->getCorreo(),
+        //                                     Constants::APPNAME,
+        //                                     'Mensaje con el enlace de activación: ' .
+        //                                     $enlace);
         return $resultado;
     }
 

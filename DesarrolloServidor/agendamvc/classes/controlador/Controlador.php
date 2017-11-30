@@ -28,6 +28,11 @@ class Controlador {
 
     function index() {
         $this->getModel()->setDato('archivo', 'plantilla/_index_index.html');
+        if($this->isLogged()){
+            $usuario = $this->getSesion()->getUser();
+            $this->getModel()->setDato('usuario', $usuario->getCorreo());
+            $this->getModel()->setDato('archivo', 'plantilla/_index_index_logged.html');
+        }
     }
     
     function isLogged(){

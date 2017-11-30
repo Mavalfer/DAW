@@ -24,6 +24,11 @@ class Vista {
         if (!file_exists($archivo)) {
             return '<h1>Error 404</h1>';
         }
-        return file_get_contents($archivo);
+        $texto = file_get_contents($archivo);
+        $datos = $this->getModel()->getDatos();
+        foreach($datos as $indice => $dato) {
+            $texto = str_replace('{{' . $indice . '}}', $dato, $texto); //busca los {{usuario}} en el html y los cambia por el valor
+        }
+        return $texto;
     }
 }
