@@ -25,7 +25,7 @@ $(function() {
         }
         var nombre = validarTextField($('#nombre'));
         var apellidos = validarTextField($('#apellidos'));
-        var provincia = validarTextField($('#provincia'), /^\w{2}$/);
+        var provincia = validarTextField($('#provincia'), /^\w{2}$/, "Maximo 2 letras");
         var postal = validarTextField($('#codPostal'), /^\d{5}$/);
         var telefono = validarTextField($('#telefono'), /^(\d{3}-){2}\d{3}$/);
         var fecha = validarFecha($('#fecha'));
