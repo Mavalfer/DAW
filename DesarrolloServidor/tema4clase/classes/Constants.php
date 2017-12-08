@@ -2,7 +2,7 @@
 
 class Constants {
     const SERVER = 'localhost';
-    const DATABASE = 'dwes';
-    const USER = 'udwes';
-    const PASSWORD = 'cdwes';
+    const DATABASE = 'agenda';
+    const USER = 'uagenda';
+    const PASSWORD = 'cagenda';
 }

@@ -1,0 +1,11 @@
+[16-Nov-2017 11:25:14 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/agenda/usuario/doalta.php on line 5
+[16-Nov-2017 11:28:06 UTC] PHP Catchable fatal error:  Argument 1 passed to ManageUsuario::__construct() must be an instance of DataBase, none given, called in /home/ubuntu/workspace/agenda/usuario/doalta.php on line 6 and defined in /home/ubuntu/workspace/agenda/classes/ManageUsuario.php on line 7
+[16-Nov-2017 11:28:06 UTC] PHP Stack trace:
+[16-Nov-2017 11:28:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/agenda/usuario/doalta.php:0
+[16-Nov-2017 11:28:06 UTC] PHP   2. ManageUsuario->__construct() /home/ubuntu/workspace/agenda/usuario/doalta.php:6
+[16-Nov-2017 11:28:44 UTC] PHP Fatal error:  Call to undefined method DataBase::close() in /home/ubuntu/workspace/agenda/usuario/doalta.php on line 10
+[16-Nov-2017 11:28:44 UTC] PHP Stack trace:
+[16-Nov-2017 11:28:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/agenda/usuario/doalta.php:0
+[16-Nov-2017 12:04:17 UTC] PHP Fatal error:  Class 'util' not found in /home/ubuntu/workspace/agenda/usuario/dologin.php on line 5
+[16-Nov-2017 12:04:17 UTC] PHP Stack trace:
+[16-Nov-2017 12:04:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/agenda/usuario/dologin.php:0

@@ -7,6 +7,7 @@ $rows = $gestor->count();
 
 $action = Request::read('action');
 $result = Request::read('r');
+$opt = Request::read('opt');
 
 $page = Request::read('page');//página actual
 if($page === null) {

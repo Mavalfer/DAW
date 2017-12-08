@@ -2,7 +2,7 @@
 
 class ConstantsRoot {
     const SERVER = 'localhost:3306';
-    const DATABASE = 'dwes';
-    const USER = 'root';
-    const PASSWORD = 'root';
+    const DATABASE = 'agenda';
+    const USER = 'uagenda';
+    const PASSWORD = 'cagenda';
 }
