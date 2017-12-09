@@ -23,6 +23,22 @@ class ManageContacto {
         }
         return $id;
     }
+    
+    public function addConUsuario($objeto) {
+        $sql = 'INSERT INTO contacto(id, idusuario, nombre) VALUES (null, :idusuario, :nombre)';
+        $params = array(
+            'idusuario'  => $objeto->getIdUsuario(),
+            'nombre'     => $objeto->getNombre()
+        );
+        $resultado = $this->db->execute($sql, $params);//true o false
+        if($resultado) {
+            $id = $this->db->getId();
+            $objeto->setId($id);
+        } else {
+            $id = 0;
+        }
+        return $id;
+    }
 
     public function edit($objeto) {
         $sql = 'UPDATE contacto SET nombre = :nombre WHERE id = :id';
@@ -43,6 +59,23 @@ class ManageContacto {
         $sql = 'SELECT * FROM contacto WHERE id = :id';
         $params = array(
             'id'     => $id
+        );
+        $resultado = $this->db->execute($sql, $params);//true o false
+        $sentencia = $this->db->getStatement();
+        $contacto = new Contacto();
+        if($resultado && $fila = $sentencia->fetch()) {
+            $contacto->set($fila);
+        } else {
+            $contacto = null;//si la consulta falla o no encuentra el contacto
+        }
+        return $contacto;
+    }
+    
+    public function getFromNombreAndUsuario($nombre, $usuario) {
+        $sql = 'SELECT * FROM contacto WHERE nombre = :nombre AND idusuario = :idusuario';
+        $params = array(
+            'nombre'     => $nombre,
+            'idusuario'  => $usuario
         );
         $resultado = $this->db->execute($sql, $params);//true o false
         $sentencia = $this->db->getStatement();

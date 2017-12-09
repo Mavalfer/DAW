@@ -1,7 +1,9 @@
 <?php
 require'../classes/AutoLoad.php';
 
+$idTelefono = Request::read('idtelefono');
 $idContacto = Request::read('idcontacto');
+$descTelefono = Request::read('dtelefono');
 $nombreContacto = Request::read('ncontacto');
 
 $sesion = new Session('agenda');
@@ -20,10 +22,12 @@ if($usuario === null) {
     <title>Document</title>
 </head>
 <body>
-    <h1>Editando <?php echo $nombreContacto; ?></h1>
-    <form action="../contacto/doedit.php" method="POST">
-        <input type="hidden" name="idnombre" value="<?php echo $idContacto; ?>"/>
-        <input type="text" name="nombrenuevo" placeholder="Nuevo nombre"/>
+    <h1>Editando <?php echo $descTelefono; ?> de <?php echo $nombreContacto; ?></h1>
+    <form action="../telefono/doedit.php" method="POST">
+        <input type="hidden" name="idcontacto" value="<?php echo $idContacto; ?>"/>
+        <input type="hidden" name="idtelefono" value="<?php echo $idTelefono; ?>"/>
+        <input type="text" name="telnuevo" placeholder="Nuevo telefono"/>
+        <input type="text" name="descnueva" placeholder="Nueva descripcion"/>
         <input type="submit" value="Enviar"/>
     </form>
 </body>

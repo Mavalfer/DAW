@@ -48,7 +48,7 @@ if ($opt === 'pass' && $nuevaPass !== null && $nuevaPass !== "" && $nuevaPass ==
     } else {
         header('Location: ../views/viewEditUsuario.php?opt=nopass2');
     }
-} else {
+} else if ($opt !== 'mail') {
     header('Location: ../views/viewEditUsuario.php?opt=nopass');
 }
 

@@ -1,15 +1,15 @@
 <?php
 require'../classes/AutoLoad.php';
 
-$idContacto = Request::read('idcontacto');
-$nombreContacto = Request::read('ncontacto');
-
 $sesion = new Session('agenda');
 $usuario = $sesion->getUser();
 if($usuario === null) {
     header('Location: ../index.php');
     exit;
 }
+
+$idContacto = Request::read('idcontacto');
+$idTelefono = Request::read('idtelefono');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +20,8 @@ if($usuario === null) {
     <title>Document</title>
 </head>
 <body>
-    <h1>Editando <?php echo $nombreContacto; ?></h1>
-    <form action="../contacto/doedit.php" method="POST">
-        <input type="hidden" name="idnombre" value="<?php echo $idContacto; ?>"/>
-        <input type="text" name="nombrenuevo" placeholder="Nuevo nombre"/>
-        <input type="submit" value="Enviar"/>
-    </form>
+    <h1>¿Estas seguro?</h1>
+    <a href="viewContactos.php">No</a>
+    <a href="../contacto/dodelete.php?idcontacto=<?php echo $idContacto; ?>">Si</a>
 </body>
 </html>

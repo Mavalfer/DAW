@@ -3,22 +3,6 @@ require'./classes/AutoLoad.php';
 $opt = Request::read('opt');
 $r = Request::read('r');
 $mensaje = '';
-if ($opt === 'activar') {
-    if ($r === '1') {
-        echo '<h1>Correo activado</h1>';
-    }
-    if ($r === '0') {
-        echo '<h1>El correo ya ha sido activado</h1>';
-    }
-}
-
-if ($opt === 'reactivar') {
-        echo '<h1>Se ha enviado un enlace de activacion al nuevo correo</h1>';
-}
-
-if ($opt === 'repass') {
-    echo '<h1>Puedes iniciar sesion con tu nueva contraseña</h1>';
-}
 
 $sesion = new Session('agenda');
 $usuario = $sesion->getUser();
@@ -56,6 +40,27 @@ $usuario = $sesion->getUser();
         </form>
         <hr>
         <h3><a href="usuario/claveolvidada.php">He olvidado mi contraseña</a></h3>
+        <span>
+        <?php
+            if ($opt === 'activar') {
+                
+                if ($r === '1') {
+                    echo '<h1>Correo activado</h1>';
+                }
+                if ($r === '0') {
+                    echo '<h1>El correo ya ha sido activado</h1>';
+                }
+            }
+
+            if ($opt === 'reactivar') {
+                    echo '<h1>Se ha enviado un enlace de activacion al nuevo correo</h1>';
+            }
+
+            if ($opt === 'repass') {
+                echo '<h1>Puedes iniciar sesion con tu nueva contraseña</h1>';
+            }
+        ?>
+        </span>
         <?php
         } else {
             header('Location: views/viewContactos.php');

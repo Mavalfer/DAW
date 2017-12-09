@@ -74,11 +74,43 @@ class ManageTelefono {
         }
         return $telefonos;
     }
+    
+    public function getAllTelefonosFromContacto($idContacto) {
+        $sql = 'SELECT * FROM telefono where idcontacto = :idcontacto';
+        $params = array(
+            'idcontacto'     => $idContacto
+        );
+        $resultado = $this->db->execute($sql);
+        $telefonos = array();
+        if($resultado){
+            $sentencia = $this->db->getStatement();
+            while($fila = $sentencia->fetch()) {
+                $telefono = new Telefono();
+                $telefono->set($fila);
+                $telefonos[] = $telefono;
+            }
+        }
+        return $telefonos;
+    }
 
     public function remove($id) {
         $sql = 'DELETE FROM telefono WHERE id = :id';
         $params = array(
             'id'     => $id
+        );
+        $resultado = $this->db->execute($sql, $params);
+        if($resultado) {
+            $filasAfectadas = $this->db->getRowNumber();
+        } else {
+            $filasAfectadas = -1;
+        }
+        return $filasAfectadas;
+    }
+    
+    public function removeFromContacto($id) {
+        $sql = 'DELETE FROM telefono WHERE idcontacto = :idcontacto';
+        $params = array(
+            'idcontacto'     => $id
         );
         $resultado = $this->db->execute($sql, $params);
         if($resultado) {
