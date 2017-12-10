@@ -25,7 +25,7 @@ class Util {
                 $mail->From = Constants::CORREO;
                 $mail->FromName = Constants::ALIAS;
                 $mail->AddAddress($destino);
-                $mail->AddReplyTo($origen, $alias);
+              //  $mail->AddReplyTo($origen, $alias);
                 $mail->Subject = $asunto;
                 $mail->Body = $mensaje;
                 $mail->preSend();

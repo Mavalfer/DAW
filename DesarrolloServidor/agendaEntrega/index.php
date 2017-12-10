@@ -59,6 +59,10 @@ $usuario = $sesion->getUser();
             if ($opt === 'repass') {
                 echo '<h1>Puedes iniciar sesion con tu nueva contraseña</h1>';
             }
+            
+            if ($opt === 'recup') {
+                echo '<h1>Enlace de recuperacion enviado</h1>';
+            }
         ?>
         </span>
         <?php

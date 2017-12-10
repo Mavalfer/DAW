@@ -20,7 +20,7 @@ $gestorTelefono = new ManageTelefono($db);
 $telefonoDB = $gestorTelefono->get($idTelefono);
 $contactoDB = $gestorContacto->get($idContacto);
 
-if ($usuario->getId() === $contactoDB->getIdUsuario() && $contactoDB->getId() === $telefonoDB->getIdContacto()) {
+if ($usuario->getId() === $contactoDB->getIdUsuario() && $contactoDB->getId() === $telefonoDB->getIdContacto() && $nuevoTelefono !== null) {
     $telefonoDB->setTelefono($nuevoTelefono);
     $telefonoDB->setDescripcion($nuevaDesc);
     $gestorTelefono->edit($telefonoDB);

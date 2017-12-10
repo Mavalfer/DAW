@@ -57,7 +57,7 @@ class ManageUsuario {
         }
         return $filasAfectadas;
     }
-
+    /*Edit sin clave?*/
     public function get($id) {
         $sql = 'select * from usuario where id = :id';
         $params = array(

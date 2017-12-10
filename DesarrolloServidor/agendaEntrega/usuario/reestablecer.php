@@ -3,7 +3,7 @@ require '../classes/AutoLoad.php';
 require '../classes/vendor/autoload.php';
 date_default_timezone_set('Europe/Madrid');
 use \Firebase\JWT\JWT;
-$clave = 'mipalabrasecreta';
+$clave = 'wasdwasd';
 $dato = Request::read('dato');
 $decoded = JWT::decode($dato, $clave, array('HS256'));
 

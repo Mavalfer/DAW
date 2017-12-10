@@ -23,6 +23,8 @@ $opt = Request::read('opt');
         <input type="text" name="contacto" placeholder="Nombre de tu contacto"/>
         <input type="submit" value="Enviar"/>
     </form>
+    <br>
+    <a href="viewContactos.php">Volver</a>
     <span>
         <?php
             if ($opt === 'existe') {

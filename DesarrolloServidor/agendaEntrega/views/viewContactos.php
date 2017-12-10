@@ -13,8 +13,6 @@ $db = new DataBase();
 $gestor = new ManageContactoTelefono($db);
 $rows = $gestor->count();
 
-$action = Request::read('action');
-$result = Request::read('r');
 $opt = Request::read('opt');
 $opt2 = Request::read('telborrados');
 $opt3 = Request::read('contborrado');
@@ -75,7 +73,7 @@ $listaDeContactosTelefonos = $gestor->getAllLimitFromId($usuario->getId(), $pagi
                         </td>
                         
                         <td>
-                            <a href="../views/viewDeleteTelefonos.php?idcontacto=<?= $contacto->getId() ?>&idtelefono=<?= $telefono->getId() ?>">
+                            <a href="../views/viewDeleteTelefono.php?idtelefono=<?= $telefono->getId() ?>">
                                 Eliminar telefono
                             </a>
                         </td>
@@ -117,6 +115,10 @@ $listaDeContactosTelefonos = $gestor->getAllLimitFromId($usuario->getId(), $pagi
             
             if ($opt === 'borrarcontacto') {
                 echo '<h1>Borrados ' . $opt2 . ' telefonos y ' . $opt3 . ' contacto' . '</h1>';
+            }
+            
+            if ($opt === 'borrartelefono') {
+                echo '<h1>Borrado ' . $opt2 . ' telefono' . '</h1>';
             }
         ?>
 </body>

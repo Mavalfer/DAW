@@ -13,7 +13,7 @@ if(Filter::isEmail($usuario->getCorreo()) && $usuario->getClave() === $claveRepe
     $resultado = $manager->addUsuario($usuario);
     
     if ($resultado > 0) {
-        $enlaceActivacion = '<a href="https://daw-mavalfer.c9users.io/DesarrolloServidor/agendaEntrega/usuario/doactivar.php?id=' . $resultado . '&data=' . sha1($usuario->getCorreo()) . '"></a>';
+        $enlaceActivacion = 'https://daw-mavalfer.c9users.io/DesarrolloServidor/agendaEntrega/usuario/doactivar.php?id=' . $resultado . '&data=' . sha1($usuario->getCorreo());
         $resultado2 = Util::enviarCorreo ('mvalfer92@gmail.com', 'AppAgenda', $enlaceActivacion);
     }
     $db->closeConnection();

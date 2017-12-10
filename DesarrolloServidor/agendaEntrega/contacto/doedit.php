@@ -16,7 +16,7 @@ $gestorContacto = new ManageContacto($db);
 
 $contactoDB = $gestorContacto->get($idContacto);
 
-if ($usuario->getId() === $contactoDB->getIdUsuario()) {
+if ($usuario->getId() === $contactoDB->getIdUsuario() && $nombreContacto !== null) {
     $contactoDB->setNombre($nombreContacto);
     $gestorContacto->edit($contactoDB);
     header('Location: ../views/viewContactos.php?opt=editado');

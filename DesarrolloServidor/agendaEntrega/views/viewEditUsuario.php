@@ -36,6 +36,8 @@ $opt = Request::read('opt');
         <input type="password" name="repitepass"/>
         <input type="submit" value="Actualizar contraseña"/>
     </form>
+    <br>
+    <a href="viewContactos.php">Volver</a>
     <span>
         <?php 
             if ($opt === 'nomail') {

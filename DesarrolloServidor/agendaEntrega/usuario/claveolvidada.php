@@ -16,10 +16,10 @@ if($usuario !== null) {
         <title>Document</title>
     </head>
     <body>
-        <h2>no recordar clave</h2>
+        <h2>Recuperar clave</h2>
         <form method="post" action="dorecordar.php">
-            <input type="email" name="correo" placeholder="correo" required>
-            <input type="submit" value="Submit"/>
+            <input type="email" name="correo" placeholder="Tu correo" required>
+            <input type="submit" value="Enviar"/>
         </form>
     </body>
 </html>

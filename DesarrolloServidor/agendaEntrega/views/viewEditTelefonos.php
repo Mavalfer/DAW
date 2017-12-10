@@ -30,5 +30,7 @@ if($usuario === null) {
         <input type="text" name="descnueva" placeholder="Nueva descripcion"/>
         <input type="submit" value="Enviar"/>
     </form>
+    <br>
+    <a href="viewContactos.php">Volver</a>
 </body>
 </html>
