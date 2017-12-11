@@ -63,6 +63,19 @@ $usuario = $sesion->getUser();
             if ($opt === 'recup') {
                 echo '<h1>Enlace de recuperacion enviado</h1>';
             }
+            
+            if ($opt === 'expirado') {
+                echo '<h1>Enlace expirado</h1>';
+            }
+            
+            if ($opt === 'passcambiada') {
+                echo '<h1>Contraseña cambiada</h1>';
+            }
+            
+            if ($opt === 'error') {
+                echo '<h1>Error</h1>';
+            }
+            
         ?>
         </span>
         <?php
