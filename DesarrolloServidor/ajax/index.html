@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- https://learn.jquery.com/ajax/jquery-ajax-methods/ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>dwes: proyecto agenda</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- jumbotron -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">proyecto agenda</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                  <div class="form-group">
+                    <input type="text" placeholder="Correo electrónico" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" placeholder="Clave de acceso" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-success">Autentificación</button>
+                </form>
+              </div><!--/.navbar-collapse -->
+            </div>
+        </nav>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1>Agenda</h1>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Acerca de &raquo;</a></p>
+          </div>
+        </div>
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <input id="botonAjax" type="button" value="botón ajax">
+                <a id="enlaceAjax" href="#">enlace ajax</a>
+                <div id="destino"></div>
+            </div>
+            <hr>
+            <footer>
+              <p>&copy; 2017 Company, Inc.</p>
+            </footer>
+        </div> <!-- /container -->
+        <!-- jumbotron -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="ajax.js"></script>
+    </body>
+</html>
