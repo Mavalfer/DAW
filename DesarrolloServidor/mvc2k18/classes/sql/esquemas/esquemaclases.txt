@@ -1,0 +1,20 @@
+Implementación del MVC
+
+a) ControladorFrontal   (terminado)
+b) Enrutador            hay que añadir nuevas entradas a la tabla ruta
+c) Ruta                 (terminado)
+
+Controladores
+    constructor(Modelo)
+    getModel
+    un método por acción
+
+Modelos
+    constructor
+    getDato
+    setDato
+
+Vistas
+    constructor(Modelo)
+    getModel
+    render(accion)
