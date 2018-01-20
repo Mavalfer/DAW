@@ -2,17 +2,34 @@
 
 class Usuario {
 
-    private $id, $correo, $clave, $verificado;
+    private $id, $nombre, $apellidos, $alias, $correo, $clave, $tipo, $fechaalta, $verificado;
     
-    function __construct($id = null, $correo = null, $clave = null, $verificado = null) {
+    function __construct($id = null, $nombre = null, $apellidos = null, $alias = null, $correo = null, $clave = null, $tipo = null, $fechaalta = null, $verificado = null) {
         $this->id = $id;
+        $this->nombre = $nombre;
+        $this->apellidos = $apellidos;
+        $this->alias = $alias;
         $this->correo = $correo;
         $this->clave = $clave;
+        $this->tipo = $tipo;
+        $this->fechaalta = $fechaalta;
         $this->verificado = $verificado;
     }
 
     function getId() {
         return $this->id;
+    }
+
+    function getNombre(){
+        return $this->nombre;    
+    }
+    
+    function getApellidos() {
+        return $this->apellidos;    
+    }
+    
+    function getAlias() {
+        return $this->alias;    
     }
 
     function getCorreo() {
@@ -21,6 +38,14 @@ class Usuario {
 
     function getClave() {
         return $this->clave;
+    }
+
+    function getTipo() {
+        return $this->tipo;
+    }
+
+    function getFecha() {
+        return $this->fechaalta;
     }
 
     function getVerificado() {
@@ -47,6 +72,13 @@ class Usuario {
         $this->verificado = $verificado;
     }
     
+    function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
+    
+    function setFechaAlta($fecha) {
+        $this->fechaalta = $fecha;
+    }
     /* común a todas las clases */
 
     function getAttributes(){

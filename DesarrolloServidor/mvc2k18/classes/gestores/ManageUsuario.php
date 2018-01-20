@@ -26,10 +26,15 @@ class ManageUsuario {
     }
 
     public function addUsuario(Usuario $objeto) {
-        $sql = 'insert into usuario(correo, clave, verificado) values (:correo, :clave, 0)';
+        $sql = 'insert into usuario(nombre, apellidos, alias, correo, clave, tipo, fechaalta, verificado) values (:nombre, :apellidos, :alias, :correo, :clave, :tipo, :fechaalta, 0)';
         $params = array(
+            'nombre' => $objeto->getNombre(),
+            'apellidos' => $objeto->getApellidos(),
+            'alias' => $objeto->getAlias(),
             'correo' => $objeto->getCorreo(),
-            'clave' => Util::encriptar($objeto->getClave())
+            'clave' => Util::encriptar($objeto->getClave()),
+            'tipo' => $objeto->getTipo(),
+            'fechaalta' => $objeto->getFecha()
         );
         $resultado = $this->db->execute($sql, $params);
         if($resultado) {

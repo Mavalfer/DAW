@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <link href="plantilla/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="plantilla/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="plantilla/css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <a class="btn btn-primary btn-block" href="?accion=borrar&id={{id}}">Borrar</a>
+        <a class="btn btn-primary btn-block" href="?acccion=index">Volver</a>
+        <form>
+          <div class="form-group">
+            <label for="correo">Email address</label>
+            <input class="form-control" name="correo" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="clave">Password</label>
+            <input class="form-control" name="clave" type="password" placeholder="Password">
+          </div>
+         <!-- <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember Password</label>
+            </div>
+          </div> !-->
+          <input type="hidden" name="accion" value="login">
+          <input type="hidden" name="ruta" value="index">
+          <input type="submit" class="btn btn-primary btn-block" value="Login">
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="?accion=registrarusuario">Register an Account</a>
+          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="plantilla/vendor/jquery/jquery.min.js"></script>
+  <script src="plantilla/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="plantilla/vendor/jquery-easing/jquery.easing.min.js"></script>
+</body>
+
+</html>

@@ -1,7 +1,5 @@
 <?php
 
-/* vamos a dejarlo con sólo los métodos comunes a todos */
-
 class Controlador {
 
     private $modelo;

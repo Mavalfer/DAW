@@ -3,15 +3,18 @@
 class Constants {
     //base de datos
     const SERVER = 'localhost';
-    const DATABASE = 'agenda';
-    const USER = 'uagenda';
-    const PASSWORD = 'cagenda';
+    const DATABASE = 'appenero';
+    const USER = 'uenero';
+    const PASSWORD = 'cenero';
 
-    //correo electrónico
-    const ALIAS = 'Clases de DWES en DAW';
-    const APPNAME = 'AppAgenda';
-    const CLIENTID = '55473887151-5n82enecr0d67mv606gr3p2i0hs2hs5p.apps.googleusercontent.com';
-    const CLIENTSECRET = 'UYmlsrNnjA1ieiv2OfK67_Br';
-    const CORREO = 'izvdamdaw@gmail.com';
-    const TOKEN = 'classes/token/token.conf';
+    //correo
+    const APPNAME = "Correo Electronico";
+    const CLIENTID = "636681053867-uviv30gv3i8ncbfd45qi11kli0kqlpmd.apps.googleusercontent.com";
+    const CLIENTSECRET = "lzzPNosCJjP8cpTnz-XzcTgf";
+    const TOKEN = "../classes/token/token.conf";
+    const CORREO = "mvalfer92@gmail.com";
+    const ALIAS = "Miguel";
+    
+    //sesion
+    const NOMBRESESSION = 'mvcentrega';
 }
