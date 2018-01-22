@@ -49,7 +49,11 @@ class Usuario {
     }
 
     function getVerificado() {
-        return $this->verificado;
+        $r = false; 
+        if($this->verificado) {
+            $r = true;
+        }
+        return $r;
     }
 
     function isVerificado() {

@@ -47,10 +47,14 @@ class ManageUsuario {
     }
 
     public function edit(Usuario $objeto) {
-        $sql = 'update usuario set correo = :correo , clave = :clave, verificado = :verificado where id = :id';
+        $sql = 'update usuario set nombre = :nombre, apellidos = :apellidos, alias = :alias, correo = :correo , clave = :clave, tipo = :tipo, verificado = :verificado where id = :id';
         $params = array(
+            'nombre' => $objeto->getNombre(),
+            'apellidos' => $objeto->getApellidos(),
+            'alias' => $objeto->getAlias(),
             'correo' => $objeto->getCorreo(),
             'clave' => Util::encriptar($objeto->getClave()),
+            'tipo' => $objeto->getTipo(),
             'verificado' => $objeto->getVerificado(),
             'id' => $objeto->getId()
         );
@@ -80,9 +84,51 @@ class ManageUsuario {
 
     public function editSinClave(Usuario $objeto) {
         $sql = 'update usuario set correo = :correo , verificado = :verificado where id = :id';
+        $verificado = 0;
+        if ($objeto->getVerificado()) {
+            $verificado = 1;
+        }
         $params = array(
             'correo' => $objeto->getCorreo(),
-            'verificado' => $objeto->getVerificado(),
+            'verificado' => $verificado,
+            'id' => $objeto->getId()
+        );
+        $resultado = $this->db->execute($sql, $params);
+        if($resultado) {
+            $filasAfectadas = $this->db->getRowNumber();
+        } else {
+            $filasAfectadas = -1;
+        }
+        return $filasAfectadas;
+    }
+    
+    public function editSinTipo(Usuario $objeto) {
+        $sql = 'update usuario set nombre = :nombre, apellidos = :apellidos, alias = :alias, correo = :correo, verificado = 0, clave = :clave where id = :id';
+        $params = array(
+            'nombre' => $objeto->getNombre(),
+            'apellidos' => $objeto->getApellidos(),
+            'alias' => $objeto->getAlias(),
+            'correo' => $objeto->getCorreo(),
+            'clave' => Util::encriptar($objeto->getClave()),
+            'id' => $objeto->getId()
+        );
+        $resultado = $this->db->execute($sql, $params);
+        if($resultado) {
+            $filasAfectadas = $this->db->getRowNumber();
+        } else {
+            $filasAfectadas = -1;
+        }
+        return $filasAfectadas;
+    }
+    
+    public function editSinTipoAdvanced(Usuario $objeto) {
+        $sql = 'update usuario set nombre = :nombre, apellidos = :apellidos, alias = :alias, correo = :correo, clave = :clave where id = :id';
+        $params = array(
+            'nombre' => $objeto->getNombre(),
+            'apellidos' => $objeto->getApellidos(),
+            'alias' => $objeto->getAlias(),
+            'correo' => $objeto->getCorreo(),
+            'clave' => Util::encriptar($objeto->getClave()),
             'id' => $objeto->getId()
         );
         $resultado = $this->db->execute($sql, $params);
@@ -153,5 +199,16 @@ class ManageUsuario {
             $filasAfectadas = -1;
         }
         return $filasAfectadas;
+    }
+    
+    public function getNumAdmins() {
+        $sql = 'select count(tipo) from usuario where tipo = "admin"';
+        $resultado = $this->db->execute($sql, array());
+        if($resultado) {
+            $filasContadas = $this->db->getCount();
+        } else {
+            $filasContadas = -1;
+        }
+        return $filasContadas;
     }
 }

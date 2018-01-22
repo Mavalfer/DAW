@@ -19,31 +19,17 @@
 <body class="bg-dark">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
+      <div class="card-header">Password recovery</div>
       <div class="card-body">
         <form>
           <div class="form-group">
             <label for="correo">Email address</label>
             <input class="form-control" name="correo" type="email" aria-describedby="emailHelp" placeholder="Enter email">
           </div>
-          <div class="form-group">
-            <label for="clave">Password</label>
-            <input class="form-control" name="clave" type="password" placeholder="Password">
-          </div>
-         <!-- <div class="form-group">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox"> Remember Password</label>
-            </div>
-          </div> !-->
-          <input type="hidden" name="accion" value="login">
+          <input type="hidden" name="accion" value="recuperar">
           <input type="hidden" name="ruta" value="index">
-          <input type="submit" class="btn btn-primary btn-block" value="Login">
+          <input type="submit" class="btn btn-primary btn-block" value="Recuperar">
         </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="?accion=registrarusuario">Register an Account</a>
-          <a class="d-block small" href="?accion=gorecuperar">Forgot Password?</a>
-        </div>
       </div>
     </div>
   </div>

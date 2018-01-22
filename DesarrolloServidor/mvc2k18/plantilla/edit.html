@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <link href="plantilla/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="plantilla/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="plantilla/css/sb-admin.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Editing {{nombre}}</div>
+      <div class="card-body">
+        <form method='post'>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="nombre">First name</label>
+                <input class="form-control" name="nombre" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
+              </div>
+              <div class="col-md-6">
+                <label for="apellidos">Last name</label>
+                <input class="form-control" name="apellidos" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="alias">Alias</label>
+                <input class="form-control" name="alias" type="text" placeholder="Enter alias">
+              </div>
+              <div class="col-md-6">
+                <label for="correo">Email address</label>
+                <input class="form-control" name="correo" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label for="tipo">Role</label>
+                <input class="form-control" name="tipo" type="text" placeholder="Enter role">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <label for="clave">Password</label>
+                <input class="form-control" name="clave" type="password" placeholder="Password">
+              </div>
+              <div class="col-md-6">
+                <label for="claveRepetida">Confirm password</label>
+                <input class="form-control" name="claveRepetida" type="password" placeholder="Confirm password">
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="accion" value="editar">
+          <input type="hidden" name="ruta" value="index">
+          <input type="hidden" name="id" value="{{id}}">
+          <input type="submit" class="btn btn-primary btn-block" value="Edit">
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="plantilla/vendor/jquery/jquery.min.js"></script>
+  <script src="plantilla/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="plantilla/vendor/jquery-easing/jquery.easing.min.js"></script>
+</body>
+
+</html>

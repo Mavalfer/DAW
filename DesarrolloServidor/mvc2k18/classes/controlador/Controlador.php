@@ -7,7 +7,7 @@ class Controlador {
 
     function __construct(Modelo $modelo) {
         $this->modelo = $modelo;
-        $this->sesion = new Session('agendamvc');
+        $this->sesion = new Session('appenero');
         if($this->isLogged()) {
             $usuario = $this->getUser();
             $this->getModel()->setDato('usuario', $usuario->getCorreo());
@@ -32,16 +32,18 @@ class Controlador {
     
     function isAdministrator() {
         return $this->isLogged() &&
-                $this->getUser()->getCorreo() === 'admin@admin.es';
+                $this->getUser()->getTipo() === 'admin';
     }
     
     function isAdvanced() {
         return $this->isLogged() &&
-                $this->getUser()->getTipo() === 'avanzado';
+                $this->getUser()->getTipo() === 'adv';
     }
 
     function isLogged() {
         return $this->getSesion()->isLogged();
     }
+    
+    
 
 }

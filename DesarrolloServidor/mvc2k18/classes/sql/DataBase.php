@@ -53,4 +53,8 @@ class DataBase {
     function getStatement(){
         return $this->sentencia;
     }
+    
+    function getCount() {
+        return $this->sentencia->fetchColumn();
+    }
 }
