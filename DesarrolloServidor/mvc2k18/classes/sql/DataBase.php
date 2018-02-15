@@ -23,7 +23,11 @@ class DataBase {
     function execute($sql, array $parametros = array()) {
         $this->sentencia = $this->conexion->prepare($sql);
         foreach ($parametros as $nombreDelParametro => $valorDelParametro) {
-            $this->sentencia->bindValue($nombreDelParametro, $valorDelParametro);
+            if(is_array($valorDelParametro)){
+                $this->sentencia->bindValue($nombreDelParametro, $valorDelParametro['valor'], $valorDelParametro['tipo']);
+            } else {
+                $this->sentencia->bindValue($nombreDelParametro, $valorDelParametro);
+            }
         }
         $r = $this->sentencia->execute();//true o false
         /*

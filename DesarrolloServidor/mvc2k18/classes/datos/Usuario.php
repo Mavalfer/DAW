@@ -83,6 +83,7 @@ class Usuario {
     function setFechaAlta($fecha) {
         $this->fechaalta = $fecha;
     }
+    
     /* común a todas las clases */
 
     function getAttributes(){

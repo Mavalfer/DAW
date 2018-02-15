@@ -11,7 +11,7 @@ class VistaBootstrap extends Vista {
         $archivo = $datos['archivo'];
         return Util::renderTemplate($archivo, $datos);
     }
-
+    
     function render($accion) {
         if(!method_exists(get_class(), $accion)) {
             $accion = 'index';

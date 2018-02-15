@@ -9,7 +9,8 @@ class ControladorUsuario extends Controlador {
     function __construct(Modelo $modelo) {
         parent::__construct($modelo);
         $msg = Request::read('msg');
-        $this->getModel()->setDato('mensaje', $this->mensajes[$msg]);
+        if(isset($this->mensajes[$msg]))
+               $this->getModel()->setDato('mensaje', $this->mensajes[$msg]);
     }
 
     function index() {
@@ -36,28 +37,44 @@ class ControladorUsuario extends Controlador {
                                 <td>{{fechaalta}}</td>
                                 <td>{{verificado}}</td>
                                 ';
-            if($this->isAdministrator()) {
-                $usuarios = $this->getModel()->getUsuarios();
-                $todo = '';
-                $lineaAdmin = $linea .= '<td><a href="?ruta=index&accion=editarusuarioadmin&id={{id}}">editar</a></td>
-                                        <td><a href="?ruta=index&accion=borrarusuarioadmin&id={{id}}">borrar</a></td>
-                                     </tr>';
-                foreach($usuarios as $indice => $usuario) {
-                    $r = Util::renderText($lineaAdmin, $usuario->getAttributesValues());
-                    $todo .= $r;
-                }
-                $this->getModel()->setDato('lineasUsuario', $todo);
-                $this->getModel()->setDato('admincontrol' , '<a href="?ruta=index&accion=adminadduser" class="btn btn-primary btn-lg">Add user</a>');
-            } else {
-                $usuario = $this->getModel()->getUsuario($this->getSesion()->getUser());
-                $todo = '';
-                $lineaUser = $linea .= '<td><a href="?ruta=index&accion=editarusuariouser&id={{id}}">editar</a></td>
-                                        <td><a href="?ruta=index&accion=borrarusuariouser&id={{id}}">borrar</a></td>
-                                     </tr>';
-                $r = Util::renderText($lineaUser, $usuario->getAttributesValues());
+        if($this->isAdministrator()) {
+            if(Request::read('page') === null){
+                $pagina = 1;
+            }else{
+                $pagina = Request::read('page');
+            }
+            $paginar = new Pagination($this->getModel()->getCount() , $pagina , 3);
+            $usuarios = $this->getModel()->paginarUsuarios($paginar->getOffset(),  $paginar->getRpp());
+            $todo = '';
+            $lineaAdmin = $linea .= '<td><a href="?ruta=index&accion=editarusuarioadmin&id={{id}}">edit</a></td>
+                                    <td><a href="?ruta=index&accion=borrarusuario&id={{id}}">delete</a></td>
+                                 </tr>';
+            foreach($usuarios as $indice => $usuario) {
+                $r = Util::renderText($lineaAdmin, $usuario->getAttributesValues());
                 $todo .= $r;
-                $this->getModel()->setDato('lineasUsuario', $todo);
-            } 
+            }
+   
+            $enlaces = '<a class="btn btn-primary" href="?ruta=index&page=' . $paginar->getFirst() . '">First</a> ';
+                foreach($paginar->getRange() as $number){
+                    $enlaces .= '<a class="btn btn-secondary" href="?ruta=index&page=' . $number . '">' . $number . '</a> ';
+                }
+            $enlaces .= '<a class="btn btn-primary" href="?ruta=index&page=' . $paginar->getLast() . '">Last</a> ';
+            $this->getModel()->setDato('enlaces' , $enlaces);
+     
+            $this->getModel()->setDato('lineasUsuario', $todo);
+            $this->getModel()->setDato('admincontrol' , '<a href="?ruta=index&accion=adminadduser" class="btn btn-primary btn-lg">Add user</a>');
+        } else {
+            $usuario = $this->getModel()->getUsuario($this->getSesion()->getUser());
+            $todo = '';
+            $lineaUser = $linea .= '<td><a href="?ruta=index&accion=editarusuariouser&id={{id}}">edit</a></td>
+                                    <td><a href="?ruta=index&accion=borrarusuario&id={{id}}">delete</a></td>
+                                 </tr>';
+            $r = Util::renderText($lineaUser, $usuario->getAttributesValues());
+            $todo .= $r;
+            $this->getModel()->setDato('lineasUsuario', $todo);
+            $this->getModel()->setDato('form', '<form method="post" enctype="multipart/form-data"><input type="file" name="foto"><input type="hidden" name="accion" value="subirfoto"><input type="hidden" name="ruta" value="index"><input type="hidden" name="id" value="{{id}}"><input type="submit" value="Subir foto"></form>');
+            $this->getModel()->setDato('ver', '<img src="?ruta=index&accion=verfoto">');
+        } 
     }
     
     //acciones
@@ -67,6 +84,10 @@ class ControladorUsuario extends Controlador {
     
     function getSessionUserName(){
         return $this->getSesion()->getUser()->getNombre();
+    }
+    
+    function getSessionUserId() {
+        return $this->getSesion()->getUser()->getId();
     }
     
     function activar() {
@@ -121,8 +142,7 @@ class ControladorUsuario extends Controlador {
         $resultado2 = Util::enviarCorreo (Constants::CORREO, Constants::APPNAME, 'Mensaje con el enlace de activación: ' . $enlace);
     }
     
-    function borrarusuarioadmin() {
-        if($this->isAdministrator()){
+    function borrarusuario() {
             $id = Request::read('id');
             $this->getModel()->setDato('archivo', 'plantilla/borrarusuario.html');
             $this->getModel()->setDato('id', $id);
@@ -130,24 +150,27 @@ class ControladorUsuario extends Controlador {
             $usuario->setId($id);
             $usuario = $this->getModel()->getUsuario($usuario);
             $this->getModel()->setDato('nombre', $usuario->getNombre());
-        }
-        header('Location: index.php?ruta=index');
-        exit();
     }
 
     function borrar() {
         $resultado = 0;
         $msg = '';
+        $id = Request::read('id');
         if($this->isAdministrator()) {
-            $id = Request::read('id');
             $usuario = new Usuario($id);
             $usuario->setId($id);
             $usuario = $this->getModel()->getUsuario($usuario);
-            if($this->getModel()->numeroAdmins() > 1) {
+            if($this->getModel()->numeroAdmins() !== 1 && $this->getSessionUserId() !== $id) {
                 $resultado = $this->getModel()->borrarUsuario($usuario);
             } else {
                 $msg = 'ultimoadmin';
             }
+        } else if ($this->getSessionUserId() === $id) {
+            $usuario = new Usuario($id);
+            $usuario->setId($id);
+            $usuario = $this->getModel()->getUsuario($usuario);
+            $resultado = $this->getModel()->borrarUsuario($usuario);
+            $this->cerrarsesion();
         }
         header('Location: index.php?ruta=index&op=borrar&res=' . $resultado . '&msg=' . $msg);
         exit();
@@ -162,10 +185,11 @@ class ControladorUsuario extends Controlador {
             $usuario = new Usuario();
             $usuario->setId($id);
             $usuario = $this->getModel()->getUsuario($usuario);
-            $this->getModel()->setDato('nombre', $usuario->getNombre());
+            foreach ($usuario->getAttributesValues() as $indice => $valor) {
+                $this->getModel()->setDato($indice, $valor);
+            }
+            
         }
-        header('Location: index.php?ruta=index');
-        exit();
     }
     
     function editar() {
@@ -174,7 +198,11 @@ class ControladorUsuario extends Controlador {
             $usuario = new Usuario();
             $usuario->read();
             if (Request::read('claveRepetida') === $usuario->getClave()){
-                $resultado = $this->getModel()->editarUsuario($usuario);
+                if ($usuario->getClave() === null) {
+                    $resultado = $this->getModel()->editarSinClave($usuario);
+                } else {
+                    $resultado = $this->getModel()->editarUsuario($usuario);
+                }
             }
         }
         header('Location: index.php?ruta=index&op=editar&res=' . $resultado);
@@ -188,8 +216,15 @@ class ControladorUsuario extends Controlador {
     }
     
     function editarusuariouser() {
-        if ($this->isLogged() && $this->isCurrentUser(Request::read('id'))) {
+        $id = Request::read('id');
+        if ($this->isLogged() && $this->isCurrentUser($id)) {
             $this->getModel()->setDato('archivo', 'plantilla/useredit.html');
+            $usuario = new Usuario();
+            $usuario->setId($id);
+            $usuario = $this->getModel()->getUsuario($usuario);
+            foreach ($usuario->getAttributesValues() as $indice => $valor) {
+                $this->getModel()->setDato($indice, $valor);
+            }
         }
     }
     
@@ -205,11 +240,26 @@ class ControladorUsuario extends Controlador {
             if (Util::verificarClave(Request::read('claveVieja'), $this->getModel()->getUsuario($usuario)->getClave())) {
                 if (Request::read('claveRepetida') === $usuario->getClave()){
                     if($this->isAdvanced()) {
-                        $resultado = $this->getModel()->editSelfUserAdvanced($usuario);
+                        if ($usuario->getClave() === null) {
+                            $resultado = $this->getModel()->editSelfUserAdvancedSinClave($usuario);
+                        } else {
+                            $resultado = $this->getModel()->editSelfUserAdvanced($usuario);
+                        }
                     } else {
-                        $resultado = $this->getModel()->editSelfUser($usuario);
-                        $this->remail($usuario);
-                        $this->cerrarsesion();
+                        if ($usuario->getClave() === null) {
+                            $resultado = $this->getModel()->editSelfUserSinClave($usuario);
+                            if ($this->getModel()->getDato('correoCambiado')) {
+                                $this->remail($usuario);
+                                $this->cerrarsesion();
+                            }
+                        } else {
+                            $resultado = $this->getModel()->editSelfUser($usuario);
+                            if ($this->getModel()->getDato('correoCambiado')) {
+                                $this->remail($usuario);
+                                $this->cerrarsesion();
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -231,6 +281,32 @@ class ControladorUsuario extends Controlador {
         }
         header('Location: index.php?ruta=index');
         exit();
+    }
+    
+    function subirfoto() {
+        $id = $this->getSessionUserId();
+        if($this->isLogged() && $this->isCurrentUser($id)){
+            $upload = new FileUpload('foto' , $id, '../../fotos' , 2 * 1024 * 1024, FileUpload::SOBREESCRIBIR);
+            $res = $upload->upload();
+            header('Location: index.php?ruta=index&id=' . $id . '&op=subirfoto&res=' . $res);
+            exit;
+        }else{
+            $this->index();
+        }
+    }
+    
+    function verfoto(){
+        if($this->isLogged()) {
+            header('Content-type: image/*');
+            $archivo = '../../fotos/' . $this->getUser()->getId();
+            if(!file_exists($archivo)) {
+                $archivo = '../../fotos/0';
+            }
+            readfile($archivo);
+            exit();
+        } else {
+            $this->index();
+        }
     }
     
     function checkMail($usuario) {

@@ -86,14 +86,14 @@ header .lema {
     width: 364px;
     height: 675px;
     top: 81px;
-    left: 622px;
+    left: 550px;
 }
 
 .sectionInicio1 div {
     width: 448px;
     height: 675px;
     top: 81px;
-    left: 1038px;+
+    left: 950px;
 }
 
 /*----------------------*/
@@ -110,7 +110,7 @@ header .lema {
 
 .inicio2Contenido #pIzda {
     width: 320px;
-    height: 420px;
+    height: 415px;
     left: 10px;
 }
 
@@ -121,12 +121,18 @@ header .lema {
     right: 10px;
 }
 
-.inicio2Contenido .organic {
-    
+.inicio2Contenido #organic {
+    width: 320px;
+    height: 340px;
+    top: 0px;
+    right: 10px;
 }
 
-.inicio2Contenido .natural {
-    
+.inicio2Contenido #natural {
+    width: 320px;
+    height: 325px;
+    bottom: 0px;
+    left: 10px;
 }
 
 /*----------------------*/
@@ -157,7 +163,7 @@ footer #footerP2 {
     left: 781px;
 }
 
-footer div {
+footer .social {
     width: 305px;
     height: 105px;
     top: 190px;
@@ -169,6 +175,34 @@ footer #copyright {
     height: 20px;
     top: 450px;
     left: 708px;
+}
+
+footer #facebook {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 35px;
+}
+
+footer #twitter {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 95px;
+}
+
+footer #instagram {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 155px;
+}
+
+footer #pinterest {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 215px;
 }
 
 footer {
@@ -183,8 +217,12 @@ footer #footerP2 {
     background-color: aqua;
 }
 
-footer div {
+footer .social {
     background-color: aqua;
+}
+
+footer .social div {
+    background-color: red;
 }
 
 footer #copyright {
@@ -246,5 +284,14 @@ footer #copyright {
     .inicio2Contenido #pDcha {
         background-color: dimgray;
     }
+    
+    .inicio2Contenido #organic {
+        background-color: red;
+    }
+
+    .inicio2Contenido #natural {
+        background-color: red;
+    } 
+    
 
 /*-----------------------*/

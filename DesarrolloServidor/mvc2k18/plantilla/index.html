@@ -33,6 +33,12 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="?ruta=paciente&accion=paciente">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Ver pacientes</span>
+          </a>
+        </li>
       </ul> 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -80,10 +86,13 @@
                 {{lineasUsuario}}
               </tbody>
             </table>
-            {{admincontrol}}{{usercontrol}}
+            <div>{{enlaces}}</div>
           </div>
+          
         </div>
+        {{admincontrol}}{{usercontrol}}
       </div>
+      {{form}} {{ver}}
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->

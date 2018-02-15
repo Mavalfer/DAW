@@ -83,14 +83,18 @@ class ManageUsuario {
     }
 
     public function editSinClave(Usuario $objeto) {
-        $sql = 'update usuario set correo = :correo , verificado = :verificado where id = :id';
+        $sql = 'update usuario set nombre = :nombre, apellidos = :apellidos, alias = :alias, correo = :correo, tipo = :tipo, verificado = :verificado where id = :id';
         $verificado = 0;
         if ($objeto->getVerificado()) {
             $verificado = 1;
         }
         $params = array(
+            'nombre' => $objeto->getNombre(),
+            'apellidos' => $objeto->getApellidos(),
+            'alias' => $objeto->getAlias(),
             'correo' => $objeto->getCorreo(),
-            'verificado' => $verificado,
+            'tipo' => $objeto->getTipo(),
+            'verificado' => $objeto->getVerificado(),
             'id' => $objeto->getId()
         );
         $resultado = $this->db->execute($sql, $params);
@@ -139,6 +143,42 @@ class ManageUsuario {
         }
         return $filasAfectadas;
     }
+    
+    public function editSinTipoSinClave(Usuario $objeto) {
+        $sql = 'update usuario set nombre = :nombre, apellidos = :apellidos, alias = :alias, correo = :correo, verificado = 0 where id = :id';
+        $params = array(
+            'nombre' => $objeto->getNombre(),
+            'apellidos' => $objeto->getApellidos(),
+            'alias' => $objeto->getAlias(),
+            'correo' => $objeto->getCorreo(),
+            'id' => $objeto->getId()
+        );
+        $resultado = $this->db->execute($sql, $params);
+        if($resultado) {
+            $filasAfectadas = $this->db->getRowNumber();
+        } else {
+            $filasAfectadas = -1;
+        }
+        return $filasAfectadas;
+    }
+    
+    public function editSinTipoSinClaveAdvanced(Usuario $objeto) {
+        $sql = 'update usuario set nombre = :nombre, apellidos = :apellidos, alias = :alias, correo = :correo where id = :id';
+        $params = array(
+            'nombre' => $objeto->getNombre(),
+            'apellidos' => $objeto->getApellidos(),
+            'alias' => $objeto->getAlias(),
+            'correo' => $objeto->getCorreo(),
+            'id' => $objeto->getId()
+        );
+        $resultado = $this->db->execute($sql, $params);
+        if($resultado) {
+            $filasAfectadas = $this->db->getRowNumber();
+        } else {
+            $filasAfectadas = -1;
+        }
+        return $filasAfectadas;
+    }
 
     public function get($id) {
         $sql = 'select * from usuario where id = :id';
@@ -169,6 +209,41 @@ class ManageUsuario {
             }
         }
         return $objetos;
+    }
+
+    function getAllCount(){
+        $sql = 'select count(*) from usuario';
+        $res = $this->db->execute($sql);
+        if($res){
+            $sentencia = $sentencia = $this->db->getStatement();
+            $fila = $sentencia->fetch();
+            return $fila[0];       
+        }
+        return $res;
+    }
+
+    function getUserLimit($a , $b){
+        $sql = 'select * from usuario limit ' . $a . ',' . $b . ';';
+        /*$params = array(
+            'a' => $a,
+            'b' => $b
+        );*/
+        $sql = 'select * from usuario limit :desde, :numregistros;';
+        $params = array(
+            'desde' => array('valor' => $a, 'tipo' => PDO::PARAM_INT),
+            'numregistros' => array('valor' => $b, 'tipo' => PDO::PARAM_INT)
+        );
+        $res = $this->db->execute($sql, $params);
+        $usuarios = array();
+        if($res){
+            $sentencia = $this->db->getStatement();
+            while($fila = $sentencia->fetch()){
+                $usuario = new Usuario();
+                $usuario->set($fila);
+                $usuarios[] = $usuario;
+            }
+        }
+        return $usuarios;
     }
 
     public function getFromCorreo($correo) {

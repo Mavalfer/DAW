@@ -1,0 +1,19 @@
+#este archivo en realidad deberia etsar en la carpeta superior que engloba a esta
+#para cubrir el caso de que no pidas nada
+#DirectoryIndex servidorrest.php
+#activar reglas de reescritura con una regex, 
+#quiere decir que pida lo que pida que se vaya al servidor rest
+#RewriteEngine On 
+#ahi esta la regex, y el url=$1 quiere decir que lo que ha pedido se pasa como parametro 
+#(llamado parametro, url o como pollas quieras, pero con ese nombre se leera en el .php)
+#QSA significa query string append, para que agregue correctamente el parametro a la url
+#RewriteRule ^(.*)$ servidorrest.php?parametro=$1 [QSA]
+
+
+#asi queda con el problema de no poner nada en la url
+#DirectoryIndex servidorrest.php
+RewriteEngine On
+RewriteRule ^$ servidorrest.php [L]
+#L - last, última regla que se aplica, si se llega a aplicar
+#^$ - si no hay ningún texto más
+RewriteRule ^(.*)$ servidorrest.php?parametro=$1 [QSA]

@@ -66,9 +66,7 @@ class ModeloUsuario extends Modelo {
         return $resultado;
     }
     
-    
-    
-    function getUsuarios() {
+     function getUsuarios() {
         $manager = new ManageUsuario($this->getDataBase());
         return $manager->getAll();
     }
@@ -78,6 +76,16 @@ class ModeloUsuario extends Modelo {
         return $manager->get($usuario->getId());
     }
     
+    function getCount() {
+        $manager = new ManageUsuario($this->getDataBase());
+        return $manager->getAllCount();
+    }
+
+    function paginarUsuarios($a, $b){
+        $manager = new ManageUsuario($this->getDataBase());
+        return $manager->getUserLimit($a, $b);
+    }
+    
     function borrarUsuario($usuario) {
         $manager = new ManageUsuario($this->getDataBase());
         return $manager->remove($usuario->getId());
@@ -85,17 +93,79 @@ class ModeloUsuario extends Modelo {
     
     function editarUsuario($usuario) {
         $manager = new ManageUsuario($this->getDataBase());
+        $usuarioDB = $manager->get($usuario->getId());
+        $atributosDB  = $usuarioDB->getAttributesValues();
+        $atributosUsuario = $usuario->getAttributesValues();
+        //ya esta dando por hecho que es edit con clave
+        foreach ($atributosUsuario as $indice => $valor) {
+            if ($valor === null) {
+                $atributosUsuario[$indice] = $atributosDB[$indice]; 
+            }
+        }
+        $usuario->setFromAssociative($atributosUsuario);
         return $manager->edit($usuario);
     }
     
     function editSelfUser($usuario) {
         $manager = new ManageUsuario($this->getDataBase());
+        $usuarioDB = $manager->get($usuario->getId());
+        $atributosDB  = $usuarioDB->getAttributesValues();
+        $atributosUsuario = $usuario->getAttributesValues();
+        if ($atributosUsuario['correo'] !== $atributosDB['correo'] && $atributosUsuario['correo'] !== null) {
+            $this->setDato('correoCambiado', true);
+        }
+        foreach ($atributosUsuario as $indice => $valor) {
+            if ($valor === null) {
+                $atributosUsuario[$indice] = $atributosDB[$indice]; 
+            }
+        }
+        $usuario->setFromAssociative($atributosUsuario);
         return $manager->editSinTipo($usuario);
     }
     
     function editSelfUserAdvanced($usuario) {
         $manager = new ManageUsuario($this->getDataBase());
+        $usuarioDB = $manager->get($usuario->getId());
+        $atributosDB  = $usuarioDB->getAttributesValues();
+        $atributosUsuario = $usuario->getAttributesValues();
+        foreach ($atributosUsuario as $indice => $valor) {
+            if ($valor === null) {
+                $atributosUsuario[$indice] = $atributosDB[$indice]; 
+            }
+        }
+        $usuario->setFromAssociative($atributosUsuario);
         return $manager->editSinTipoAdvanced($usuario);
+    }
+    
+    function editSelfUserSinClave($usuario) {
+        $manager = new ManageUsuario($this->getDataBase());
+        $usuarioDB = $manager->get($usuario->getId());
+        $atributosDB  = $usuarioDB->getAttributesValues();
+        $atributosUsuario = $usuario->getAttributesValues();
+        if ($atributosUsuario['correo'] !== $atributosDB['correo'] && $atributosUsuario['correo'] !== null) {
+            $this->setDato('correoCambiado', true);
+        }
+        foreach ($atributosUsuario as $indice => $valor) {
+            if ($valor === null && $indice !== 'clave') {
+                $atributosUsuario[$indice] = $atributosDB[$indice]; 
+            }
+        }
+        $usuario->setFromAssociative($atributosUsuario);
+        return $manager->editSinTipoSinClave($usuario);
+    }
+    
+    function editSelfUserAdvancedSinClave($usuario) {
+        $manager = new ManageUsuario($this->getDataBase());
+        $usuarioDB = $manager->get($usuario->getId());
+        $atributosDB  = $usuarioDB->getAttributesValues();
+        $atributosUsuario = $usuario->getAttributesValues();
+        foreach ($atributosUsuario as $indice => $valor) {
+            if ($valor === null && $indice !== 'clave') {
+                $atributosUsuario[$indice] = $atributosDB[$indice]; 
+            }
+        }
+        $usuario->setFromAssociative($atributosUsuario);
+        return $manager->editSinTipoSinClaveAdvanced($usuario);
     }
     
     function numeroAdmins() {
@@ -120,5 +190,19 @@ class ModeloUsuario extends Modelo {
             }
         }
         return $r;
+    }
+    
+    function editarSinClave($usuario) {
+        $manager = new ManageUsuario($this->getDataBase());
+        $usuarioDB = $manager->get($usuario->getId());
+        $atributosDB  = $usuarioDB->getAttributesValues();
+        $atributosUsuario = $usuario->getAttributesValues();
+        foreach ($atributosUsuario as $indice => $valor) {
+            if ($valor === null && $indice !== 'clave') {
+                $atributosUsuario[$indice] = $atributosDB[$indice]; 
+            }
+        }
+        $usuario->setFromAssociative($atributosUsuario);
+        return $manager->editSinClave($usuario);
     }
 }

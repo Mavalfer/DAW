@@ -1,0 +1,3 @@
+(function(){
+    $.ajax().done().fail();
+});

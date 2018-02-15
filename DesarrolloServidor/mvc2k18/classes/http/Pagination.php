@@ -19,20 +19,20 @@ class Pagination {
         return $this->rpp * ($this->page - 1);
     }
     
-    function last() {
+    function getLast() {
         return ceil($this->rowcount / $this->rpp);
     }
     
-    function first() {
+    function getFirst() {
         return 1;
     }
     
-    function next() {
-        return min($this->page + 1, $this->last());
+    function getNext() {
+        return min($this->page + 1, $this->getLast());
     }
     
-    function previous() {
-        return max($this->page - 1, $this->first());
+    function getPrevious() {
+        return max($this->page - 1, $this->getFirstfirst());
     }
     
     function setRpp($rpp) {
@@ -41,7 +41,7 @@ class Pagination {
     
     function getRange($range = 3) {
         $array = array();
-        $last = $this->last();
+        $last = $this->getLast();
         for($i = $this->page - $range; $i <= $this->page + $range; $i++) {
             //no meter páginas debajo del 1
             //no meter páginas encima del $pages

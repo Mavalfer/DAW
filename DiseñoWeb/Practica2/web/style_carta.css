@@ -1,0 +1,214 @@
+@import url(../reset.css);
+
+/*-Dimensiones generales-*/
+
+.wrapper {
+    width: 1850px;
+    height: 3000px;
+    margin: 0 auto;
+}
+
+/*
+header, section {
+    height: 850px;
+}
+*/
+header {
+    height: 250px;
+}
+
+section .sectionCarta1 {
+    height: 600px;
+}
+
+section .sectionCarta2 {
+    height: 850px;
+}
+
+/*------------------*/
+
+
+/*-Posicionamiento-*/
+
+header, section {
+    position: relative;
+}
+
+
+header div, header nav {
+    position: absolute;
+}
+
+
+section * {
+    position: absolute;
+}
+
+/*-----------------*/
+
+/*-Header-*/
+
+header .logo {
+    width: 380px;
+    height: 290px;
+    top: 60px;
+    left: 80px;
+}
+
+header nav {
+    width: 690px;
+    height: 50px;
+    top: 115px;
+    left: 985px;
+}
+
+header nav .listanav {
+    list-style-type: none;
+}
+
+header nav .listanav li {
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    line-height: 50px; 
+    text-align: center; 
+    margin-left: 66px;
+}
+
+header nav .listanav li:first-child {
+    margin-left: 0px;
+}
+
+header nav .listanav li:hover {
+    background-image: url(sprite.png);
+}
+
+/*-----------------*/
+
+/*-Footer-*/
+
+footer {
+    position: relative;
+    height: 500px;
+}
+
+footer * {
+    position: absolute;
+}
+
+footer #footerP1 {
+    width: 320px;
+    height: 200px;
+    top: 146px;
+    left: 302px;
+}
+
+footer #footerP2 {
+    width: 376px;
+    height: 210px;
+    top: 146px;
+    left: 781px;
+}
+
+footer .social {
+    width: 305px;
+    height: 105px;
+    top: 190px;
+    left: 1267px;
+}
+
+footer #copyright {
+    width: 525px;
+    height: 20px;
+    top: 450px;
+    left: 708px;
+}
+
+footer #facebook {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 35px;
+}
+
+footer #twitter {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 95px;
+}
+
+footer #instagram {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 155px;
+}
+
+footer #pinterest {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 215px;
+}
+
+footer {
+    background-color: chocolate;
+}
+
+footer #footerP1 {
+    background-color: aqua;
+}
+
+footer #footerP2 {
+    background-color: aqua;
+}
+
+footer .social {
+    background-color: aqua;
+}
+
+footer .social div {
+    background-color: red;
+}
+
+footer #copyright {
+    background-color: aqua;
+}
+/*----------------------*/
+
+
+/*-Colores para pruebas-*/
+
+    .wrapper {
+        background-color: aqua;
+    }
+
+    header {
+        background-color: cadetblue;
+    }
+
+    header .logo {
+        background-color: antiquewhite;
+    }
+
+    header nav {
+        background-color: aliceblue;
+    }
+
+    header nav .listanav li {
+        background-color: brown;
+    }
+
+    header .lema {
+        background-color: azure;
+    }
+    
+    section .sectionCarta1 {
+        background-color: brown;
+    }
+
+    
+    
+
+/*-----------------------*/

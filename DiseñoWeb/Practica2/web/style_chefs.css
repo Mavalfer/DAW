@@ -1,0 +1,34 @@
+@import url(../reset.css);
+
+/*-Dimensiones generales-*/
+
+.wrapper {
+    width: 1850px;
+    height: 3000px;
+    margin: 0 auto;
+}
+
+header, section {
+    height: 850px;
+}
+
+/*------------------*/
+
+
+/*-Posicionamiento-*/
+
+header, section {
+    position: relative;
+}
+
+/*
+header div, header nav {
+    position: absolute;
+}
+*/
+
+section * {
+    position: absolute;
+}
+
+/*-----------------*/

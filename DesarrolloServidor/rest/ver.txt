@@ -1,0 +1,38 @@
+getallheaders();
+file_get_contents('php://input') // json_decode(file_get_contents('php://input'), true);
+$_SERVER['REQUEST_METHOD'];
+$_GET;
+
+Servidor Web / Rest
+1º Pueden usar la misma tecnología: Apache, PHP, MySQL
+2º Se utilizan fundamentalmente para comunicar
+   dispositivos móviles con servidores
+   también se pueden usar para comunicar servidores entre sí
+3º Diferencias:
+   a) métodos: GET, POST, PUT, DELETE (PATCH, HEAD)
+   b) sesión: no se utiliza, token
+   c) parámetros: json, parámetros URL
+   d) cabeceras (headers): se usan activamente
+   e) las urls contienen información (parámetros)
+4º Semántica de los métodos
+   GET - consulta
+   POST - alta
+   PUT - modificar
+   DELETE - borrar
+5º http/https
+   a) parte 1: cabecera/ head
+   b) parte 2: cuerpo  / body
+6º .htaccess -> reglas de reescritura
+
+Ejemplo:
+post https://.../destino/usuario + cuerpo json -> inserte en la tabla usuario los datos json
+post https://.../destino/agenda + cuerpo json -> inserte en la tabla agenda los datos json
+put  https://.../destino/agenda + cuerpo json -> modifica en la tabla agenda los datos json
+put  https://.../destino/agenda/19 + cuerpo json -> modifica en la tabla agenda al elemento con id 19
+                                                    los datos json
+delete https://.../destino/agenda/47 -> borra el elemento 47 de la tabla agenda
+delete https://.../destino/agenda + cuerpo json -> borra el elemento id del json de la tabla agenda
+get https://.../destino/agenda -> listado de la agenda
+get https://.../destino/agenda/11 -> información del elemento 11 de la agenda
+
+qsa - querystring append, añado un parámetro a la url
